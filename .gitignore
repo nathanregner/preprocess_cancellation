@@ -136,3 +136,18 @@ dmypy.json
 
 # Cython debug symbols
 cython_debug/
+
+# Nix
+.direnv/
+result
+
+# Profiling
+flamegraph.svg
+
+# Linux
+perf.data
+perf.data.old
+
+# OSX
+.DS_Store
+
