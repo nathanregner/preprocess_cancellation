@@ -1,3 +1,7 @@
+[build-system]
+requires = ["maturin>=1.3,<2.0"]
+build-backend = "maturin"
+
 [tool.poetry]
 name = "preprocess_cancellation"
 version = "0.2.0"
@@ -39,3 +43,6 @@ addopts = '-v --cov=preprocess_cancellation'
 
 [tool.coverage.run]
 branch = true
+
+[tool.maturin]
+features = ["pyo3/extension-module"]
