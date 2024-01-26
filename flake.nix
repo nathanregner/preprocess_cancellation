@@ -1,25 +1,37 @@
 {
   description = "GCode processor to add klipper cancel-object markers";
 
-  inputs.nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+  inputs = {
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    flake-utils.url = "github:numtide/flake-utils";
+    rust-overlay.url = "github:oxalica/rust-overlay";
+    rust-overlay.inputs.nixpkgs.follows = "nixpkgs";
+  };
 
-  outputs = inputs@{ flake-parts, ... }:
-    flake-parts.lib.mkFlake { inherit inputs; } {
-      systems =
-        [ "x86_64-linux" "aarch64-linux" "aarch64-darwin" "x86_64-darwin" ];
-      perSystem = { config, self', inputs', pkgs, system, ... }: rec {
-        packages.default = pkgs.python311Packages.callPackage ./package.nix { };
+  outputs = { self, nixpkgs, rust-overlay, flake-utils, ... }:
+    flake-utils.lib.eachDefaultSystem (system:
+      let
+        overlays = [ (import rust-overlay) ];
+        pkgs = import nixpkgs { inherit system overlays; };
+        rust-bin = pkgs.rust-bin.nightly.latest.default;
+      in rec {
+        packages.default = pkgs.python311Packages.callPackage ./package.nix {
+          rustPlatform = pkgs.makeRustPlatform {
+            cargo = rust-bin;
+            rustc = rust-bin;
+          };
+        };
+        packages.rust = rust-bin;
         devShells.default = pkgs.mkShell {
           inherit (packages.default) nativeBuildInputs;
           venvDir = "./.venv";
-          buildInputs = [
-            packages.default.buildInputs
-            pkgs.cargo-insta
-            pkgs.poetry
-            pkgs.python311Packages.venvShellHook
-            pkgs.rust-analyzer
-          ];
+          buildInputs = [ packages.default.buildInputs rust-bin ]
+            ++ (with pkgs; [
+              cargo-insta
+              poetry
+              python311Packages.venvShellHook
+              rust-analyzer
+            ]);
         };
-      };
-    };
+      });
 }

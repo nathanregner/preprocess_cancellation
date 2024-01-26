@@ -3,10 +3,10 @@ use std::io::{BufRead, BufReader};
 use tempfile::NamedTempFile;
 
 #[pyclass]
-pub struct PyFileIter(pub Option<BufReader<NamedTempFile>>);
+pub struct FileIter(pub Option<BufReader<NamedTempFile>>);
 
 #[pymethods]
-impl PyFileIter {
+impl FileIter {
     fn __iter__(slf: PyRef<'_, Self>) -> PyRef<'_, Self> {
         slf
     }

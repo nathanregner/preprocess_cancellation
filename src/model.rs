@@ -1,4 +1,39 @@
 use std::fmt::{self, Display, Formatter};
+use std::ops::Range;
+
+#[derive(Debug)]
+pub struct KnownObject {
+    id: String,
+    ranges: Vec<Range<u64>>,
+    hull: BoundingBox,
+}
+
+impl KnownObject {
+    pub fn new(id: String, range: Range<u64>, hull: BoundingBox) -> Self {
+        Self {
+            id: id.replace(|c: char| !c.is_ascii_alphanumeric(), "_"),
+            ranges: vec![range],
+            hull,
+        }
+    }
+
+    pub fn union(&mut self, range: Range<u64>, hull: BoundingBox) {
+        self.ranges.push(range);
+        self.hull.union_with(&hull);
+    }
+
+    pub fn id(&self) -> &str {
+        &self.id
+    }
+
+    pub fn ranges(&self) -> &[Range<u64>] {
+        &self.ranges
+    }
+
+    pub fn hull(&self) -> &BoundingBox {
+        &self.hull
+    }
+}
 
 #[derive(Copy, Clone, Debug)]
 pub struct BoundingBox {
@@ -29,7 +64,7 @@ impl BoundingBox {
     pub fn center(&self) -> (f32, f32) {
         let (x1, y1) = self.min();
         let (x2, y2) = self.max();
-        ((x1 + x2) / 2.0, (y1 + y2) / 2.0)
+        ((x2 - x1) / 2.0 + x1, (y2 - y1) / 2.0 + y1)
     }
 
     pub fn min(&self) -> (f32, f32) {

@@ -1,10 +1,9 @@
-use super::{comment, ExtrudeMove, KnownObject};
-use crate::bounding_box::BoundingBox;
+use crate::model::{BoundingBox, KnownObject};
+use crate::parser::{comment, extrude_move};
 use std::collections::HashMap;
 use std::io::{self, BufRead, Seek};
 use std::vec;
 use winnow::combinator::{preceded, rest};
-use winnow::Parser;
 
 pub fn list_objects(file: &mut (impl BufRead + Seek)) -> io::Result<Vec<KnownObject>> {
     let mut objects = HashMap::<String, KnownObject>::new();
@@ -20,12 +19,9 @@ pub fn list_objects(file: &mut (impl BufRead + Seek)) -> io::Result<Vec<KnownObj
             return Ok(vec![]);
         }
 
-        if let Some(id) = comment(preceded("printing object", rest))
-            .parse(&*line)
-            .ok()
-        {
+        if let Ok(id) = comment(preceded("printing object", rest), &line) {
             printing = Some((id.trim().to_owned(), pos));
-        } else if let Some(_) = comment(preceded("stop printing", rest)).parse(&*line).ok() {
+        } else if let Ok(_) = comment(preceded("stop printing", rest), &line) {
             if let Some(hull) = hull.take() {
                 let (id, start_pos) = printing.take().expect("printing");
                 objects
@@ -35,7 +31,7 @@ pub fn list_objects(file: &mut (impl BufRead + Seek)) -> io::Result<Vec<KnownObj
                         KnownObject::new(id.to_string(), start_pos..pos, hull)
                     });
             }
-        } else if let Some(extrude) = ExtrudeMove::parser().parse_next(&mut &*line).ok() {
+        } else if let Ok(extrude) = extrude_move(&line) {
             if printing.is_some() {
                 if let Some(hull) = &mut hull {
                     hull.union(extrude.x, extrude.y);

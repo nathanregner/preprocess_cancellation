@@ -1,38 +1,19 @@
-mod bounding_box;
-mod pyiter;
+mod error;
+mod generator;
+mod model;
+mod parser;
+mod py;
 mod slicers;
 
-use crate::slicers::rewrite;
-pub use crate::slicers::{rewrite_to_string, Slicer};
-use pyiter::PyFileIter;
-use pyo3::exceptions::PyTypeError;
+pub type Result<T> = std::result::Result<T, error::Error>;
+
+pub use crate::generator::rewrite_to_string;
+pub use crate::slicers::Slicer;
+use generator::rewrite;
+use py::{FileIter, FileLike};
 use pyo3::prelude::*;
 use std::fs::File;
 use std::io::BufReader;
-use std::path::{Path, PathBuf};
-
-#[derive(Clone, Debug)]
-pub struct FileLike(PathBuf);
-
-impl FromPyObject<'_> for FileLike {
-    fn extract(ob: &PyAny) -> PyResult<Self> {
-        let file_name: String = ob
-            .extract::<String>()
-            .or_else(|_| ob.getattr("name")?.extract::<String>())
-            .or_else(|_| {
-                Err(PyErr::new::<PyTypeError, _>(
-                    "Not a path or file-like object",
-                ))
-            })?;
-        Ok(FileLike(file_name.into()))
-    }
-}
-
-impl AsRef<Path> for FileLike {
-    fn as_ref(&self) -> &Path {
-        &self.0
-    }
-}
 
 #[pymodule]
 fn preprocess_cancellation(_py: Python<'_>, m: &PyModule) -> PyResult<()> {
@@ -44,12 +25,12 @@ fn preprocess_cancellation(_py: Python<'_>, m: &PyModule) -> PyResult<()> {
 }
 
 #[pyfunction]
-pub fn preprocess_slicer(file_like: FileLike) -> PyResult<PyFileIter> {
+pub fn preprocess_slicer(file_like: FileLike) -> PyResult<FileIter> {
     let mut src = BufReader::new(File::open(&file_like)?);
     let mut objects = slicers::slic3r::list_objects(&mut src)?;
     Ok(match rewrite(file_like.as_ref(), &mut objects).unwrap() {
-        None => PyFileIter(None),
-        Some(dst) => PyFileIter(Some(BufReader::new(dst))),
+        None => FileIter(None),
+        Some(dst) => FileIter(Some(BufReader::new(dst))),
     })
 }
 
@@ -66,11 +47,11 @@ pub fn preprocess_cura(file_like: FileLike) -> PyResult<()> {
 }
 
 #[pyfunction]
-pub fn preprocess_ideamaker(file_path: FileLike) -> PyResult<()> {
+pub fn preprocess_ideamaker(_file_path: FileLike) -> PyResult<()> {
     todo!()
 }
 
 #[pyfunction]
-pub fn preprocess_m486(file_path: FileLike) -> PyResult<()> {
+pub fn preprocess_m486(_file_path: FileLike) -> PyResult<()> {
     todo!()
 }
