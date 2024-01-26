@@ -79,6 +79,7 @@ def test_superslicer():
     with (gcode_path / "superslicer.gcode").open("r") as f:
         results = "".join(list(preprocess_slicer(f))).split("\n")
 
+    print("\n".join(results))
     definitions = collect_definitions(results)
 
     assert "EXCLUDE_OBJECT_DEFINE NAME=cube_1_id_0_copy_0" in definitions

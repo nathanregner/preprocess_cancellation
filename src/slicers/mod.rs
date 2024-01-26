@@ -2,6 +2,7 @@ use crate::bounding_box::BoundingBox;
 use std::fs::File;
 use std::io::{self, BufRead, BufReader, BufWriter, Read, Seek, SeekFrom, Write};
 use std::path::Path;
+use std::vec;
 use tempfile::NamedTempFile;
 use winnow::ascii::{float, space0};
 use winnow::combinator::{delimited, permutation, preceded, rest};
@@ -51,10 +52,21 @@ pub fn comment<'i, O>(inner: impl StrParser<'i, O>) -> impl StrParser<'i, O> {
 
 #[derive(Debug)]
 pub struct KnownObject {
-    pub id: String,
-    pub start_pos: u64,
-    pub end_pos: u64,
-    pub hull: BoundingBox,
+    id: String,
+    start_pos: u64,
+    end_pos: u64,
+    hull: BoundingBox,
+}
+
+impl KnownObject {
+    pub fn new(id: String, start_pos: u64, end_pos: u64, hull: BoundingBox) -> Self {
+        Self {
+            id: id.replace(|c: char| !c.is_ascii_alphanumeric(), "_"),
+            start_pos,
+            end_pos,
+            hull,
+        }
+    }
 }
 
 pub fn extract_objects(mut file: (impl Read + Write + Seek)) -> io::Result<()> {
@@ -115,7 +127,6 @@ enum Slicer {
 
 fn copy_to(mut src: impl BufRead + Seek, dst: &mut impl Write, end: u64) -> io::Result<u64> {
     let pos = src.stream_position()?;
-    println!("copy_to(?, {:?}, {})", pos, end);
     let count = end - pos;
     io::copy(&mut src.take(count), dst)
 }
@@ -131,6 +142,18 @@ pub fn rewrite(src: &Path, objects: &[KnownObject]) -> anyhow::Result<()> {
 
     rewrite_to(BufReader::new(File::open(src)?), &objects, dst.reopen()?)?;
     Ok(std::fs::rename(dst.into_temp_path(), src)?)
+}
+
+pub fn rewrite_to_string(src: &Path, objects: &[KnownObject]) -> anyhow::Result<String> {
+    let mut result = vec![];
+    if objects.is_empty() {
+        // println!("preprocess_slicer: no objects found");
+        File::open(src)?.read_to_end(&mut result)?;
+    } else {
+        rewrite_to(BufReader::new(File::open(src)?), &objects, &mut result)?;
+    }
+
+    Ok(String::from_utf8(result)?)
 }
 
 pub fn rewrite_to(
@@ -156,7 +179,7 @@ pub fn rewrite_to(
         let (x, y) = object.hull.center();
         writeln!(
             writer,
-            "; EXCLUDE_OBJECT_DEFINE NAME={} CENTER={x},{y} POLYGON={}",
+            "EXCLUDE_OBJECT_DEFINE NAME={} CENTER={x},{y} POLYGON={}",
             object.id, object.hull
         )?;
     }
@@ -164,9 +187,9 @@ pub fn rewrite_to(
     println!("objects={:#?}", objects);
     for object in objects {
         copy_to(&mut file, &mut writer, object.start_pos)?;
-        writeln!(writer, "EXCLUDE_OBJECT_START NAME={}\n", object.id)?;
+        writeln!(writer, "EXCLUDE_OBJECT_START NAME={}", object.id)?;
         copy_to(&mut file, &mut writer, object.end_pos)?;
-        writeln!(writer, "EXCLUDE_OBJECT_END NAME={}\n", object.id)?;
+        writeln!(writer, "EXCLUDE_OBJECT_END NAME={}", object.id)?;
     }
 
     writer.flush()?;

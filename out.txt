@@ -1,3 +1,1517 @@
+============================= test session starts ==============================
+platform darwin -- Python 3.11.7, pytest-7.4.3, pluggy-1.3.0
+rootdir: /Volumes/dev/github/preprocess_cancellation
+collected 8 items / 7 deselected / 1 skipped / 1 selected
+
+test_preprocessor.py comment: "; Postprocessed by [ArcWelder](https://github.com/FormerLurker/ArcWelderLib)\r\n"
+comment: "; Copyright(C) 2020 - Brad Hochgesang\r\n"
+comment: "; resolution=0.05mm\r\n"
+comment: "; path_tolerance=5%\r\n"
+comment: "; max_radius=1000000.00mm\r\n"
+comment: "; default_xyz_precision=3\r\n"
+comment: "; default_e_precision=5\r\n"
+objects=[
+    KnownObject {
+        id: "cube_1_id_0_copy_0",
+        start_pos: 70181,
+        end_pos: 71349,
+        hull: BoundingBox {
+            min: (
+                148.385,
+                153.38,
+            ),
+            max: (
+                152.625,
+                157.62,
+            ),
+        },
+    },
+    KnownObject {
+        id: "cube_1_id_0_copy_1",
+        start_pos: 71431,
+        end_pos: 72680,
+        hull: BoundingBox {
+            min: (
+                137.385,
+                153.38,
+            ),
+            max: (
+                141.625,
+                157.62,
+            ),
+        },
+    },
+    KnownObject {
+        id: "union_3_id_2_copy_0",
+        start_pos: 72763,
+        end_pos: 75027,
+        hull: BoundingBox {
+            min: (
+                137.385,
+                142.38,
+            ),
+            max: (
+                151.625,
+                146.62,
+            ),
+        },
+    },
+    KnownObject {
+        id: "cylinder_2_id_1_copy_0",
+        start_pos: 75114,
+        end_pos: 75960,
+        hull: BoundingBox {
+            min: (
+                159.654,
+                148.26,
+            ),
+            max: (
+                161.06,
+                148.934,
+            ),
+        },
+    },
+    KnownObject {
+        id: "cube_1_id_0_copy_0",
+        start_pos: 76276,
+        end_pos: 77694,
+        hull: BoundingBox {
+            min: (
+                148.215,
+                153.21,
+            ),
+            max: (
+                152.795,
+                157.79,
+            ),
+        },
+    },
+    KnownObject {
+        id: "cube_1_id_0_copy_1",
+        start_pos: 77776,
+        end_pos: 79195,
+        hull: BoundingBox {
+            min: (
+                137.215,
+                153.21,
+            ),
+            max: (
+                141.795,
+                157.79,
+            ),
+        },
+    },
+    KnownObject {
+        id: "union_3_id_2_copy_0",
+        start_pos: 79278,
+        end_pos: 81941,
+        hull: BoundingBox {
+            min: (
+                137.215,
+                142.21,
+            ),
+            max: (
+                151.795,
+                146.79,
+            ),
+        },
+    },
+    KnownObject {
+        id: "cylinder_2_id_1_copy_0",
+        start_pos: 82028,
+        end_pos: 83902,
+        hull: BoundingBox {
+            min: (
+                159.314,
+                147.508,
+            ),
+            max: (
+                161.558,
+                149.921,
+            ),
+        },
+    },
+    KnownObject {
+        id: "cube_1_id_0_copy_0",
+        start_pos: 84144,
+        end_pos: 85552,
+        hull: BoundingBox {
+            min: (
+                148.215,
+                153.21,
+            ),
+            max: (
+                152.795,
+                157.79,
+            ),
+        },
+    },
+    KnownObject {
+        id: "cube_1_id_0_copy_1",
+        start_pos: 85634,
+        end_pos: 87043,
+        hull: BoundingBox {
+            min: (
+                137.215,
+                153.21,
+            ),
+            max: (
+                141.795,
+                157.79,
+            ),
+        },
+    },
+    KnownObject {
+        id: "union_3_id_2_copy_0",
+        start_pos: 87126,
+        end_pos: 89769,
+        hull: BoundingBox {
+            min: (
+                137.215,
+                142.21,
+            ),
+            max: (
+                151.795,
+                146.79,
+            ),
+        },
+    },
+    KnownObject {
+        id: "cylinder_2_id_1_copy_0",
+        start_pos: 89856,
+        end_pos: 91767,
+        hull: BoundingBox {
+            min: (
+                159.15,
+                147.402,
+            ),
+            max: (
+                161.558,
+                149.655,
+            ),
+        },
+    },
+    KnownObject {
+        id: "cube_1_id_0_copy_0",
+        start_pos: 92009,
+        end_pos: 93417,
+        hull: BoundingBox {
+            min: (
+                148.215,
+                153.21,
+            ),
+            max: (
+                152.795,
+                157.79,
+            ),
+        },
+    },
+    KnownObject {
+        id: "cube_1_id_0_copy_1",
+        start_pos: 93499,
+        end_pos: 94908,
+        hull: BoundingBox {
+            min: (
+                137.215,
+                153.21,
+            ),
+            max: (
+                141.795,
+                157.79,
+            ),
+        },
+    },
+    KnownObject {
+        id: "union_3_id_2_copy_0",
+        start_pos: 94991,
+        end_pos: 97634,
+        hull: BoundingBox {
+            min: (
+                137.215,
+                142.21,
+            ),
+            max: (
+                151.795,
+                146.79,
+            ),
+        },
+    },
+    KnownObject {
+        id: "cylinder_2_id_1_copy_0",
+        start_pos: 97721,
+        end_pos: 99591,
+        hull: BoundingBox {
+            min: (
+                159.314,
+                147.508,
+            ),
+            max: (
+                161.558,
+                149.921,
+            ),
+        },
+    },
+    KnownObject {
+        id: "cube_1_id_0_copy_0",
+        start_pos: 99831,
+        end_pos: 101239,
+        hull: BoundingBox {
+            min: (
+                148.215,
+                153.21,
+            ),
+            max: (
+                152.795,
+                157.79,
+            ),
+        },
+    },
+    KnownObject {
+        id: "cube_1_id_0_copy_1",
+        start_pos: 101321,
+        end_pos: 102730,
+        hull: BoundingBox {
+            min: (
+                137.215,
+                153.21,
+            ),
+            max: (
+                141.795,
+                157.79,
+            ),
+        },
+    },
+    KnownObject {
+        id: "union_3_id_2_copy_0",
+        start_pos: 102813,
+        end_pos: 105456,
+        hull: BoundingBox {
+            min: (
+                137.215,
+                142.21,
+            ),
+            max: (
+                151.795,
+                146.79,
+            ),
+        },
+    },
+    KnownObject {
+        id: "cylinder_2_id_1_copy_0",
+        start_pos: 105543,
+        end_pos: 107467,
+        hull: BoundingBox {
+            min: (
+                159.15,
+                147.402,
+            ),
+            max: (
+                161.558,
+                149.655,
+            ),
+        },
+    },
+    KnownObject {
+        id: "cube_1_id_0_copy_0",
+        start_pos: 107709,
+        end_pos: 108783,
+        hull: BoundingBox {
+            min: (
+                148.215,
+                153.21,
+            ),
+            max: (
+                152.795,
+                157.79,
+            ),
+        },
+    },
+    KnownObject {
+        id: "cube_1_id_0_copy_1",
+        start_pos: 108865,
+        end_pos: 109927,
+        hull: BoundingBox {
+            min: (
+                137.215,
+                153.21,
+            ),
+            max: (
+                141.795,
+                157.79,
+            ),
+        },
+    },
+    KnownObject {
+        id: "union_3_id_2_copy_0",
+        start_pos: 110010,
+        end_pos: 112021,
+        hull: BoundingBox {
+            min: (
+                137.215,
+                142.21,
+            ),
+            max: (
+                151.795,
+                146.79,
+            ),
+        },
+    },
+    KnownObject {
+        id: "cylinder_2_id_1_copy_0",
+        start_pos: 112108,
+        end_pos: 112971,
+        hull: BoundingBox {
+            min: (
+                158.252,
+                147.475,
+            ),
+            max: (
+                161.662,
+                149.5,
+            ),
+        },
+    },
+    KnownObject {
+        id: "cube_1_id_0_copy_0",
+        start_pos: 113213,
+        end_pos: 114274,
+        hull: BoundingBox {
+            min: (
+                148.215,
+                153.21,
+            ),
+            max: (
+                152.795,
+                157.79,
+            ),
+        },
+    },
+    KnownObject {
+        id: "cube_1_id_0_copy_1",
+        start_pos: 114356,
+        end_pos: 115418,
+        hull: BoundingBox {
+            min: (
+                137.215,
+                153.21,
+            ),
+            max: (
+                141.795,
+                157.79,
+            ),
+        },
+    },
+    KnownObject {
+        id: "union_3_id_2_copy_0",
+        start_pos: 115501,
+        end_pos: 117512,
+        hull: BoundingBox {
+            min: (
+                137.215,
+                142.21,
+            ),
+            max: (
+                151.795,
+                146.79,
+            ),
+        },
+    },
+    KnownObject {
+        id: "cylinder_2_id_1_copy_0",
+        start_pos: 117599,
+        end_pos: 118431,
+        hull: BoundingBox {
+            min: (
+                159.602,
+                147.423,
+            ),
+            max: (
+                161.614,
+                149.359,
+            ),
+        },
+    },
+    KnownObject {
+        id: "cube_1_id_0_copy_0",
+        start_pos: 118673,
+        end_pos: 119788,
+        hull: BoundingBox {
+            min: (
+                148.215,
+                153.21,
+            ),
+            max: (
+                152.795,
+                157.79,
+            ),
+        },
+    },
+    KnownObject {
+        id: "cube_1_id_0_copy_1",
+        start_pos: 119870,
+        end_pos: 120986,
+        hull: BoundingBox {
+            min: (
+                137.215,
+                153.21,
+            ),
+            max: (
+                141.795,
+                157.79,
+            ),
+        },
+    },
+    KnownObject {
+        id: "union_3_id_2_copy_0",
+        start_pos: 121069,
+        end_pos: 123080,
+        hull: BoundingBox {
+            min: (
+                137.215,
+                142.21,
+            ),
+            max: (
+                151.795,
+                146.79,
+            ),
+        },
+    },
+    KnownObject {
+        id: "cylinder_2_id_1_copy_0",
+        start_pos: 123167,
+        end_pos: 123985,
+        hull: BoundingBox {
+            min: (
+                159.5,
+                147.399,
+            ),
+            max: (
+                161.545,
+                149.217,
+            ),
+        },
+    },
+    KnownObject {
+        id: "cube_1_id_0_copy_0",
+        start_pos: 124227,
+        end_pos: 125373,
+        hull: BoundingBox {
+            min: (
+                148.215,
+                153.21,
+            ),
+            max: (
+                152.795,
+                157.79,
+            ),
+        },
+    },
+    KnownObject {
+        id: "cube_1_id_0_copy_1",
+        start_pos: 125455,
+        end_pos: 126602,
+        hull: BoundingBox {
+            min: (
+                137.215,
+                153.21,
+            ),
+            max: (
+                141.795,
+                157.79,
+            ),
+        },
+    },
+    KnownObject {
+        id: "union_3_id_2_copy_0",
+        start_pos: 126685,
+        end_pos: 128696,
+        hull: BoundingBox {
+            min: (
+                137.215,
+                142.21,
+            ),
+            max: (
+                151.795,
+                146.79,
+            ),
+        },
+    },
+    KnownObject {
+        id: "cylinder_2_id_1_copy_0",
+        start_pos: 128783,
+        end_pos: 129649,
+        hull: BoundingBox {
+            min: (
+                158.252,
+                147.403,
+            ),
+            max: (
+                160.386,
+                149.262,
+            ),
+        },
+    },
+    KnownObject {
+        id: "cube_1_id_0_copy_0",
+        start_pos: 129889,
+        end_pos: 130973,
+        hull: BoundingBox {
+            min: (
+                148.215,
+                153.21,
+            ),
+            max: (
+                152.795,
+                157.79,
+            ),
+        },
+    },
+    KnownObject {
+        id: "cube_1_id_0_copy_1",
+        start_pos: 131055,
+        end_pos: 132140,
+        hull: BoundingBox {
+            min: (
+                137.215,
+                153.21,
+            ),
+            max: (
+                141.795,
+                157.79,
+            ),
+        },
+    },
+    KnownObject {
+        id: "union_3_id_2_copy_0",
+        start_pos: 132223,
+        end_pos: 134280,
+        hull: BoundingBox {
+            min: (
+                137.215,
+                142.21,
+            ),
+            max: (
+                151.795,
+                146.79,
+            ),
+        },
+    },
+    KnownObject {
+        id: "cylinder_2_id_1_copy_0",
+        start_pos: 134367,
+        end_pos: 135237,
+        hull: BoundingBox {
+            min: (
+                158.309,
+                147.429,
+            ),
+            max: (
+                160.238,
+                149.381,
+            ),
+        },
+    },
+    KnownObject {
+        id: "cube_1_id_0_copy_0",
+        start_pos: 135479,
+        end_pos: 136563,
+        hull: BoundingBox {
+            min: (
+                148.215,
+                153.21,
+            ),
+            max: (
+                152.795,
+                157.79,
+            ),
+        },
+    },
+    KnownObject {
+        id: "cube_1_id_0_copy_1",
+        start_pos: 136645,
+        end_pos: 137730,
+        hull: BoundingBox {
+            min: (
+                137.215,
+                153.21,
+            ),
+            max: (
+                141.795,
+                157.79,
+            ),
+        },
+    },
+    KnownObject {
+        id: "union_3_id_2_copy_0",
+        start_pos: 137813,
+        end_pos: 139870,
+        hull: BoundingBox {
+            min: (
+                137.215,
+                142.21,
+            ),
+            max: (
+                151.795,
+                146.79,
+            ),
+        },
+    },
+    KnownObject {
+        id: "cylinder_2_id_1_copy_0",
+        start_pos: 139957,
+        end_pos: 140827,
+        hull: BoundingBox {
+            min: (
+                158.309,
+                147.465,
+            ),
+            max: (
+                160.095,
+                149.483,
+            ),
+        },
+    },
+    KnownObject {
+        id: "cube_1_id_0_copy_0",
+        start_pos: 141069,
+        end_pos: 142153,
+        hull: BoundingBox {
+            min: (
+                148.215,
+                153.21,
+            ),
+            max: (
+                152.795,
+                157.79,
+            ),
+        },
+    },
+    KnownObject {
+        id: "cube_1_id_0_copy_1",
+        start_pos: 142235,
+        end_pos: 143320,
+        hull: BoundingBox {
+            min: (
+                137.215,
+                153.21,
+            ),
+            max: (
+                141.795,
+                157.79,
+            ),
+        },
+    },
+    KnownObject {
+        id: "union_3_id_2_copy_0",
+        start_pos: 143403,
+        end_pos: 145460,
+        hull: BoundingBox {
+            min: (
+                137.215,
+                142.21,
+            ),
+            max: (
+                151.795,
+                146.79,
+            ),
+        },
+    },
+    KnownObject {
+        id: "cylinder_2_id_1_copy_0",
+        start_pos: 145547,
+        end_pos: 146417,
+        hull: BoundingBox {
+            min: (
+                158.309,
+                147.52,
+            ),
+            max: (
+                159.964,
+                149.566,
+            ),
+        },
+    },
+    KnownObject {
+        id: "cube_1_id_0_copy_0",
+        start_pos: 146659,
+        end_pos: 147743,
+        hull: BoundingBox {
+            min: (
+                148.215,
+                153.21,
+            ),
+            max: (
+                152.795,
+                157.79,
+            ),
+        },
+    },
+    KnownObject {
+        id: "cube_1_id_0_copy_1",
+        start_pos: 147825,
+        end_pos: 148910,
+        hull: BoundingBox {
+            min: (
+                137.215,
+                153.21,
+            ),
+            max: (
+                141.795,
+                157.79,
+            ),
+        },
+    },
+    KnownObject {
+        id: "union_3_id_2_copy_0",
+        start_pos: 148993,
+        end_pos: 151050,
+        hull: BoundingBox {
+            min: (
+                137.215,
+                142.21,
+            ),
+            max: (
+                151.795,
+                146.79,
+            ),
+        },
+    },
+    KnownObject {
+        id: "cylinder_2_id_1_copy_0",
+        start_pos: 151137,
+        end_pos: 151976,
+        hull: BoundingBox {
+            min: (
+                159.314,
+                147.596,
+            ),
+            max: (
+                159.964,
+                149.641,
+            ),
+        },
+    },
+    KnownObject {
+        id: "cube_1_id_0_copy_0",
+        start_pos: 152218,
+        end_pos: 153333,
+        hull: BoundingBox {
+            min: (
+                148.215,
+                153.21,
+            ),
+            max: (
+                152.795,
+                157.79,
+            ),
+        },
+    },
+    KnownObject {
+        id: "cube_1_id_0_copy_1",
+        start_pos: 153415,
+        end_pos: 154531,
+        hull: BoundingBox {
+            min: (
+                137.215,
+                153.21,
+            ),
+            max: (
+                141.795,
+                157.79,
+            ),
+        },
+    },
+    KnownObject {
+        id: "union_3_id_2_copy_0",
+        start_pos: 154614,
+        end_pos: 158585,
+        hull: BoundingBox {
+            min: (
+                137.215,
+                142.21,
+            ),
+            max: (
+                151.795,
+                146.79,
+            ),
+        },
+    },
+    KnownObject {
+        id: "cylinder_2_id_1_copy_0",
+        start_pos: 158672,
+        end_pos: 159538,
+        hull: BoundingBox {
+            min: (
+                158.309,
+                147.679,
+            ),
+            max: (
+                160.097,
+                149.693,
+            ),
+        },
+    },
+    KnownObject {
+        id: "cube_1_id_0_copy_0",
+        start_pos: 159778,
+        end_pos: 160862,
+        hull: BoundingBox {
+            min: (
+                148.215,
+                153.21,
+            ),
+            max: (
+                152.795,
+                157.79,
+            ),
+        },
+    },
+    KnownObject {
+        id: "cube_1_id_0_copy_1",
+        start_pos: 160944,
+        end_pos: 162029,
+        hull: BoundingBox {
+            min: (
+                137.215,
+                153.21,
+            ),
+            max: (
+                141.795,
+                157.79,
+            ),
+        },
+    },
+    KnownObject {
+        id: "union_3_id_2_copy_0",
+        start_pos: 162112,
+        end_pos: 165083,
+        hull: BoundingBox {
+            min: (
+                137.215,
+                142.21,
+            ),
+            max: (
+                151.795,
+                146.79,
+            ),
+        },
+    },
+    KnownObject {
+        id: "cylinder_2_id_1_copy_0",
+        start_pos: 165170,
+        end_pos: 166008,
+        hull: BoundingBox {
+            min: (
+                159.363,
+                147.781,
+            ),
+            max: (
+                160.237,
+                149.734,
+            ),
+        },
+    },
+    KnownObject {
+        id: "cube_1_id_0_copy_0",
+        start_pos: 166250,
+        end_pos: 167396,
+        hull: BoundingBox {
+            min: (
+                148.215,
+                153.21,
+            ),
+            max: (
+                152.795,
+                157.79,
+            ),
+        },
+    },
+    KnownObject {
+        id: "cube_1_id_0_copy_1",
+        start_pos: 167478,
+        end_pos: 168625,
+        hull: BoundingBox {
+            min: (
+                137.215,
+                153.21,
+            ),
+            max: (
+                141.795,
+                157.79,
+            ),
+        },
+    },
+    KnownObject {
+        id: "union_3_id_2_copy_0",
+        start_pos: 168708,
+        end_pos: 171229,
+        hull: BoundingBox {
+            min: (
+                137.215,
+                142.21,
+            ),
+            max: (
+                151.795,
+                146.79,
+            ),
+        },
+    },
+    KnownObject {
+        id: "cylinder_2_id_1_copy_0",
+        start_pos: 171316,
+        end_pos: 172154,
+        hull: BoundingBox {
+            min: (
+                159.422,
+                147.9,
+            ),
+            max: (
+                160.385,
+                149.76,
+            ),
+        },
+    },
+    KnownObject {
+        id: "cube_1_id_0_copy_0",
+        start_pos: 172396,
+        end_pos: 173511,
+        hull: BoundingBox {
+            min: (
+                148.215,
+                153.21,
+            ),
+            max: (
+                152.795,
+                157.79,
+            ),
+        },
+    },
+    KnownObject {
+        id: "cube_1_id_0_copy_1",
+        start_pos: 173593,
+        end_pos: 174709,
+        hull: BoundingBox {
+            min: (
+                137.215,
+                153.21,
+            ),
+            max: (
+                141.795,
+                157.79,
+            ),
+        },
+    },
+    KnownObject {
+        id: "union_3_id_2_copy_0",
+        start_pos: 174792,
+        end_pos: 177282,
+        hull: BoundingBox {
+            min: (
+                137.215,
+                142.21,
+            ),
+            max: (
+                151.795,
+                146.79,
+            ),
+        },
+    },
+    KnownObject {
+        id: "cylinder_2_id_1_copy_0",
+        start_pos: 177369,
+        end_pos: 178187,
+        hull: BoundingBox {
+            min: (
+                159.5,
+                147.945,
+            ),
+            max: (
+                161.545,
+                149.763,
+            ),
+        },
+    },
+    KnownObject {
+        id: "cube_1_id_0_copy_0",
+        start_pos: 178429,
+        end_pos: 179490,
+        hull: BoundingBox {
+            min: (
+                148.215,
+                153.21,
+            ),
+            max: (
+                152.795,
+                157.79,
+            ),
+        },
+    },
+    KnownObject {
+        id: "cube_1_id_0_copy_1",
+        start_pos: 179572,
+        end_pos: 180634,
+        hull: BoundingBox {
+            min: (
+                137.215,
+                153.21,
+            ),
+            max: (
+                141.795,
+                157.79,
+            ),
+        },
+    },
+    KnownObject {
+        id: "union_3_id_2_copy_0",
+        start_pos: 180717,
+        end_pos: 183145,
+        hull: BoundingBox {
+            min: (
+                137.215,
+                142.21,
+            ),
+            max: (
+                151.795,
+                146.79,
+            ),
+        },
+    },
+    KnownObject {
+        id: "cylinder_2_id_1_copy_0",
+        start_pos: 183232,
+        end_pos: 184065,
+        hull: BoundingBox {
+            min: (
+                160.265,
+                147.803,
+            ),
+            max: (
+                161.614,
+                149.739,
+            ),
+        },
+    },
+    KnownObject {
+        id: "cube_1_id_0_copy_0",
+        start_pos: 184307,
+        end_pos: 185368,
+        hull: BoundingBox {
+            min: (
+                148.215,
+                153.21,
+            ),
+            max: (
+                152.795,
+                157.79,
+            ),
+        },
+    },
+    KnownObject {
+        id: "cube_1_id_0_copy_1",
+        start_pos: 185450,
+        end_pos: 186512,
+        hull: BoundingBox {
+            min: (
+                137.215,
+                153.21,
+            ),
+            max: (
+                141.795,
+                157.79,
+            ),
+        },
+    },
+    KnownObject {
+        id: "union_3_id_2_copy_0",
+        start_pos: 186595,
+        end_pos: 187911,
+        hull: BoundingBox {
+            min: (
+                137.215,
+                142.21,
+            ),
+            max: (
+                151.795,
+                146.79,
+            ),
+        },
+    },
+    KnownObject {
+        id: "cylinder_2_id_1_copy_0",
+        start_pos: 187998,
+        end_pos: 188827,
+        hull: BoundingBox {
+            min: (
+                160.069,
+                147.662,
+            ),
+            max: (
+                161.662,
+                149.682,
+            ),
+        },
+    },
+    KnownObject {
+        id: "cube_1_id_0_copy_0",
+        start_pos: 189067,
+        end_pos: 190515,
+        hull: BoundingBox {
+            min: (
+                148.215,
+                153.21,
+            ),
+            max: (
+                152.795,
+                157.79,
+            ),
+        },
+    },
+    KnownObject {
+        id: "cube_1_id_0_copy_1",
+        start_pos: 190597,
+        end_pos: 192072,
+        hull: BoundingBox {
+            min: (
+                137.215,
+                153.21,
+            ),
+            max: (
+                141.795,
+                157.79,
+            ),
+        },
+    },
+    KnownObject {
+        id: "union_3_id_2_copy_0",
+        start_pos: 192155,
+        end_pos: 194659,
+        hull: BoundingBox {
+            min: (
+                137.215,
+                142.21,
+            ),
+            max: (
+                151.795,
+                146.79,
+            ),
+        },
+    },
+    KnownObject {
+        id: "cylinder_2_id_1_copy_0",
+        start_pos: 194746,
+        end_pos: 195820,
+        hull: BoundingBox {
+            min: (
+                159.407,
+                147.225,
+            ),
+            max: (
+                161.67,
+                149.631,
+            ),
+        },
+    },
+    KnownObject {
+        id: "cube_1_id_0_copy_0",
+        start_pos: 196062,
+        end_pos: 197497,
+        hull: BoundingBox {
+            min: (
+                148.215,
+                153.21,
+            ),
+            max: (
+                152.795,
+                157.79,
+            ),
+        },
+    },
+    KnownObject {
+        id: "cube_1_id_0_copy_1",
+        start_pos: 197579,
+        end_pos: 199002,
+        hull: BoundingBox {
+            min: (
+                137.215,
+                153.21,
+            ),
+            max: (
+                141.795,
+                157.79,
+            ),
+        },
+    },
+    KnownObject {
+        id: "union_3_id_2_copy_0",
+        start_pos: 199085,
+        end_pos: 201754,
+        hull: BoundingBox {
+            min: (
+                137.215,
+                142.21,
+            ),
+            max: (
+                151.795,
+                146.79,
+            ),
+        },
+    },
+    KnownObject {
+        id: "cylinder_2_id_1_copy_0",
+        start_pos: 201841,
+        end_pos: 203018,
+        hull: BoundingBox {
+            min: (
+                158.208,
+                147.483,
+            ),
+            max: (
+                161.668,
+                149.756,
+            ),
+        },
+    },
+    KnownObject {
+        id: "cube_1_id_0_copy_0",
+        start_pos: 203260,
+        end_pos: 204655,
+        hull: BoundingBox {
+            min: (
+                148.215,
+                153.21,
+            ),
+            max: (
+                152.795,
+                157.79,
+            ),
+        },
+    },
+    KnownObject {
+        id: "cube_1_id_0_copy_1",
+        start_pos: 204737,
+        end_pos: 206146,
+        hull: BoundingBox {
+            min: (
+                137.215,
+                153.21,
+            ),
+            max: (
+                141.795,
+                157.79,
+            ),
+        },
+    },
+    KnownObject {
+        id: "union_3_id_2_copy_0",
+        start_pos: 206229,
+        end_pos: 208760,
+        hull: BoundingBox {
+            min: (
+                137.215,
+                142.21,
+            ),
+            max: (
+                151.795,
+                146.79,
+            ),
+        },
+    },
+    KnownObject {
+        id: "cylinder_2_id_1_copy_0",
+        start_pos: 208847,
+        end_pos: 210752,
+        hull: BoundingBox {
+            min: (
+                158.217,
+                147.508,
+            ),
+            max: (
+                161.558,
+                149.921,
+            ),
+        },
+    },
+    KnownObject {
+        id: "cube_1_id_0_copy_0",
+        start_pos: 210994,
+        end_pos: 212402,
+        hull: BoundingBox {
+            min: (
+                148.215,
+                153.21,
+            ),
+            max: (
+                152.795,
+                157.79,
+            ),
+        },
+    },
+    KnownObject {
+        id: "cube_1_id_0_copy_1",
+        start_pos: 212484,
+        end_pos: 213893,
+        hull: BoundingBox {
+            min: (
+                137.215,
+                153.21,
+            ),
+            max: (
+                141.795,
+                157.79,
+            ),
+        },
+    },
+    KnownObject {
+        id: "union_3_id_2_copy_0",
+        start_pos: 213976,
+        end_pos: 216507,
+        hull: BoundingBox {
+            min: (
+                137.215,
+                142.21,
+            ),
+            max: (
+                151.795,
+                146.79,
+            ),
+        },
+    },
+    KnownObject {
+        id: "cylinder_2_id_1_copy_0",
+        start_pos: 216594,
+        end_pos: 218536,
+        hull: BoundingBox {
+            min: (
+                158.206,
+                147.402,
+            ),
+            max: (
+                161.558,
+                149.655,
+            ),
+        },
+    },
+    KnownObject {
+        id: "cube_1_id_0_copy_0",
+        start_pos: 218778,
+        end_pos: 220186,
+        hull: BoundingBox {
+            min: (
+                148.215,
+                153.21,
+            ),
+            max: (
+                152.795,
+                157.79,
+            ),
+        },
+    },
+    KnownObject {
+        id: "cube_1_id_0_copy_1",
+        start_pos: 220268,
+        end_pos: 221677,
+        hull: BoundingBox {
+            min: (
+                137.215,
+                153.21,
+            ),
+            max: (
+                141.795,
+                157.79,
+            ),
+        },
+    },
+    KnownObject {
+        id: "union_3_id_2_copy_0",
+        start_pos: 221760,
+        end_pos: 224291,
+        hull: BoundingBox {
+            min: (
+                137.215,
+                142.21,
+            ),
+            max: (
+                151.795,
+                146.79,
+            ),
+        },
+    },
+    KnownObject {
+        id: "cylinder_2_id_1_copy_0",
+        start_pos: 224378,
+        end_pos: 226291,
+        hull: BoundingBox {
+            min: (
+                158.217,
+                147.508,
+            ),
+            max: (
+                161.558,
+                149.921,
+            ),
+        },
+    },
+    KnownObject {
+        id: "cube_1_id_0_copy_0",
+        start_pos: 226531,
+        end_pos: 227942,
+        hull: BoundingBox {
+            min: (
+                148.215,
+                153.21,
+            ),
+            max: (
+                152.795,
+                157.79,
+            ),
+        },
+    },
+    KnownObject {
+        id: "cube_1_id_0_copy_1",
+        start_pos: 228024,
+        end_pos: 229510,
+        hull: BoundingBox {
+            min: (
+                137.215,
+                153.21,
+            ),
+            max: (
+                141.795,
+                157.79,
+            ),
+        },
+    },
+    KnownObject {
+        id: "union_3_id_2_copy_0",
+        start_pos: 229593,
+        end_pos: 232202,
+        hull: BoundingBox {
+            min: (
+                137.215,
+                142.21,
+            ),
+            max: (
+                151.795,
+                146.79,
+            ),
+        },
+    },
+    KnownObject {
+        id: "cylinder_2_id_1_copy_0",
+        start_pos: 232289,
+        end_pos: 234481,
+        hull: BoundingBox {
+            min: (
+                158.212,
+                146.625,
+            ),
+            max: (
+                162.45,
+                150.734,
+            ),
+        },
+    },
+]
 ; Postprocessed by [ArcWelder](https://github.com/FormerLurker/ArcWelderLib)
 ; Copyright(C) 2020 - Brad Hochgesang
 ; resolution=0.05mm
@@ -6,6 +1520,206 @@
 ; default_xyz_precision=3
 ; default_e_precision=5
 
+EXCLUDE_OBJECT_DEFINE NAME=cube_1_id_0_copy_0 CENTER=150.505,155.5 POLYGON=[[148.385,153.38],[152.625,153.38],[152.625,157.62],[148.385,157.62]]
+EXCLUDE_OBJECT_DEFINE NAME=cube_1_id_0_copy_1 CENTER=139.505,155.5 POLYGON=[[137.385,153.38],[141.625,153.38],[141.625,157.62],[137.385,157.62]]
+EXCLUDE_OBJECT_DEFINE NAME=union_3_id_2_copy_0 CENTER=144.505,144.5 POLYGON=[[137.385,142.38],[151.625,142.38],[151.625,146.62],[137.385,146.62]]
+EXCLUDE_OBJECT_DEFINE NAME=cylinder_2_id_1_copy_0 CENTER=160.357,148.597 POLYGON=[[159.654,148.26],[161.06,148.26],[161.06,148.934],[159.654,148.934]]
+EXCLUDE_OBJECT_DEFINE NAME=cube_1_id_0_copy_0 CENTER=150.505,155.5 POLYGON=[[148.215,153.21],[152.795,153.21],[152.795,157.79],[148.215,157.79]]
+EXCLUDE_OBJECT_DEFINE NAME=cube_1_id_0_copy_1 CENTER=139.505,155.5 POLYGON=[[137.215,153.21],[141.795,153.21],[141.795,157.79],[137.215,157.79]]
+EXCLUDE_OBJECT_DEFINE NAME=union_3_id_2_copy_0 CENTER=144.505,144.5 POLYGON=[[137.215,142.21],[151.795,142.21],[151.795,146.79],[137.215,146.79]]
+EXCLUDE_OBJECT_DEFINE NAME=cylinder_2_id_1_copy_0 CENTER=160.436,148.71451 POLYGON=[[159.314,147.508],[161.558,147.508],[161.558,149.921],[159.314,149.921]]
+EXCLUDE_OBJECT_DEFINE NAME=cube_1_id_0_copy_0 CENTER=150.505,155.5 POLYGON=[[148.215,153.21],[152.795,153.21],[152.795,157.79],[148.215,157.79]]
+EXCLUDE_OBJECT_DEFINE NAME=cube_1_id_0_copy_1 CENTER=139.505,155.5 POLYGON=[[137.215,153.21],[141.795,153.21],[141.795,157.79],[137.215,157.79]]
+EXCLUDE_OBJECT_DEFINE NAME=union_3_id_2_copy_0 CENTER=144.505,144.5 POLYGON=[[137.215,142.21],[151.795,142.21],[151.795,146.79],[137.215,146.79]]
+EXCLUDE_OBJECT_DEFINE NAME=cylinder_2_id_1_copy_0 CENTER=160.354,148.5285 POLYGON=[[159.15,147.402],[161.558,147.402],[161.558,149.655],[159.15,149.655]]
+EXCLUDE_OBJECT_DEFINE NAME=cube_1_id_0_copy_0 CENTER=150.505,155.5 POLYGON=[[148.215,153.21],[152.795,153.21],[152.795,157.79],[148.215,157.79]]
+EXCLUDE_OBJECT_DEFINE NAME=cube_1_id_0_copy_1 CENTER=139.505,155.5 POLYGON=[[137.215,153.21],[141.795,153.21],[141.795,157.79],[137.215,157.79]]
+EXCLUDE_OBJECT_DEFINE NAME=union_3_id_2_copy_0 CENTER=144.505,144.5 POLYGON=[[137.215,142.21],[151.795,142.21],[151.795,146.79],[137.215,146.79]]
+EXCLUDE_OBJECT_DEFINE NAME=cylinder_2_id_1_copy_0 CENTER=160.436,148.71451 POLYGON=[[159.314,147.508],[161.558,147.508],[161.558,149.921],[159.314,149.921]]
+EXCLUDE_OBJECT_DEFINE NAME=cube_1_id_0_copy_0 CENTER=150.505,155.5 POLYGON=[[148.215,153.21],[152.795,153.21],[152.795,157.79],[148.215,157.79]]
+EXCLUDE_OBJECT_DEFINE NAME=cube_1_id_0_copy_1 CENTER=139.505,155.5 POLYGON=[[137.215,153.21],[141.795,153.21],[141.795,157.79],[137.215,157.79]]
+EXCLUDE_OBJECT_DEFINE NAME=union_3_id_2_copy_0 CENTER=144.505,144.5 POLYGON=[[137.215,142.21],[151.795,142.21],[151.795,146.79],[137.215,146.79]]
+EXCLUDE_OBJECT_DEFINE NAME=cylinder_2_id_1_copy_0 CENTER=160.354,148.5285 POLYGON=[[159.15,147.402],[161.558,147.402],[161.558,149.655],[159.15,149.655]]
+EXCLUDE_OBJECT_DEFINE NAME=cube_1_id_0_copy_0 CENTER=150.505,155.5 POLYGON=[[148.215,153.21],[152.795,153.21],[152.795,157.79],[148.215,157.79]]
+EXCLUDE_OBJECT_DEFINE NAME=cube_1_id_0_copy_1 CENTER=139.505,155.5 POLYGON=[[137.215,153.21],[141.795,153.21],[141.795,157.79],[137.215,157.79]]
+EXCLUDE_OBJECT_DEFINE NAME=union_3_id_2_copy_0 CENTER=144.505,144.5 POLYGON=[[137.215,142.21],[151.795,142.21],[151.795,146.79],[137.215,146.79]]
+EXCLUDE_OBJECT_DEFINE NAME=cylinder_2_id_1_copy_0 CENTER=159.957,148.4875 POLYGON=[[158.252,147.475],[161.662,147.475],[161.662,149.5],[158.252,149.5]]
+EXCLUDE_OBJECT_DEFINE NAME=cube_1_id_0_copy_0 CENTER=150.505,155.5 POLYGON=[[148.215,153.21],[152.795,153.21],[152.795,157.79],[148.215,157.79]]
+EXCLUDE_OBJECT_DEFINE NAME=cube_1_id_0_copy_1 CENTER=139.505,155.5 POLYGON=[[137.215,153.21],[141.795,153.21],[141.795,157.79],[137.215,157.79]]
+EXCLUDE_OBJECT_DEFINE NAME=union_3_id_2_copy_0 CENTER=144.505,144.5 POLYGON=[[137.215,142.21],[151.795,142.21],[151.795,146.79],[137.215,146.79]]
+EXCLUDE_OBJECT_DEFINE NAME=cylinder_2_id_1_copy_0 CENTER=160.608,148.39099 POLYGON=[[159.602,147.423],[161.614,147.423],[161.614,149.359],[159.602,149.359]]
+EXCLUDE_OBJECT_DEFINE NAME=cube_1_id_0_copy_0 CENTER=150.505,155.5 POLYGON=[[148.215,153.21],[152.795,153.21],[152.795,157.79],[148.215,157.79]]
+EXCLUDE_OBJECT_DEFINE NAME=cube_1_id_0_copy_1 CENTER=139.505,155.5 POLYGON=[[137.215,153.21],[141.795,153.21],[141.795,157.79],[137.215,157.79]]
+EXCLUDE_OBJECT_DEFINE NAME=union_3_id_2_copy_0 CENTER=144.505,144.5 POLYGON=[[137.215,142.21],[151.795,142.21],[151.795,146.79],[137.215,146.79]]
+EXCLUDE_OBJECT_DEFINE NAME=cylinder_2_id_1_copy_0 CENTER=160.52249,148.308 POLYGON=[[159.5,147.399],[161.545,147.399],[161.545,149.217],[159.5,149.217]]
+EXCLUDE_OBJECT_DEFINE NAME=cube_1_id_0_copy_0 CENTER=150.505,155.5 POLYGON=[[148.215,153.21],[152.795,153.21],[152.795,157.79],[148.215,157.79]]
+EXCLUDE_OBJECT_DEFINE NAME=cube_1_id_0_copy_1 CENTER=139.505,155.5 POLYGON=[[137.215,153.21],[141.795,153.21],[141.795,157.79],[137.215,157.79]]
+EXCLUDE_OBJECT_DEFINE NAME=union_3_id_2_copy_0 CENTER=144.505,144.5 POLYGON=[[137.215,142.21],[151.795,142.21],[151.795,146.79],[137.215,146.79]]
+EXCLUDE_OBJECT_DEFINE NAME=cylinder_2_id_1_copy_0 CENTER=159.319,148.33249 POLYGON=[[158.252,147.403],[160.386,147.403],[160.386,149.262],[158.252,149.262]]
+EXCLUDE_OBJECT_DEFINE NAME=cube_1_id_0_copy_0 CENTER=150.505,155.5 POLYGON=[[148.215,153.21],[152.795,153.21],[152.795,157.79],[148.215,157.79]]
+EXCLUDE_OBJECT_DEFINE NAME=cube_1_id_0_copy_1 CENTER=139.505,155.5 POLYGON=[[137.215,153.21],[141.795,153.21],[141.795,157.79],[137.215,157.79]]
+EXCLUDE_OBJECT_DEFINE NAME=union_3_id_2_copy_0 CENTER=144.505,144.5 POLYGON=[[137.215,142.21],[151.795,142.21],[151.795,146.79],[137.215,146.79]]
+EXCLUDE_OBJECT_DEFINE NAME=cylinder_2_id_1_copy_0 CENTER=159.2735,148.405 POLYGON=[[158.309,147.429],[160.238,147.429],[160.238,149.381],[158.309,149.381]]
+EXCLUDE_OBJECT_DEFINE NAME=cube_1_id_0_copy_0 CENTER=150.505,155.5 POLYGON=[[148.215,153.21],[152.795,153.21],[152.795,157.79],[148.215,157.79]]
+EXCLUDE_OBJECT_DEFINE NAME=cube_1_id_0_copy_1 CENTER=139.505,155.5 POLYGON=[[137.215,153.21],[141.795,153.21],[141.795,157.79],[137.215,157.79]]
+EXCLUDE_OBJECT_DEFINE NAME=union_3_id_2_copy_0 CENTER=144.505,144.5 POLYGON=[[137.215,142.21],[151.795,142.21],[151.795,146.79],[137.215,146.79]]
+EXCLUDE_OBJECT_DEFINE NAME=cylinder_2_id_1_copy_0 CENTER=159.202,148.474 POLYGON=[[158.309,147.465],[160.095,147.465],[160.095,149.483],[158.309,149.483]]
+EXCLUDE_OBJECT_DEFINE NAME=cube_1_id_0_copy_0 CENTER=150.505,155.5 POLYGON=[[148.215,153.21],[152.795,153.21],[152.795,157.79],[148.215,157.79]]
+EXCLUDE_OBJECT_DEFINE NAME=cube_1_id_0_copy_1 CENTER=139.505,155.5 POLYGON=[[137.215,153.21],[141.795,153.21],[141.795,157.79],[137.215,157.79]]
+EXCLUDE_OBJECT_DEFINE NAME=union_3_id_2_copy_0 CENTER=144.505,144.5 POLYGON=[[137.215,142.21],[151.795,142.21],[151.795,146.79],[137.215,146.79]]
+EXCLUDE_OBJECT_DEFINE NAME=cylinder_2_id_1_copy_0 CENTER=159.1365,148.543 POLYGON=[[158.309,147.52],[159.964,147.52],[159.964,149.566],[158.309,149.566]]
+EXCLUDE_OBJECT_DEFINE NAME=cube_1_id_0_copy_0 CENTER=150.505,155.5 POLYGON=[[148.215,153.21],[152.795,153.21],[152.795,157.79],[148.215,157.79]]
+EXCLUDE_OBJECT_DEFINE NAME=cube_1_id_0_copy_1 CENTER=139.505,155.5 POLYGON=[[137.215,153.21],[141.795,153.21],[141.795,157.79],[137.215,157.79]]
+EXCLUDE_OBJECT_DEFINE NAME=union_3_id_2_copy_0 CENTER=144.505,144.5 POLYGON=[[137.215,142.21],[151.795,142.21],[151.795,146.79],[137.215,146.79]]
+EXCLUDE_OBJECT_DEFINE NAME=cylinder_2_id_1_copy_0 CENTER=159.639,148.6185 POLYGON=[[159.314,147.596],[159.964,147.596],[159.964,149.641],[159.314,149.641]]
+EXCLUDE_OBJECT_DEFINE NAME=cube_1_id_0_copy_0 CENTER=150.505,155.5 POLYGON=[[148.215,153.21],[152.795,153.21],[152.795,157.79],[148.215,157.79]]
+EXCLUDE_OBJECT_DEFINE NAME=cube_1_id_0_copy_1 CENTER=139.505,155.5 POLYGON=[[137.215,153.21],[141.795,153.21],[141.795,157.79],[137.215,157.79]]
+EXCLUDE_OBJECT_DEFINE NAME=union_3_id_2_copy_0 CENTER=144.505,144.5 POLYGON=[[137.215,142.21],[151.795,142.21],[151.795,146.79],[137.215,146.79]]
+EXCLUDE_OBJECT_DEFINE NAME=cylinder_2_id_1_copy_0 CENTER=159.203,148.686 POLYGON=[[158.309,147.679],[160.097,147.679],[160.097,149.693],[158.309,149.693]]
+EXCLUDE_OBJECT_DEFINE NAME=cube_1_id_0_copy_0 CENTER=150.505,155.5 POLYGON=[[148.215,153.21],[152.795,153.21],[152.795,157.79],[148.215,157.79]]
+EXCLUDE_OBJECT_DEFINE NAME=cube_1_id_0_copy_1 CENTER=139.505,155.5 POLYGON=[[137.215,153.21],[141.795,153.21],[141.795,157.79],[137.215,157.79]]
+EXCLUDE_OBJECT_DEFINE NAME=union_3_id_2_copy_0 CENTER=144.505,144.5 POLYGON=[[137.215,142.21],[151.795,142.21],[151.795,146.79],[137.215,146.79]]
+EXCLUDE_OBJECT_DEFINE NAME=cylinder_2_id_1_copy_0 CENTER=159.8,148.7575 POLYGON=[[159.363,147.781],[160.237,147.781],[160.237,149.734],[159.363,149.734]]
+EXCLUDE_OBJECT_DEFINE NAME=cube_1_id_0_copy_0 CENTER=150.505,155.5 POLYGON=[[148.215,153.21],[152.795,153.21],[152.795,157.79],[148.215,157.79]]
+EXCLUDE_OBJECT_DEFINE NAME=cube_1_id_0_copy_1 CENTER=139.505,155.5 POLYGON=[[137.215,153.21],[141.795,153.21],[141.795,157.79],[137.215,157.79]]
+EXCLUDE_OBJECT_DEFINE NAME=union_3_id_2_copy_0 CENTER=144.505,144.5 POLYGON=[[137.215,142.21],[151.795,142.21],[151.795,146.79],[137.215,146.79]]
+EXCLUDE_OBJECT_DEFINE NAME=cylinder_2_id_1_copy_0 CENTER=159.9035,148.82999 POLYGON=[[159.422,147.9],[160.385,147.9],[160.385,149.76],[159.422,149.76]]
+EXCLUDE_OBJECT_DEFINE NAME=cube_1_id_0_copy_0 CENTER=150.505,155.5 POLYGON=[[148.215,153.21],[152.795,153.21],[152.795,157.79],[148.215,157.79]]
+EXCLUDE_OBJECT_DEFINE NAME=cube_1_id_0_copy_1 CENTER=139.505,155.5 POLYGON=[[137.215,153.21],[141.795,153.21],[141.795,157.79],[137.215,157.79]]
+EXCLUDE_OBJECT_DEFINE NAME=union_3_id_2_copy_0 CENTER=144.505,144.5 POLYGON=[[137.215,142.21],[151.795,142.21],[151.795,146.79],[137.215,146.79]]
+EXCLUDE_OBJECT_DEFINE NAME=cylinder_2_id_1_copy_0 CENTER=160.52249,148.854 POLYGON=[[159.5,147.945],[161.545,147.945],[161.545,149.763],[159.5,149.763]]
+EXCLUDE_OBJECT_DEFINE NAME=cube_1_id_0_copy_0 CENTER=150.505,155.5 POLYGON=[[148.215,153.21],[152.795,153.21],[152.795,157.79],[148.215,157.79]]
+EXCLUDE_OBJECT_DEFINE NAME=cube_1_id_0_copy_1 CENTER=139.505,155.5 POLYGON=[[137.215,153.21],[141.795,153.21],[141.795,157.79],[137.215,157.79]]
+EXCLUDE_OBJECT_DEFINE NAME=union_3_id_2_copy_0 CENTER=144.505,144.5 POLYGON=[[137.215,142.21],[151.795,142.21],[151.795,146.79],[137.215,146.79]]
+EXCLUDE_OBJECT_DEFINE NAME=cylinder_2_id_1_copy_0 CENTER=160.9395,148.771 POLYGON=[[160.265,147.803],[161.614,147.803],[161.614,149.739],[160.265,149.739]]
+EXCLUDE_OBJECT_DEFINE NAME=cube_1_id_0_copy_0 CENTER=150.505,155.5 POLYGON=[[148.215,153.21],[152.795,153.21],[152.795,157.79],[148.215,157.79]]
+EXCLUDE_OBJECT_DEFINE NAME=cube_1_id_0_copy_1 CENTER=139.505,155.5 POLYGON=[[137.215,153.21],[141.795,153.21],[141.795,157.79],[137.215,157.79]]
+EXCLUDE_OBJECT_DEFINE NAME=union_3_id_2_copy_0 CENTER=144.505,144.5 POLYGON=[[137.215,142.21],[151.795,142.21],[151.795,146.79],[137.215,146.79]]
+EXCLUDE_OBJECT_DEFINE NAME=cylinder_2_id_1_copy_0 CENTER=160.86551,148.672 POLYGON=[[160.069,147.662],[161.662,147.662],[161.662,149.682],[160.069,149.682]]
+EXCLUDE_OBJECT_DEFINE NAME=cube_1_id_0_copy_0 CENTER=150.505,155.5 POLYGON=[[148.215,153.21],[152.795,153.21],[152.795,157.79],[148.215,157.79]]
+EXCLUDE_OBJECT_DEFINE NAME=cube_1_id_0_copy_1 CENTER=139.505,155.5 POLYGON=[[137.215,153.21],[141.795,153.21],[141.795,157.79],[137.215,157.79]]
+EXCLUDE_OBJECT_DEFINE NAME=union_3_id_2_copy_0 CENTER=144.505,144.5 POLYGON=[[137.215,142.21],[151.795,142.21],[151.795,146.79],[137.215,146.79]]
+EXCLUDE_OBJECT_DEFINE NAME=cylinder_2_id_1_copy_0 CENTER=160.5385,148.42801 POLYGON=[[159.407,147.225],[161.67,147.225],[161.67,149.631],[159.407,149.631]]
+EXCLUDE_OBJECT_DEFINE NAME=cube_1_id_0_copy_0 CENTER=150.505,155.5 POLYGON=[[148.215,153.21],[152.795,153.21],[152.795,157.79],[148.215,157.79]]
+EXCLUDE_OBJECT_DEFINE NAME=cube_1_id_0_copy_1 CENTER=139.505,155.5 POLYGON=[[137.215,153.21],[141.795,153.21],[141.795,157.79],[137.215,157.79]]
+EXCLUDE_OBJECT_DEFINE NAME=union_3_id_2_copy_0 CENTER=144.505,144.5 POLYGON=[[137.215,142.21],[151.795,142.21],[151.795,146.79],[137.215,146.79]]
+EXCLUDE_OBJECT_DEFINE NAME=cylinder_2_id_1_copy_0 CENTER=159.93799,148.6195 POLYGON=[[158.208,147.483],[161.668,147.483],[161.668,149.756],[158.208,149.756]]
+EXCLUDE_OBJECT_DEFINE NAME=cube_1_id_0_copy_0 CENTER=150.505,155.5 POLYGON=[[148.215,153.21],[152.795,153.21],[152.795,157.79],[148.215,157.79]]
+EXCLUDE_OBJECT_DEFINE NAME=cube_1_id_0_copy_1 CENTER=139.505,155.5 POLYGON=[[137.215,153.21],[141.795,153.21],[141.795,157.79],[137.215,157.79]]
+EXCLUDE_OBJECT_DEFINE NAME=union_3_id_2_copy_0 CENTER=144.505,144.5 POLYGON=[[137.215,142.21],[151.795,142.21],[151.795,146.79],[137.215,146.79]]
+EXCLUDE_OBJECT_DEFINE NAME=cylinder_2_id_1_copy_0 CENTER=159.8875,148.71451 POLYGON=[[158.217,147.508],[161.558,147.508],[161.558,149.921],[158.217,149.921]]
+EXCLUDE_OBJECT_DEFINE NAME=cube_1_id_0_copy_0 CENTER=150.505,155.5 POLYGON=[[148.215,153.21],[152.795,153.21],[152.795,157.79],[148.215,157.79]]
+EXCLUDE_OBJECT_DEFINE NAME=cube_1_id_0_copy_1 CENTER=139.505,155.5 POLYGON=[[137.215,153.21],[141.795,153.21],[141.795,157.79],[137.215,157.79]]
+EXCLUDE_OBJECT_DEFINE NAME=union_3_id_2_copy_0 CENTER=144.505,144.5 POLYGON=[[137.215,142.21],[151.795,142.21],[151.795,146.79],[137.215,146.79]]
+EXCLUDE_OBJECT_DEFINE NAME=cylinder_2_id_1_copy_0 CENTER=159.88199,148.5285 POLYGON=[[158.206,147.402],[161.558,147.402],[161.558,149.655],[158.206,149.655]]
+EXCLUDE_OBJECT_DEFINE NAME=cube_1_id_0_copy_0 CENTER=150.505,155.5 POLYGON=[[148.215,153.21],[152.795,153.21],[152.795,157.79],[148.215,157.79]]
+EXCLUDE_OBJECT_DEFINE NAME=cube_1_id_0_copy_1 CENTER=139.505,155.5 POLYGON=[[137.215,153.21],[141.795,153.21],[141.795,157.79],[137.215,157.79]]
+EXCLUDE_OBJECT_DEFINE NAME=union_3_id_2_copy_0 CENTER=144.505,144.5 POLYGON=[[137.215,142.21],[151.795,142.21],[151.795,146.79],[137.215,146.79]]
+EXCLUDE_OBJECT_DEFINE NAME=cylinder_2_id_1_copy_0 CENTER=159.8875,148.71451 POLYGON=[[158.217,147.508],[161.558,147.508],[161.558,149.921],[158.217,149.921]]
+EXCLUDE_OBJECT_DEFINE NAME=cube_1_id_0_copy_0 CENTER=150.505,155.5 POLYGON=[[148.215,153.21],[152.795,153.21],[152.795,157.79],[148.215,157.79]]
+EXCLUDE_OBJECT_DEFINE NAME=cube_1_id_0_copy_1 CENTER=139.505,155.5 POLYGON=[[137.215,153.21],[141.795,153.21],[141.795,157.79],[137.215,157.79]]
+EXCLUDE_OBJECT_DEFINE NAME=union_3_id_2_copy_0 CENTER=144.505,144.5 POLYGON=[[137.215,142.21],[151.795,142.21],[151.795,146.79],[137.215,146.79]]
+EXCLUDE_OBJECT_DEFINE NAME=cylinder_2_id_1_copy_0 CENTER=160.331,148.6795 POLYGON=[[158.212,146.625],[162.45,146.625],[162.45,150.734],[158.212,150.734]]
+; EXCLUDE_OBJECT_DEFINE NAME=cube_1 id:0 copy 0 CENTER=150.505,155.5 POLYGON=[[148.385,153.38],[152.625,153.38],[152.625,157.62],[148.385,157.62]]
+; EXCLUDE_OBJECT_DEFINE NAME=cube_1 id:0 copy 1 CENTER=139.505,155.5 POLYGON=[[137.385,153.38],[141.625,153.38],[141.625,157.62],[137.385,157.62]]
+; EXCLUDE_OBJECT_DEFINE NAME=union_3 id:2 copy 0 CENTER=144.505,144.5 POLYGON=[[137.385,142.38],[151.625,142.38],[151.625,146.62],[137.385,146.62]]
+; EXCLUDE_OBJECT_DEFINE NAME=cylinder_2 id:1 copy 0 CENTER=160.357,148.597 POLYGON=[[159.654,148.26],[161.06,148.26],[161.06,148.934],[159.654,148.934]]
+; EXCLUDE_OBJECT_DEFINE NAME=cube_1 id:0 copy 0 CENTER=150.505,155.5 POLYGON=[[148.215,153.21],[152.795,153.21],[152.795,157.79],[148.215,157.79]]
+; EXCLUDE_OBJECT_DEFINE NAME=cube_1 id:0 copy 1 CENTER=139.505,155.5 POLYGON=[[137.215,153.21],[141.795,153.21],[141.795,157.79],[137.215,157.79]]
+; EXCLUDE_OBJECT_DEFINE NAME=union_3 id:2 copy 0 CENTER=144.505,144.5 POLYGON=[[137.215,142.21],[151.795,142.21],[151.795,146.79],[137.215,146.79]]
+; EXCLUDE_OBJECT_DEFINE NAME=cylinder_2 id:1 copy 0 CENTER=160.436,148.71451 POLYGON=[[159.314,147.508],[161.558,147.508],[161.558,149.921],[159.314,149.921]]
+; EXCLUDE_OBJECT_DEFINE NAME=cube_1 id:0 copy 0 CENTER=150.505,155.5 POLYGON=[[148.215,153.21],[152.795,153.21],[152.795,157.79],[148.215,157.79]]
+; EXCLUDE_OBJECT_DEFINE NAME=cube_1 id:0 copy 1 CENTER=139.505,155.5 POLYGON=[[137.215,153.21],[141.795,153.21],[141.795,157.79],[137.215,157.79]]
+; EXCLUDE_OBJECT_DEFINE NAME=union_3 id:2 copy 0 CENTER=144.505,144.5 POLYGON=[[137.215,142.21],[151.795,142.21],[151.795,146.79],[137.215,146.79]]
+; EXCLUDE_OBJECT_DEFINE NAME=cylinder_2 id:1 copy 0 CENTER=160.354,148.5285 POLYGON=[[159.15,147.402],[161.558,147.402],[161.558,149.655],[159.15,149.655]]
+; EXCLUDE_OBJECT_DEFINE NAME=cube_1 id:0 copy 0 CENTER=150.505,155.5 POLYGON=[[148.215,153.21],[152.795,153.21],[152.795,157.79],[148.215,157.79]]
+; EXCLUDE_OBJECT_DEFINE NAME=cube_1 id:0 copy 1 CENTER=139.505,155.5 POLYGON=[[137.215,153.21],[141.795,153.21],[141.795,157.79],[137.215,157.79]]
+; EXCLUDE_OBJECT_DEFINE NAME=union_3 id:2 copy 0 CENTER=144.505,144.5 POLYGON=[[137.215,142.21],[151.795,142.21],[151.795,146.79],[137.215,146.79]]
+; EXCLUDE_OBJECT_DEFINE NAME=cylinder_2 id:1 copy 0 CENTER=160.436,148.71451 POLYGON=[[159.314,147.508],[161.558,147.508],[161.558,149.921],[159.314,149.921]]
+; EXCLUDE_OBJECT_DEFINE NAME=cube_1 id:0 copy 0 CENTER=150.505,155.5 POLYGON=[[148.215,153.21],[152.795,153.21],[152.795,157.79],[148.215,157.79]]
+; EXCLUDE_OBJECT_DEFINE NAME=cube_1 id:0 copy 1 CENTER=139.505,155.5 POLYGON=[[137.215,153.21],[141.795,153.21],[141.795,157.79],[137.215,157.79]]
+; EXCLUDE_OBJECT_DEFINE NAME=union_3 id:2 copy 0 CENTER=144.505,144.5 POLYGON=[[137.215,142.21],[151.795,142.21],[151.795,146.79],[137.215,146.79]]
+; EXCLUDE_OBJECT_DEFINE NAME=cylinder_2 id:1 copy 0 CENTER=160.354,148.5285 POLYGON=[[159.15,147.402],[161.558,147.402],[161.558,149.655],[159.15,149.655]]
+; EXCLUDE_OBJECT_DEFINE NAME=cube_1 id:0 copy 0 CENTER=150.505,155.5 POLYGON=[[148.215,153.21],[152.795,153.21],[152.795,157.79],[148.215,157.79]]
+; EXCLUDE_OBJECT_DEFINE NAME=cube_1 id:0 copy 1 CENTER=139.505,155.5 POLYGON=[[137.215,153.21],[141.795,153.21],[141.795,157.79],[137.215,157.79]]
+; EXCLUDE_OBJECT_DEFINE NAME=union_3 id:2 copy 0 CENTER=144.505,144.5 POLYGON=[[137.215,142.21],[151.795,142.21],[151.795,146.79],[137.215,146.79]]
+; EXCLUDE_OBJECT_DEFINE NAME=cylinder_2 id:1 copy 0 CENTER=159.957,148.4875 POLYGON=[[158.252,147.475],[161.662,147.475],[161.662,149.5],[158.252,149.5]]
+; EXCLUDE_OBJECT_DEFINE NAME=cube_1 id:0 copy 0 CENTER=150.505,155.5 POLYGON=[[148.215,153.21],[152.795,153.21],[152.795,157.79],[148.215,157.79]]
+; EXCLUDE_OBJECT_DEFINE NAME=cube_1 id:0 copy 1 CENTER=139.505,155.5 POLYGON=[[137.215,153.21],[141.795,153.21],[141.795,157.79],[137.215,157.79]]
+; EXCLUDE_OBJECT_DEFINE NAME=union_3 id:2 copy 0 CENTER=144.505,144.5 POLYGON=[[137.215,142.21],[151.795,142.21],[151.795,146.79],[137.215,146.79]]
+; EXCLUDE_OBJECT_DEFINE NAME=cylinder_2 id:1 copy 0 CENTER=160.608,148.39099 POLYGON=[[159.602,147.423],[161.614,147.423],[161.614,149.359],[159.602,149.359]]
+; EXCLUDE_OBJECT_DEFINE NAME=cube_1 id:0 copy 0 CENTER=150.505,155.5 POLYGON=[[148.215,153.21],[152.795,153.21],[152.795,157.79],[148.215,157.79]]
+; EXCLUDE_OBJECT_DEFINE NAME=cube_1 id:0 copy 1 CENTER=139.505,155.5 POLYGON=[[137.215,153.21],[141.795,153.21],[141.795,157.79],[137.215,157.79]]
+; EXCLUDE_OBJECT_DEFINE NAME=union_3 id:2 copy 0 CENTER=144.505,144.5 POLYGON=[[137.215,142.21],[151.795,142.21],[151.795,146.79],[137.215,146.79]]
+; EXCLUDE_OBJECT_DEFINE NAME=cylinder_2 id:1 copy 0 CENTER=160.52249,148.308 POLYGON=[[159.5,147.399],[161.545,147.399],[161.545,149.217],[159.5,149.217]]
+; EXCLUDE_OBJECT_DEFINE NAME=cube_1 id:0 copy 0 CENTER=150.505,155.5 POLYGON=[[148.215,153.21],[152.795,153.21],[152.795,157.79],[148.215,157.79]]
+; EXCLUDE_OBJECT_DEFINE NAME=cube_1 id:0 copy 1 CENTER=139.505,155.5 POLYGON=[[137.215,153.21],[141.795,153.21],[141.795,157.79],[137.215,157.79]]
+; EXCLUDE_OBJECT_DEFINE NAME=union_3 id:2 copy 0 CENTER=144.505,144.5 POLYGON=[[137.215,142.21],[151.795,142.21],[151.795,146.79],[137.215,146.79]]
+; EXCLUDE_OBJECT_DEFINE NAME=cylinder_2 id:1 copy 0 CENTER=159.319,148.33249 POLYGON=[[158.252,147.403],[160.386,147.403],[160.386,149.262],[158.252,149.262]]
+; EXCLUDE_OBJECT_DEFINE NAME=cube_1 id:0 copy 0 CENTER=150.505,155.5 POLYGON=[[148.215,153.21],[152.795,153.21],[152.795,157.79],[148.215,157.79]]
+; EXCLUDE_OBJECT_DEFINE NAME=cube_1 id:0 copy 1 CENTER=139.505,155.5 POLYGON=[[137.215,153.21],[141.795,153.21],[141.795,157.79],[137.215,157.79]]
+; EXCLUDE_OBJECT_DEFINE NAME=union_3 id:2 copy 0 CENTER=144.505,144.5 POLYGON=[[137.215,142.21],[151.795,142.21],[151.795,146.79],[137.215,146.79]]
+; EXCLUDE_OBJECT_DEFINE NAME=cylinder_2 id:1 copy 0 CENTER=159.2735,148.405 POLYGON=[[158.309,147.429],[160.238,147.429],[160.238,149.381],[158.309,149.381]]
+; EXCLUDE_OBJECT_DEFINE NAME=cube_1 id:0 copy 0 CENTER=150.505,155.5 POLYGON=[[148.215,153.21],[152.795,153.21],[152.795,157.79],[148.215,157.79]]
+; EXCLUDE_OBJECT_DEFINE NAME=cube_1 id:0 copy 1 CENTER=139.505,155.5 POLYGON=[[137.215,153.21],[141.795,153.21],[141.795,157.79],[137.215,157.79]]
+; EXCLUDE_OBJECT_DEFINE NAME=union_3 id:2 copy 0 CENTER=144.505,144.5 POLYGON=[[137.215,142.21],[151.795,142.21],[151.795,146.79],[137.215,146.79]]
+; EXCLUDE_OBJECT_DEFINE NAME=cylinder_2 id:1 copy 0 CENTER=159.202,148.474 POLYGON=[[158.309,147.465],[160.095,147.465],[160.095,149.483],[158.309,149.483]]
+; EXCLUDE_OBJECT_DEFINE NAME=cube_1 id:0 copy 0 CENTER=150.505,155.5 POLYGON=[[148.215,153.21],[152.795,153.21],[152.795,157.79],[148.215,157.79]]
+; EXCLUDE_OBJECT_DEFINE NAME=cube_1 id:0 copy 1 CENTER=139.505,155.5 POLYGON=[[137.215,153.21],[141.795,153.21],[141.795,157.79],[137.215,157.79]]
+; EXCLUDE_OBJECT_DEFINE NAME=union_3 id:2 copy 0 CENTER=144.505,144.5 POLYGON=[[137.215,142.21],[151.795,142.21],[151.795,146.79],[137.215,146.79]]
+; EXCLUDE_OBJECT_DEFINE NAME=cylinder_2 id:1 copy 0 CENTER=159.1365,148.543 POLYGON=[[158.309,147.52],[159.964,147.52],[159.964,149.566],[158.309,149.566]]
+; EXCLUDE_OBJECT_DEFINE NAME=cube_1 id:0 copy 0 CENTER=150.505,155.5 POLYGON=[[148.215,153.21],[152.795,153.21],[152.795,157.79],[148.215,157.79]]
+; EXCLUDE_OBJECT_DEFINE NAME=cube_1 id:0 copy 1 CENTER=139.505,155.5 POLYGON=[[137.215,153.21],[141.795,153.21],[141.795,157.79],[137.215,157.79]]
+; EXCLUDE_OBJECT_DEFINE NAME=union_3 id:2 copy 0 CENTER=144.505,144.5 POLYGON=[[137.215,142.21],[151.795,142.21],[151.795,146.79],[137.215,146.79]]
+; EXCLUDE_OBJECT_DEFINE NAME=cylinder_2 id:1 copy 0 CENTER=159.639,148.6185 POLYGON=[[159.314,147.596],[159.964,147.596],[159.964,149.641],[159.314,149.641]]
+; EXCLUDE_OBJECT_DEFINE NAME=cube_1 id:0 copy 0 CENTER=150.505,155.5 POLYGON=[[148.215,153.21],[152.795,153.21],[152.795,157.79],[148.215,157.79]]
+; EXCLUDE_OBJECT_DEFINE NAME=cube_1 id:0 copy 1 CENTER=139.505,155.5 POLYGON=[[137.215,153.21],[141.795,153.21],[141.795,157.79],[137.215,157.79]]
+; EXCLUDE_OBJECT_DEFINE NAME=union_3 id:2 copy 0 CENTER=144.505,144.5 POLYGON=[[137.215,142.21],[151.795,142.21],[151.795,146.79],[137.215,146.79]]
+; EXCLUDE_OBJECT_DEFINE NAME=cylinder_2 id:1 copy 0 CENTER=159.203,148.686 POLYGON=[[158.309,147.679],[160.097,147.679],[160.097,149.693],[158.309,149.693]]
+; EXCLUDE_OBJECT_DEFINE NAME=cube_1 id:0 copy 0 CENTER=150.505,155.5 POLYGON=[[148.215,153.21],[152.795,153.21],[152.795,157.79],[148.215,157.79]]
+; EXCLUDE_OBJECT_DEFINE NAME=cube_1 id:0 copy 1 CENTER=139.505,155.5 POLYGON=[[137.215,153.21],[141.795,153.21],[141.795,157.79],[137.215,157.79]]
+; EXCLUDE_OBJECT_DEFINE NAME=union_3 id:2 copy 0 CENTER=144.505,144.5 POLYGON=[[137.215,142.21],[151.795,142.21],[151.795,146.79],[137.215,146.79]]
+; EXCLUDE_OBJECT_DEFINE NAME=cylinder_2 id:1 copy 0 CENTER=159.8,148.7575 POLYGON=[[159.363,147.781],[160.237,147.781],[160.237,149.734],[159.363,149.734]]
+; EXCLUDE_OBJECT_DEFINE NAME=cube_1 id:0 copy 0 CENTER=150.505,155.5 POLYGON=[[148.215,153.21],[152.795,153.21],[152.795,157.79],[148.215,157.79]]
+; EXCLUDE_OBJECT_DEFINE NAME=cube_1 id:0 copy 1 CENTER=139.505,155.5 POLYGON=[[137.215,153.21],[141.795,153.21],[141.795,157.79],[137.215,157.79]]
+; EXCLUDE_OBJECT_DEFINE NAME=union_3 id:2 copy 0 CENTER=144.505,144.5 POLYGON=[[137.215,142.21],[151.795,142.21],[151.795,146.79],[137.215,146.79]]
+; EXCLUDE_OBJECT_DEFINE NAME=cylinder_2 id:1 copy 0 CENTER=159.9035,148.82999 POLYGON=[[159.422,147.9],[160.385,147.9],[160.385,149.76],[159.422,149.76]]
+; EXCLUDE_OBJECT_DEFINE NAME=cube_1 id:0 copy 0 CENTER=150.505,155.5 POLYGON=[[148.215,153.21],[152.795,153.21],[152.795,157.79],[148.215,157.79]]
+; EXCLUDE_OBJECT_DEFINE NAME=cube_1 id:0 copy 1 CENTER=139.505,155.5 POLYGON=[[137.215,153.21],[141.795,153.21],[141.795,157.79],[137.215,157.79]]
+; EXCLUDE_OBJECT_DEFINE NAME=union_3 id:2 copy 0 CENTER=144.505,144.5 POLYGON=[[137.215,142.21],[151.795,142.21],[151.795,146.79],[137.215,146.79]]
+; EXCLUDE_OBJECT_DEFINE NAME=cylinder_2 id:1 copy 0 CENTER=160.52249,148.854 POLYGON=[[159.5,147.945],[161.545,147.945],[161.545,149.763],[159.5,149.763]]
+; EXCLUDE_OBJECT_DEFINE NAME=cube_1 id:0 copy 0 CENTER=150.505,155.5 POLYGON=[[148.215,153.21],[152.795,153.21],[152.795,157.79],[148.215,157.79]]
+; EXCLUDE_OBJECT_DEFINE NAME=cube_1 id:0 copy 1 CENTER=139.505,155.5 POLYGON=[[137.215,153.21],[141.795,153.21],[141.795,157.79],[137.215,157.79]]
+; EXCLUDE_OBJECT_DEFINE NAME=union_3 id:2 copy 0 CENTER=144.505,144.5 POLYGON=[[137.215,142.21],[151.795,142.21],[151.795,146.79],[137.215,146.79]]
+; EXCLUDE_OBJECT_DEFINE NAME=cylinder_2 id:1 copy 0 CENTER=160.9395,148.771 POLYGON=[[160.265,147.803],[161.614,147.803],[161.614,149.739],[160.265,149.739]]
+; EXCLUDE_OBJECT_DEFINE NAME=cube_1 id:0 copy 0 CENTER=150.505,155.5 POLYGON=[[148.215,153.21],[152.795,153.21],[152.795,157.79],[148.215,157.79]]
+; EXCLUDE_OBJECT_DEFINE NAME=cube_1 id:0 copy 1 CENTER=139.505,155.5 POLYGON=[[137.215,153.21],[141.795,153.21],[141.795,157.79],[137.215,157.79]]
+; EXCLUDE_OBJECT_DEFINE NAME=union_3 id:2 copy 0 CENTER=144.505,144.5 POLYGON=[[137.215,142.21],[151.795,142.21],[151.795,146.79],[137.215,146.79]]
+; EXCLUDE_OBJECT_DEFINE NAME=cylinder_2 id:1 copy 0 CENTER=160.86551,148.672 POLYGON=[[160.069,147.662],[161.662,147.662],[161.662,149.682],[160.069,149.682]]
+; EXCLUDE_OBJECT_DEFINE NAME=cube_1 id:0 copy 0 CENTER=150.505,155.5 POLYGON=[[148.215,153.21],[152.795,153.21],[152.795,157.79],[148.215,157.79]]
+; EXCLUDE_OBJECT_DEFINE NAME=cube_1 id:0 copy 1 CENTER=139.505,155.5 POLYGON=[[137.215,153.21],[141.795,153.21],[141.795,157.79],[137.215,157.79]]
+; EXCLUDE_OBJECT_DEFINE NAME=union_3 id:2 copy 0 CENTER=144.505,144.5 POLYGON=[[137.215,142.21],[151.795,142.21],[151.795,146.79],[137.215,146.79]]
+; EXCLUDE_OBJECT_DEFINE NAME=cylinder_2 id:1 copy 0 CENTER=160.5385,148.42801 POLYGON=[[159.407,147.225],[161.67,147.225],[161.67,149.631],[159.407,149.631]]
+; EXCLUDE_OBJECT_DEFINE NAME=cube_1 id:0 copy 0 CENTER=150.505,155.5 POLYGON=[[148.215,153.21],[152.795,153.21],[152.795,157.79],[148.215,157.79]]
+; EXCLUDE_OBJECT_DEFINE NAME=cube_1 id:0 copy 1 CENTER=139.505,155.5 POLYGON=[[137.215,153.21],[141.795,153.21],[141.795,157.79],[137.215,157.79]]
+; EXCLUDE_OBJECT_DEFINE NAME=union_3 id:2 copy 0 CENTER=144.505,144.5 POLYGON=[[137.215,142.21],[151.795,142.21],[151.795,146.79],[137.215,146.79]]
+; EXCLUDE_OBJECT_DEFINE NAME=cylinder_2 id:1 copy 0 CENTER=159.93799,148.6195 POLYGON=[[158.208,147.483],[161.668,147.483],[161.668,149.756],[158.208,149.756]]
+; EXCLUDE_OBJECT_DEFINE NAME=cube_1 id:0 copy 0 CENTER=150.505,155.5 POLYGON=[[148.215,153.21],[152.795,153.21],[152.795,157.79],[148.215,157.79]]
+; EXCLUDE_OBJECT_DEFINE NAME=cube_1 id:0 copy 1 CENTER=139.505,155.5 POLYGON=[[137.215,153.21],[141.795,153.21],[141.795,157.79],[137.215,157.79]]
+; EXCLUDE_OBJECT_DEFINE NAME=union_3 id:2 copy 0 CENTER=144.505,144.5 POLYGON=[[137.215,142.21],[151.795,142.21],[151.795,146.79],[137.215,146.79]]
+; EXCLUDE_OBJECT_DEFINE NAME=cylinder_2 id:1 copy 0 CENTER=159.8875,148.71451 POLYGON=[[158.217,147.508],[161.558,147.508],[161.558,149.921],[158.217,149.921]]
+; EXCLUDE_OBJECT_DEFINE NAME=cube_1 id:0 copy 0 CENTER=150.505,155.5 POLYGON=[[148.215,153.21],[152.795,153.21],[152.795,157.79],[148.215,157.79]]
+; EXCLUDE_OBJECT_DEFINE NAME=cube_1 id:0 copy 1 CENTER=139.505,155.5 POLYGON=[[137.215,153.21],[141.795,153.21],[141.795,157.79],[137.215,157.79]]
+; EXCLUDE_OBJECT_DEFINE NAME=union_3 id:2 copy 0 CENTER=144.505,144.5 POLYGON=[[137.215,142.21],[151.795,142.21],[151.795,146.79],[137.215,146.79]]
+; EXCLUDE_OBJECT_DEFINE NAME=cylinder_2 id:1 copy 0 CENTER=159.88199,148.5285 POLYGON=[[158.206,147.402],[161.558,147.402],[161.558,149.655],[158.206,149.655]]
+; EXCLUDE_OBJECT_DEFINE NAME=cube_1 id:0 copy 0 CENTER=150.505,155.5 POLYGON=[[148.215,153.21],[152.795,153.21],[152.795,157.79],[148.215,157.79]]
+; EXCLUDE_OBJECT_DEFINE NAME=cube_1 id:0 copy 1 CENTER=139.505,155.5 POLYGON=[[137.215,153.21],[141.795,153.21],[141.795,157.79],[137.215,157.79]]
+; EXCLUDE_OBJECT_DEFINE NAME=union_3 id:2 copy 0 CENTER=144.505,144.5 POLYGON=[[137.215,142.21],[151.795,142.21],[151.795,146.79],[137.215,146.79]]
+; EXCLUDE_OBJECT_DEFINE NAME=cylinder_2 id:1 copy 0 CENTER=159.8875,148.71451 POLYGON=[[158.217,147.508],[161.558,147.508],[161.558,149.921],[158.217,149.921]]
+; EXCLUDE_OBJECT_DEFINE NAME=cube_1 id:0 copy 0 CENTER=150.505,155.5 POLYGON=[[148.215,153.21],[152.795,153.21],[152.795,157.79],[148.215,157.79]]
+; EXCLUDE_OBJECT_DEFINE NAME=cube_1 id:0 copy 1 CENTER=139.505,155.5 POLYGON=[[137.215,153.21],[141.795,153.21],[141.795,157.79],[137.215,157.79]]
+; EXCLUDE_OBJECT_DEFINE NAME=union_3 id:2 copy 0 CENTER=144.505,144.5 POLYGON=[[137.215,142.21],[151.795,142.21],[151.795,146.79],[137.215,146.79]]
+; EXCLUDE_OBJECT_DEFINE NAME=cylinder_2 id:1 copy 0 CENTER=160.331,148.6795 POLYGON=[[158.212,146.625],[162.45,146.625],[162.45,150.734],[158.212,150.734]]
 ; generated by SuperSlicer 2.3.56 on 2021-09-03 at 16:50:39 UTC
 
 
@@ -807,6 +2521,9 @@ G1 E-0.75000 F3000
 M204 S1500
 G1 Z0.600000 F18000
 ; printing object cube_1 id:0 copy 0
+EXCLUDE_OBJECT_START NAME=cube_1_id_0_copy_0
+EXCLUDE_OBJECT_START NAME=cube_1 id:0 copy 0
+
 G1 X149.420 Y154.414
 G1 Z0.200000
 G1 E0.75000 F1800
@@ -853,7 +2570,13 @@ G1 E-0.75000 F3000
 M204 S1500
 G1 Z0.600000 F18000
 ; stop printing object cube_1 id:0 copy 0
+EXCLUDE_OBJECT_END NAME=cube_1_id_0_copy_0
+EXCLUDE_OBJECT_END NAME=cube_1 id:0 copy 0
+
 ; printing object cube_1 id:0 copy 1
+EXCLUDE_OBJECT_START NAME=cube_1_id_0_copy_1
+EXCLUDE_OBJECT_START NAME=cube_1 id:0 copy 1
+
 G1 X140.591 Y156.405
 G1 Z0.200000
 G1 E0.75000 F1800
@@ -903,7 +2626,13 @@ G1 E-0.75000 F3000
 M204 S1500
 G1 Z0.600000 F18000
 ; stop printing object cube_1 id:0 copy 1
+EXCLUDE_OBJECT_END NAME=cube_1_id_0_copy_1
+EXCLUDE_OBJECT_END NAME=cube_1 id:0 copy 1
+
 ; printing object union_3 id:2 copy 0
+EXCLUDE_OBJECT_START NAME=union_3_id_2_copy_0
+EXCLUDE_OBJECT_START NAME=union_3 id:2 copy 0
+
 G1 X140.591 Y145.586
 G1 Z0.200000
 G1 E0.75000 F1800
@@ -996,7 +2725,13 @@ G1 E-0.75000 F3000
 M204 S1500
 G1 Z0.600000 F18000
 ; stop printing object union_3 id:2 copy 0
+EXCLUDE_OBJECT_END NAME=union_3_id_2_copy_0
+EXCLUDE_OBJECT_END NAME=union_3 id:2 copy 0
+
 ; printing object cylinder_2 id:1 copy 0
+EXCLUDE_OBJECT_START NAME=cylinder_2_id_1_copy_0
+EXCLUDE_OBJECT_START NAME=cylinder_2 id:1 copy 0
+
 G1 X159.457 Y148.261
 G1 Z0.200000
 G1 E0.75000 F1800
@@ -1034,6 +2769,9 @@ G1 X159.654 Y148.260 E0.07253
 ;0.4
 
 ; stop printing object cylinder_2 id:1 copy 0
+EXCLUDE_OBJECT_END NAME=cylinder_2_id_1_copy_0
+EXCLUDE_OBJECT_END NAME=cylinder_2 id:1 copy 0
+
 M204 S1500
 G1 Z0.400000 F18000
 ;AFTER_LAYER_CHANGE
@@ -1046,6 +2784,9 @@ M140 S105 ; set bed temperature
 G1 E-0.75000 F3000
 G1 Z0.800000 F18000
 ; printing object cube_1 id:0 copy 0
+EXCLUDE_OBJECT_START NAME=cube_1_id_0_copy_0
+EXCLUDE_OBJECT_START NAME=cube_1 id:0 copy 0
+
 G1 X152.011 Y153.994
 G1 Z0.400000
 G1 E0.75000 F1800
@@ -1096,7 +2837,13 @@ G1 X149.138 Y154.867 E0.02624
 G1 E-0.75000 F3000
 G1 Z0.800000 F18000
 ; stop printing object cube_1 id:0 copy 0
+EXCLUDE_OBJECT_END NAME=cube_1_id_0_copy_0
+EXCLUDE_OBJECT_END NAME=cube_1 id:0 copy 0
+
 ; printing object cube_1 id:0 copy 1
+EXCLUDE_OBJECT_START NAME=cube_1_id_0_copy_1
+EXCLUDE_OBJECT_START NAME=cube_1 id:0 copy 1
+
 G1 X141.011 Y153.994
 G1 Z0.400000
 G1 E0.75000 F1800
@@ -1147,7 +2894,13 @@ G1 X138.138 Y154.867 E0.02624
 G1 E-0.75000 F3000
 G1 Z0.800000 F18000
 ; stop printing object cube_1 id:0 copy 1
+EXCLUDE_OBJECT_END NAME=cube_1_id_0_copy_1
+EXCLUDE_OBJECT_END NAME=cube_1 id:0 copy 1
+
 ; printing object union_3 id:2 copy 0
+EXCLUDE_OBJECT_START NAME=union_3_id_2_copy_0
+EXCLUDE_OBJECT_START NAME=union_3 id:2 copy 0
+
 G1 X138.000 Y146.006
 G1 Z0.400000
 G1 E0.75000 F1800
@@ -1245,7 +2998,13 @@ G1 X150.070 Y145.867 E0.02949
 G1 E-0.75000 F3000
 G1 Z0.800000 F18000
 ; stop printing object union_3 id:2 copy 0
+EXCLUDE_OBJECT_END NAME=union_3_id_2_copy_0
+EXCLUDE_OBJECT_END NAME=union_3 id:2 copy 0
+
 ; printing object cylinder_2 id:1 copy 0
+EXCLUDE_OBJECT_START NAME=cylinder_2_id_1_copy_0
+EXCLUDE_OBJECT_START NAME=cylinder_2 id:1 copy 0
+
 G1 X159.036 Y148.209
 G1 Z0.400000
 G1 E0.75000 F1800
@@ -1312,6 +3071,9 @@ G2 X159.267 Y148.266 I0.817 J0.622 E0.00151
 ;0.6
 
 ; stop printing object cylinder_2 id:1 copy 0
+EXCLUDE_OBJECT_END NAME=cylinder_2_id_1_copy_0
+EXCLUDE_OBJECT_END NAME=cylinder_2 id:1 copy 0
+
 G1 Z0.600000 F18000
 ;AFTER_LAYER_CHANGE
 ;0.6
@@ -1321,6 +3083,9 @@ TIMELAPSE_TAKE_FRAME
 G1 E-0.75000 F3000
 G1 Z1.000000 F18000
 ; printing object cube_1 id:0 copy 0
+EXCLUDE_OBJECT_START NAME=cube_1_id_0_copy_0
+EXCLUDE_OBJECT_START NAME=cube_1 id:0 copy 0
+
 G1 X152.011 Y153.994
 G1 Z0.600000
 G1 E0.75000 F1800
@@ -1371,7 +3136,13 @@ G1 X151.872 Y154.936 E0.02949
 G1 E-0.75000 F3000
 G1 Z1.000000 F18000
 ; stop printing object cube_1 id:0 copy 0
+EXCLUDE_OBJECT_END NAME=cube_1_id_0_copy_0
+EXCLUDE_OBJECT_END NAME=cube_1 id:0 copy 0
+
 ; printing object cube_1 id:0 copy 1
+EXCLUDE_OBJECT_START NAME=cube_1_id_0_copy_1
+EXCLUDE_OBJECT_START NAME=cube_1 id:0 copy 1
+
 G1 X141.011 Y153.994
 G1 Z0.600000
 G1 E0.75000 F1800
@@ -1422,7 +3193,13 @@ G1 X140.872 Y154.936 E0.02949
 G1 E-0.75000 F3000
 G1 Z1.000000 F18000
 ; stop printing object cube_1 id:0 copy 1
+EXCLUDE_OBJECT_END NAME=cube_1_id_0_copy_1
+EXCLUDE_OBJECT_END NAME=cube_1 id:0 copy 1
+
 ; printing object union_3 id:2 copy 0
+EXCLUDE_OBJECT_START NAME=union_3_id_2_copy_0
+EXCLUDE_OBJECT_START NAME=union_3 id:2 copy 0
+
 G1 X141.011 Y146.006
 G1 Z0.600000
 G1 E0.75000 F1800
@@ -1520,7 +3297,13 @@ G1 X148.872 Y145.867 E0.02624
 G1 E-0.75000 F3000
 G1 Z1.000000 F18000
 ; stop printing object union_3 id:2 copy 0
+EXCLUDE_OBJECT_END NAME=union_3_id_2_copy_0
+EXCLUDE_OBJECT_END NAME=union_3 id:2 copy 0
+
 ; printing object cylinder_2 id:1 copy 0
+EXCLUDE_OBJECT_START NAME=cylinder_2_id_1_copy_0
+EXCLUDE_OBJECT_START NAME=cylinder_2 id:1 copy 0
+
 G1 X159.036 Y148.209
 G1 Z0.600000
 G1 E0.75000 F1800
@@ -1600,6 +3383,9 @@ G2 X160.773 Y147.345 I-0.354 J0.484 E0.00110
 ;0.8
 
 ; stop printing object cylinder_2 id:1 copy 0
+EXCLUDE_OBJECT_END NAME=cylinder_2_id_1_copy_0
+EXCLUDE_OBJECT_END NAME=cylinder_2 id:1 copy 0
+
 G1 Z0.800000 F18000
 ;AFTER_LAYER_CHANGE
 ;0.8
@@ -1609,6 +3395,9 @@ TIMELAPSE_TAKE_FRAME
 G1 E-0.75000 F3000
 G1 Z1.200000 F18000
 ; printing object cube_1 id:0 copy 0
+EXCLUDE_OBJECT_START NAME=cube_1_id_0_copy_0
+EXCLUDE_OBJECT_START NAME=cube_1 id:0 copy 0
+
 G1 X152.011 Y153.994
 G1 Z0.800000
 G1 E0.75000 F1800
@@ -1659,7 +3448,13 @@ G1 X149.138 Y154.867 E0.02624
 G1 E-0.75000 F3000
 G1 Z1.200000 F18000
 ; stop printing object cube_1 id:0 copy 0
+EXCLUDE_OBJECT_END NAME=cube_1_id_0_copy_0
+EXCLUDE_OBJECT_END NAME=cube_1 id:0 copy 0
+
 ; printing object cube_1 id:0 copy 1
+EXCLUDE_OBJECT_START NAME=cube_1_id_0_copy_1
+EXCLUDE_OBJECT_START NAME=cube_1 id:0 copy 1
+
 G1 X141.011 Y153.994
 G1 Z0.800000
 G1 E0.75000 F1800
@@ -1710,7 +3505,13 @@ G1 X138.138 Y154.867 E0.02624
 G1 E-0.75000 F3000
 G1 Z1.200000 F18000
 ; stop printing object cube_1 id:0 copy 1
+EXCLUDE_OBJECT_END NAME=cube_1_id_0_copy_1
+EXCLUDE_OBJECT_END NAME=cube_1 id:0 copy 1
+
 ; printing object union_3 id:2 copy 0
+EXCLUDE_OBJECT_START NAME=union_3_id_2_copy_0
+EXCLUDE_OBJECT_START NAME=union_3 id:2 copy 0
+
 G1 X138.000 Y146.006
 G1 Z0.800000
 G1 E0.75000 F1800
@@ -1808,7 +3609,13 @@ G1 X150.070 Y145.867 E0.02949
 G1 E-0.75000 F3000
 G1 Z1.200000 F18000
 ; stop printing object union_3 id:2 copy 0
+EXCLUDE_OBJECT_END NAME=union_3_id_2_copy_0
+EXCLUDE_OBJECT_END NAME=union_3 id:2 copy 0
+
 ; printing object cylinder_2 id:1 copy 0
+EXCLUDE_OBJECT_START NAME=cylinder_2_id_1_copy_0
+EXCLUDE_OBJECT_START NAME=cylinder_2 id:1 copy 0
+
 G1 X159.036 Y148.209
 G1 Z0.800000
 G1 E0.75000 F1800
@@ -1885,6 +3692,9 @@ G2 X159.267 Y148.266 I0.817 J0.622 E0.00151
 ;1
 
 ; stop printing object cylinder_2 id:1 copy 0
+EXCLUDE_OBJECT_END NAME=cylinder_2_id_1_copy_0
+EXCLUDE_OBJECT_END NAME=cylinder_2 id:1 copy 0
+
 G1 Z1.000000 F18000
 ;AFTER_LAYER_CHANGE
 ;1
@@ -1894,6 +3704,9 @@ TIMELAPSE_TAKE_FRAME
 G1 E-0.75000 F3000
 G1 Z1.400000 F18000
 ; printing object cube_1 id:0 copy 0
+EXCLUDE_OBJECT_START NAME=cube_1_id_0_copy_0
+EXCLUDE_OBJECT_START NAME=cube_1 id:0 copy 0
+
 G1 X152.011 Y153.994
 G1 Z1.000000
 G1 E0.75000 F1800
@@ -1944,7 +3757,13 @@ G1 X151.872 Y154.936 E0.02949
 G1 E-0.75000 F3000
 G1 Z1.400000 F18000
 ; stop printing object cube_1 id:0 copy 0
+EXCLUDE_OBJECT_END NAME=cube_1_id_0_copy_0
+EXCLUDE_OBJECT_END NAME=cube_1 id:0 copy 0
+
 ; printing object cube_1 id:0 copy 1
+EXCLUDE_OBJECT_START NAME=cube_1_id_0_copy_1
+EXCLUDE_OBJECT_START NAME=cube_1 id:0 copy 1
+
 G1 X141.011 Y153.994
 G1 Z1.000000
 G1 E0.75000 F1800
@@ -1995,7 +3814,13 @@ G1 X140.872 Y154.936 E0.02949
 G1 E-0.75000 F3000
 G1 Z1.400000 F18000
 ; stop printing object cube_1 id:0 copy 1
+EXCLUDE_OBJECT_END NAME=cube_1_id_0_copy_1
+EXCLUDE_OBJECT_END NAME=cube_1 id:0 copy 1
+
 ; printing object union_3 id:2 copy 0
+EXCLUDE_OBJECT_START NAME=union_3_id_2_copy_0
+EXCLUDE_OBJECT_START NAME=union_3 id:2 copy 0
+
 G1 X141.011 Y146.006
 G1 Z1.000000
 G1 E0.75000 F1800
@@ -2093,7 +3918,13 @@ G1 X148.872 Y145.867 E0.02624
 G1 E-0.75000 F3000
 G1 Z1.400000 F18000
 ; stop printing object union_3 id:2 copy 0
+EXCLUDE_OBJECT_END NAME=union_3_id_2_copy_0
+EXCLUDE_OBJECT_END NAME=union_3 id:2 copy 0
+
 ; printing object cylinder_2 id:1 copy 0
+EXCLUDE_OBJECT_START NAME=cylinder_2_id_1_copy_0
+EXCLUDE_OBJECT_START NAME=cylinder_2 id:1 copy 0
+
 G1 X159.036 Y148.209
 G1 Z1.000000
 G1 E0.75000 F1800
@@ -2174,6 +4005,9 @@ M106 S73.95
 ;1.2
 
 ; stop printing object cylinder_2 id:1 copy 0
+EXCLUDE_OBJECT_END NAME=cylinder_2_id_1_copy_0
+EXCLUDE_OBJECT_END NAME=cylinder_2 id:1 copy 0
+
 G1 Z1.200000 F18000
 ;AFTER_LAYER_CHANGE
 ;1.2
@@ -2183,6 +4017,9 @@ TIMELAPSE_TAKE_FRAME
 G1 E-0.75000 F3000
 G1 Z1.600000 F18000
 ; printing object cube_1 id:0 copy 0
+EXCLUDE_OBJECT_START NAME=cube_1_id_0_copy_0
+EXCLUDE_OBJECT_START NAME=cube_1 id:0 copy 0
+
 G1 X152.011 Y153.994
 G1 Z1.200000
 G1 E0.75000 F1800
@@ -2223,7 +4060,13 @@ G1 X151.694 Y156.419 E0.07375
 G1 E-0.75000 F3000
 G1 Z1.600000 F18000
 ; stop printing object cube_1 id:0 copy 0
+EXCLUDE_OBJECT_END NAME=cube_1_id_0_copy_0
+EXCLUDE_OBJECT_END NAME=cube_1 id:0 copy 0
+
 ; printing object cube_1 id:0 copy 1
+EXCLUDE_OBJECT_START NAME=cube_1_id_0_copy_1
+EXCLUDE_OBJECT_START NAME=cube_1 id:0 copy 1
+
 G1 X141.011 Y157.006
 G1 Z1.200000
 G1 E0.75000 F1800
@@ -2263,7 +4106,13 @@ G1 X140.694 Y155.720 E0.05045
 G1 E-0.75000 F3000
 G1 Z1.600000 F18000
 ; stop printing object cube_1 id:0 copy 1
+EXCLUDE_OBJECT_END NAME=cube_1_id_0_copy_1
+EXCLUDE_OBJECT_END NAME=cube_1 id:0 copy 1
+
 ; printing object union_3 id:2 copy 0
+EXCLUDE_OBJECT_START NAME=union_3_id_2_copy_0
+EXCLUDE_OBJECT_START NAME=union_3 id:2 copy 0
+
 G1 X141.011 Y146.006
 G1 Z1.200000
 G1 E0.75000 F1800
@@ -2341,7 +4190,13 @@ G1 X150.694 Y145.419 E0.07375
 G1 E-0.75000 F3000
 G1 Z1.600000 F18000
 ; stop printing object union_3 id:2 copy 0
+EXCLUDE_OBJECT_END NAME=union_3_id_2_copy_0
+EXCLUDE_OBJECT_END NAME=union_3 id:2 copy 0
+
 ; printing object cylinder_2 id:1 copy 0
+EXCLUDE_OBJECT_START NAME=cylinder_2_id_1_copy_0
+EXCLUDE_OBJECT_START NAME=cylinder_2 id:1 copy 0
+
 G1 X159.056 Y148.137
 G1 Z1.200000
 G1 E0.75000 F1800
@@ -2376,6 +4231,9 @@ G1 X159.747 Y149.500 E0.04643
 ;1.4
 
 ; stop printing object cylinder_2 id:1 copy 0
+EXCLUDE_OBJECT_END NAME=cylinder_2_id_1_copy_0
+EXCLUDE_OBJECT_END NAME=cylinder_2 id:1 copy 0
+
 G1 Z1.400000 F18000
 ;AFTER_LAYER_CHANGE
 ;1.4
@@ -2385,6 +4243,9 @@ TIMELAPSE_TAKE_FRAME
 G1 E-0.75000 F3000
 G1 Z1.800000 F18000
 ; printing object cube_1 id:0 copy 0
+EXCLUDE_OBJECT_START NAME=cube_1_id_0_copy_0
+EXCLUDE_OBJECT_START NAME=cube_1 id:0 copy 0
+
 G1 X152.011 Y153.994
 G1 Z1.400000
 G1 E0.75000 F1800
@@ -2424,7 +4285,13 @@ G1 X151.694 Y156.278 E0.07375
 G1 E-0.75000 F3000
 G1 Z1.800000 F18000
 ; stop printing object cube_1 id:0 copy 0
+EXCLUDE_OBJECT_END NAME=cube_1_id_0_copy_0
+EXCLUDE_OBJECT_END NAME=cube_1 id:0 copy 0
+
 ; printing object cube_1 id:0 copy 1
+EXCLUDE_OBJECT_START NAME=cube_1_id_0_copy_1
+EXCLUDE_OBJECT_START NAME=cube_1 id:0 copy 1
+
 G1 X141.011 Y157.006
 G1 Z1.400000
 G1 E0.75000 F1800
@@ -2464,7 +4331,13 @@ G1 X140.694 Y156.002 E0.06058
 G1 E-0.75000 F3000
 G1 Z1.800000 F18000
 ; stop printing object cube_1 id:0 copy 1
+EXCLUDE_OBJECT_END NAME=cube_1_id_0_copy_1
+EXCLUDE_OBJECT_END NAME=cube_1 id:0 copy 1
+
 ; printing object union_3 id:2 copy 0
+EXCLUDE_OBJECT_START NAME=union_3_id_2_copy_0
+EXCLUDE_OBJECT_START NAME=union_3 id:2 copy 0
+
 G1 X141.011 Y146.006
 G1 Z1.400000
 G1 E0.75000 F1800
@@ -2542,7 +4415,13 @@ G1 X150.694 Y145.278 E0.07375
 G1 E-0.75000 F3000
 G1 Z1.800000 F18000
 ; stop printing object union_3 id:2 copy 0
+EXCLUDE_OBJECT_END NAME=union_3_id_2_copy_0
+EXCLUDE_OBJECT_END NAME=union_3 id:2 copy 0
+
 ; printing object cylinder_2 id:1 copy 0
+EXCLUDE_OBJECT_START NAME=cylinder_2_id_1_copy_0
+EXCLUDE_OBJECT_START NAME=cylinder_2 id:1 copy 0
+
 G1 X159.071 Y148.092
 G1 Z1.400000
 G1 E0.75000 F1800
@@ -2576,6 +4455,9 @@ G1 X159.602 Y149.359 E0.05544
 ;1.6
 
 ; stop printing object cylinder_2 id:1 copy 0
+EXCLUDE_OBJECT_END NAME=cylinder_2_id_1_copy_0
+EXCLUDE_OBJECT_END NAME=cylinder_2 id:1 copy 0
+
 G1 Z1.600000 F18000
 ;AFTER_LAYER_CHANGE
 ;1.6
@@ -2585,6 +4467,9 @@ TIMELAPSE_TAKE_FRAME
 G1 E-0.75000 F3000
 G1 Z2.000000 F18000
 ; printing object cube_1 id:0 copy 0
+EXCLUDE_OBJECT_START NAME=cube_1_id_0_copy_0
+EXCLUDE_OBJECT_START NAME=cube_1 id:0 copy 0
+
 G1 X152.011 Y153.994
 G1 Z1.600000
 G1 E0.75000 F1800
@@ -2625,7 +4510,13 @@ G1 X151.694 Y156.136 E0.07375
 G1 E-0.75000 F3000
 G1 Z2.000000 F18000
 ; stop printing object cube_1 id:0 copy 0
+EXCLUDE_OBJECT_END NAME=cube_1_id_0_copy_0
+EXCLUDE_OBJECT_END NAME=cube_1 id:0 copy 0
+
 ; printing object cube_1 id:0 copy 1
+EXCLUDE_OBJECT_START NAME=cube_1_id_0_copy_1
+EXCLUDE_OBJECT_START NAME=cube_1 id:0 copy 1
+
 G1 X141.011 Y157.006
 G1 Z1.600000
 G1 E0.75000 F1800
@@ -2666,7 +4557,13 @@ G1 X140.694 Y156.136 E0.07375
 G1 E-0.75000 F3000
 G1 Z2.000000 F18000
 ; stop printing object cube_1 id:0 copy 1
+EXCLUDE_OBJECT_END NAME=cube_1_id_0_copy_1
+EXCLUDE_OBJECT_END NAME=cube_1 id:0 copy 1
+
 ; printing object union_3 id:2 copy 0
+EXCLUDE_OBJECT_START NAME=union_3_id_2_copy_0
+EXCLUDE_OBJECT_START NAME=union_3 id:2 copy 0
+
 G1 X141.011 Y146.006
 G1 Z1.600000
 G1 E0.75000 F1800
@@ -2744,7 +4641,13 @@ G1 X150.694 Y145.136 E0.07375
 G1 E-0.75000 F3000
 G1 Z2.000000 F18000
 ; stop printing object union_3 id:2 copy 0
+EXCLUDE_OBJECT_END NAME=union_3_id_2_copy_0
+EXCLUDE_OBJECT_END NAME=union_3 id:2 copy 0
+
 ; printing object cylinder_2 id:1 copy 0
+EXCLUDE_OBJECT_START NAME=cylinder_2_id_1_copy_0
+EXCLUDE_OBJECT_START NAME=cylinder_2 id:1 copy 0
+
 G1 X159.080 Y148.066
 G1 Z1.600000
 G1 E0.75000 F1800
@@ -2778,6 +4681,9 @@ G1 X159.500 Y149.217 E0.06175
 ;1.8
 
 ; stop printing object cylinder_2 id:1 copy 0
+EXCLUDE_OBJECT_END NAME=cylinder_2_id_1_copy_0
+EXCLUDE_OBJECT_END NAME=cylinder_2 id:1 copy 0
+
 G1 Z1.800000 F18000
 ;AFTER_LAYER_CHANGE
 ;1.8
@@ -2787,6 +4693,9 @@ TIMELAPSE_TAKE_FRAME
 G1 E-0.75000 F3000
 G1 Z2.200000 F18000
 ; printing object cube_1 id:0 copy 0
+EXCLUDE_OBJECT_START NAME=cube_1_id_0_copy_0
+EXCLUDE_OBJECT_START NAME=cube_1 id:0 copy 0
+
 G1 X152.011 Y153.994
 G1 Z1.800000
 G1 E0.75000 F1800
@@ -2828,7 +4737,13 @@ G1 X151.694 Y155.995 E0.07375
 G1 E-0.75000 F3000
 G1 Z2.200000 F18000
 ; stop printing object cube_1 id:0 copy 0
+EXCLUDE_OBJECT_END NAME=cube_1_id_0_copy_0
+EXCLUDE_OBJECT_END NAME=cube_1 id:0 copy 0
+
 ; printing object cube_1 id:0 copy 1
+EXCLUDE_OBJECT_START NAME=cube_1_id_0_copy_1
+EXCLUDE_OBJECT_START NAME=cube_1 id:0 copy 1
+
 G1 X141.011 Y157.006
 G1 Z1.800000
 G1 E0.75000 F1800
@@ -2870,7 +4785,13 @@ G1 X140.694 Y155.995 E0.07375
 G1 E-0.75000 F3000
 G1 Z2.200000 F18000
 ; stop printing object cube_1 id:0 copy 1
+EXCLUDE_OBJECT_END NAME=cube_1_id_0_copy_1
+EXCLUDE_OBJECT_END NAME=cube_1 id:0 copy 1
+
 ; printing object union_3 id:2 copy 0
+EXCLUDE_OBJECT_START NAME=union_3_id_2_copy_0
+EXCLUDE_OBJECT_START NAME=union_3 id:2 copy 0
+
 G1 X141.011 Y146.006
 G1 Z1.800000
 G1 E0.75000 F1800
@@ -2948,7 +4869,13 @@ G1 X148.317 Y144.606 E0.04639
 G1 E-0.75000 F3000
 G1 Z2.200000 F18000
 ; stop printing object union_3 id:2 copy 0
+EXCLUDE_OBJECT_END NAME=union_3_id_2_copy_0
+EXCLUDE_OBJECT_END NAME=union_3 id:2 copy 0
+
 ; printing object cylinder_2 id:1 copy 0
+EXCLUDE_OBJECT_START NAME=cylinder_2_id_1_copy_0
+EXCLUDE_OBJECT_START NAME=cylinder_2 id:1 copy 0
+
 G1 X159.056 Y148.137
 G1 Z1.800000
 G1 E0.75000 F1800
@@ -2982,6 +4909,9 @@ G1 X159.530 Y149.262 E0.06666
 ;2
 
 ; stop printing object cylinder_2 id:1 copy 0
+EXCLUDE_OBJECT_END NAME=cylinder_2_id_1_copy_0
+EXCLUDE_OBJECT_END NAME=cylinder_2 id:1 copy 0
+
 G1 Z2.000000 F18000
 ;AFTER_LAYER_CHANGE
 ;2
@@ -2991,6 +4921,9 @@ TIMELAPSE_TAKE_FRAME
 G1 E-0.75000 F3000
 G1 Z2.400000 F18000
 ; printing object cube_1 id:0 copy 0
+EXCLUDE_OBJECT_START NAME=cube_1_id_0_copy_0
+EXCLUDE_OBJECT_START NAME=cube_1 id:0 copy 0
+
 G1 X152.011 Y153.994
 G1 Z2.000000
 G1 E0.75000 F1800
@@ -3030,7 +4963,13 @@ G1 X151.694 Y155.854 E0.07375
 G1 E-0.75000 F3000
 G1 Z2.400000 F18000
 ; stop printing object cube_1 id:0 copy 0
+EXCLUDE_OBJECT_END NAME=cube_1_id_0_copy_0
+EXCLUDE_OBJECT_END NAME=cube_1 id:0 copy 0
+
 ; printing object cube_1 id:0 copy 1
+EXCLUDE_OBJECT_START NAME=cube_1_id_0_copy_1
+EXCLUDE_OBJECT_START NAME=cube_1 id:0 copy 1
+
 G1 X141.011 Y157.006
 G1 Z2.000000
 G1 E0.75000 F1800
@@ -3070,7 +5009,13 @@ G1 X140.694 Y155.854 E0.07375
 G1 E-0.75000 F3000
 G1 Z2.400000 F18000
 ; stop printing object cube_1 id:0 copy 1
+EXCLUDE_OBJECT_END NAME=cube_1_id_0_copy_1
+EXCLUDE_OBJECT_END NAME=cube_1 id:0 copy 1
+
 ; printing object union_3 id:2 copy 0
+EXCLUDE_OBJECT_START NAME=union_3_id_2_copy_0
+EXCLUDE_OBJECT_START NAME=union_3 id:2 copy 0
+
 G1 X141.011 Y146.006
 G1 Z2.000000
 G1 E0.75000 F1800
@@ -3148,7 +5093,13 @@ G1 X148.672 Y143.312 E0.08516
 G1 E-0.75000 F3000
 G1 Z2.400000 F18000
 ; stop printing object union_3 id:2 copy 0
+EXCLUDE_OBJECT_END NAME=union_3_id_2_copy_0
+EXCLUDE_OBJECT_END NAME=union_3 id:2 copy 0
+
 ; printing object cylinder_2 id:1 copy 0
+EXCLUDE_OBJECT_START NAME=cylinder_2_id_1_copy_0
+EXCLUDE_OBJECT_START NAME=cylinder_2 id:1 copy 0
+
 G1 X159.107 Y147.996
 G1 Z2.000000
 G1 E0.75000 F1800
@@ -3182,6 +5133,9 @@ G1 X159.624 Y149.381 E0.07000
 ;2.2
 
 ; stop printing object cylinder_2 id:1 copy 0
+EXCLUDE_OBJECT_END NAME=cylinder_2_id_1_copy_0
+EXCLUDE_OBJECT_END NAME=cylinder_2 id:1 copy 0
+
 G1 Z2.200000 F18000
 ;AFTER_LAYER_CHANGE
 ;2.2
@@ -3191,6 +5145,9 @@ TIMELAPSE_TAKE_FRAME
 G1 E-0.75000 F3000
 G1 Z2.600000 F18000
 ; printing object cube_1 id:0 copy 0
+EXCLUDE_OBJECT_START NAME=cube_1_id_0_copy_0
+EXCLUDE_OBJECT_START NAME=cube_1 id:0 copy 0
+
 G1 X152.011 Y153.994
 G1 Z2.200000
 G1 E0.75000 F1800
@@ -3230,7 +5187,13 @@ G1 X151.694 Y155.712 E0.07375
 G1 E-0.75000 F3000
 G1 Z2.600000 F18000
 ; stop printing object cube_1 id:0 copy 0
+EXCLUDE_OBJECT_END NAME=cube_1_id_0_copy_0
+EXCLUDE_OBJECT_END NAME=cube_1 id:0 copy 0
+
 ; printing object cube_1 id:0 copy 1
+EXCLUDE_OBJECT_START NAME=cube_1_id_0_copy_1
+EXCLUDE_OBJECT_START NAME=cube_1 id:0 copy 1
+
 G1 X141.011 Y157.006
 G1 Z2.200000
 G1 E0.75000 F1800
@@ -3270,7 +5233,13 @@ G1 X140.694 Y155.712 E0.07375
 G1 E-0.75000 F3000
 G1 Z2.600000 F18000
 ; stop printing object cube_1 id:0 copy 1
+EXCLUDE_OBJECT_END NAME=cube_1_id_0_copy_1
+EXCLUDE_OBJECT_END NAME=cube_1 id:0 copy 1
+
 ; printing object union_3 id:2 copy 0
+EXCLUDE_OBJECT_START NAME=union_3_id_2_copy_0
+EXCLUDE_OBJECT_START NAME=union_3 id:2 copy 0
+
 G1 X141.011 Y146.006
 G1 Z2.200000
 G1 E0.75000 F1800
@@ -3348,7 +5317,13 @@ G1 X148.509 Y143.312 E0.08516
 G1 E-0.75000 F3000
 G1 Z2.600000 F18000
 ; stop printing object union_3 id:2 copy 0
+EXCLUDE_OBJECT_END NAME=union_3_id_2_copy_0
+EXCLUDE_OBJECT_END NAME=union_3 id:2 copy 0
+
 ; printing object cylinder_2 id:1 copy 0
+EXCLUDE_OBJECT_START NAME=cylinder_2_id_1_copy_0
+EXCLUDE_OBJECT_START NAME=cylinder_2 id:1 copy 0
+
 G1 X159.107 Y147.996
 G1 Z2.200000
 G1 E0.75000 F1800
@@ -3382,6 +5357,9 @@ G1 X159.729 Y149.483 E0.07218
 ;2.4
 
 ; stop printing object cylinder_2 id:1 copy 0
+EXCLUDE_OBJECT_END NAME=cylinder_2_id_1_copy_0
+EXCLUDE_OBJECT_END NAME=cylinder_2 id:1 copy 0
+
 G1 Z2.400000 F18000
 ;AFTER_LAYER_CHANGE
 ;2.4
@@ -3391,6 +5369,9 @@ TIMELAPSE_TAKE_FRAME
 G1 E-0.75000 F3000
 G1 Z2.800000 F18000
 ; printing object cube_1 id:0 copy 0
+EXCLUDE_OBJECT_START NAME=cube_1_id_0_copy_0
+EXCLUDE_OBJECT_START NAME=cube_1 id:0 copy 0
+
 G1 X152.011 Y153.994
 G1 Z2.400000
 G1 E0.75000 F1800
@@ -3430,7 +5411,13 @@ G1 X151.694 Y155.571 E0.07375
 G1 E-0.75000 F3000
 G1 Z2.800000 F18000
 ; stop printing object cube_1 id:0 copy 0
+EXCLUDE_OBJECT_END NAME=cube_1_id_0_copy_0
+EXCLUDE_OBJECT_END NAME=cube_1 id:0 copy 0
+
 ; printing object cube_1 id:0 copy 1
+EXCLUDE_OBJECT_START NAME=cube_1_id_0_copy_1
+EXCLUDE_OBJECT_START NAME=cube_1 id:0 copy 1
+
 G1 X141.011 Y157.006
 G1 Z2.400000
 G1 E0.75000 F1800
@@ -3470,7 +5457,13 @@ G1 X140.694 Y155.571 E0.07375
 G1 E-0.75000 F3000
 G1 Z2.800000 F18000
 ; stop printing object cube_1 id:0 copy 1
+EXCLUDE_OBJECT_END NAME=cube_1_id_0_copy_1
+EXCLUDE_OBJECT_END NAME=cube_1 id:0 copy 1
+
 ; printing object union_3 id:2 copy 0
+EXCLUDE_OBJECT_START NAME=union_3_id_2_copy_0
+EXCLUDE_OBJECT_START NAME=union_3 id:2 copy 0
+
 G1 X141.011 Y146.006
 G1 Z2.400000
 G1 E0.75000 F1800
@@ -3548,7 +5541,13 @@ G1 X148.346 Y143.312 E0.08516
 G1 E-0.75000 F3000
 G1 Z2.800000 F18000
 ; stop printing object union_3 id:2 copy 0
+EXCLUDE_OBJECT_END NAME=union_3_id_2_copy_0
+EXCLUDE_OBJECT_END NAME=union_3 id:2 copy 0
+
 ; printing object cylinder_2 id:1 copy 0
+EXCLUDE_OBJECT_START NAME=cylinder_2_id_1_copy_0
+EXCLUDE_OBJECT_START NAME=cylinder_2 id:1 copy 0
+
 G1 X159.107 Y147.996
 G1 Z2.400000
 G1 E0.75000 F1800
@@ -3582,6 +5581,9 @@ G1 X159.844 Y149.566 E0.07329
 ;2.6
 
 ; stop printing object cylinder_2 id:1 copy 0
+EXCLUDE_OBJECT_END NAME=cylinder_2_id_1_copy_0
+EXCLUDE_OBJECT_END NAME=cylinder_2 id:1 copy 0
+
 G1 Z2.600000 F18000
 ;AFTER_LAYER_CHANGE
 ;2.6
@@ -3591,6 +5593,9 @@ TIMELAPSE_TAKE_FRAME
 G1 E-0.75000 F3000
 G1 Z3.000000 F18000
 ; printing object cube_1 id:0 copy 0
+EXCLUDE_OBJECT_START NAME=cube_1_id_0_copy_0
+EXCLUDE_OBJECT_START NAME=cube_1 id:0 copy 0
+
 G1 X152.011 Y153.994
 G1 Z2.600000
 G1 E0.75000 F1800
@@ -3630,7 +5635,13 @@ G1 X151.694 Y155.429 E0.07375
 G1 E-0.75000 F3000
 G1 Z3.000000 F18000
 ; stop printing object cube_1 id:0 copy 0
+EXCLUDE_OBJECT_END NAME=cube_1_id_0_copy_0
+EXCLUDE_OBJECT_END NAME=cube_1 id:0 copy 0
+
 ; printing object cube_1 id:0 copy 1
+EXCLUDE_OBJECT_START NAME=cube_1_id_0_copy_1
+EXCLUDE_OBJECT_START NAME=cube_1 id:0 copy 1
+
 G1 X141.011 Y153.994
 G1 Z2.600000
 G1 E0.75000 F1800
@@ -3670,7 +5681,13 @@ G1 X140.694 Y155.429 E0.07375
 G1 E-0.75000 F3000
 G1 Z3.000000 F18000
 ; stop printing object cube_1 id:0 copy 1
+EXCLUDE_OBJECT_END NAME=cube_1_id_0_copy_1
+EXCLUDE_OBJECT_END NAME=cube_1 id:0 copy 1
+
 ; printing object union_3 id:2 copy 0
+EXCLUDE_OBJECT_START NAME=union_3_id_2_copy_0
+EXCLUDE_OBJECT_START NAME=union_3 id:2 copy 0
+
 G1 X141.011 Y146.006
 G1 Z2.600000
 G1 E0.75000 F1800
@@ -3748,7 +5765,13 @@ G1 X148.346 Y145.688 E0.08516
 G1 E-0.75000 F3000
 G1 Z3.000000 F18000
 ; stop printing object union_3 id:2 copy 0
+EXCLUDE_OBJECT_END NAME=union_3_id_2_copy_0
+EXCLUDE_OBJECT_END NAME=union_3 id:2 copy 0
+
 ; printing object cylinder_2 id:1 copy 0
+EXCLUDE_OBJECT_START NAME=cylinder_2_id_1_copy_0
+EXCLUDE_OBJECT_START NAME=cylinder_2 id:1 copy 0
+
 G1 X159.036 Y148.209
 G1 Z2.600000
 G1 E0.75000 F1800
@@ -3781,6 +5804,9 @@ G1 X159.844 Y147.596 E0.07332
 ;2.8
 
 ; stop printing object cylinder_2 id:1 copy 0
+EXCLUDE_OBJECT_END NAME=cylinder_2_id_1_copy_0
+EXCLUDE_OBJECT_END NAME=cylinder_2 id:1 copy 0
+
 G1 Z2.800000 F18000
 ;AFTER_LAYER_CHANGE
 ;2.8
@@ -3790,6 +5816,9 @@ TIMELAPSE_TAKE_FRAME
 G1 E-0.75000 F3000
 G1 Z3.200000 F18000
 ; printing object cube_1 id:0 copy 0
+EXCLUDE_OBJECT_START NAME=cube_1_id_0_copy_0
+EXCLUDE_OBJECT_START NAME=cube_1 id:0 copy 0
+
 G1 X152.011 Y153.994
 G1 Z2.800000
 G1 E0.75000 F1800
@@ -3830,7 +5859,13 @@ G1 X151.694 Y155.288 E0.07375
 G1 E-0.75000 F3000
 G1 Z3.200000 F18000
 ; stop printing object cube_1 id:0 copy 0
+EXCLUDE_OBJECT_END NAME=cube_1_id_0_copy_0
+EXCLUDE_OBJECT_END NAME=cube_1 id:0 copy 0
+
 ; printing object cube_1 id:0 copy 1
+EXCLUDE_OBJECT_START NAME=cube_1_id_0_copy_1
+EXCLUDE_OBJECT_START NAME=cube_1 id:0 copy 1
+
 G1 X141.011 Y153.994
 G1 Z2.800000
 G1 E0.75000 F1800
@@ -3871,7 +5906,13 @@ G1 X140.694 Y155.288 E0.07375
 G1 E-0.75000 F3000
 G1 Z3.200000 F18000
 ; stop printing object cube_1 id:0 copy 1
+EXCLUDE_OBJECT_END NAME=cube_1_id_0_copy_1
+EXCLUDE_OBJECT_END NAME=cube_1 id:0 copy 1
+
 ; printing object union_3 id:2 copy 0
+EXCLUDE_OBJECT_START NAME=union_3_id_2_copy_0
+EXCLUDE_OBJECT_START NAME=union_3 id:2 copy 0
+
 G1 X138.000 Y146.006
 G1 Z2.800000
 G1 E0.75000 F1800
@@ -4066,7 +6107,13 @@ G1 X150.694 Y144.288 E0.08223
 G1 E-0.75000 F3000
 G1 Z3.200000 F18000
 ; stop printing object union_3 id:2 copy 0
+EXCLUDE_OBJECT_END NAME=union_3_id_2_copy_0
+EXCLUDE_OBJECT_END NAME=union_3 id:2 copy 0
+
 ; printing object cylinder_2 id:1 copy 0
+EXCLUDE_OBJECT_START NAME=cylinder_2_id_1_copy_0
+EXCLUDE_OBJECT_START NAME=cylinder_2 id:1 copy 0
+
 G1 X159.107 Y147.996
 G1 Z2.800000
 G1 E0.75000 F1800
@@ -4100,6 +6147,9 @@ G1 X159.729 Y147.679 E0.07233
 ;3
 
 ; stop printing object cylinder_2 id:1 copy 0
+EXCLUDE_OBJECT_END NAME=cylinder_2_id_1_copy_0
+EXCLUDE_OBJECT_END NAME=cylinder_2 id:1 copy 0
+
 G1 Z3.000000 F18000
 ;AFTER_LAYER_CHANGE
 ;3
@@ -4109,6 +6159,9 @@ TIMELAPSE_TAKE_FRAME
 G1 E-0.75000 F3000
 G1 Z3.400000 F18000
 ; printing object cube_1 id:0 copy 0
+EXCLUDE_OBJECT_START NAME=cube_1_id_0_copy_0
+EXCLUDE_OBJECT_START NAME=cube_1 id:0 copy 0
+
 G1 X152.011 Y153.994
 G1 Z3.000000
 G1 E0.75000 F1800
@@ -4148,7 +6201,13 @@ G1 X151.694 Y155.146 E0.07375
 G1 E-0.75000 F3000
 G1 Z3.400000 F18000
 ; stop printing object cube_1 id:0 copy 0
+EXCLUDE_OBJECT_END NAME=cube_1_id_0_copy_0
+EXCLUDE_OBJECT_END NAME=cube_1 id:0 copy 0
+
 ; printing object cube_1 id:0 copy 1
+EXCLUDE_OBJECT_START NAME=cube_1_id_0_copy_1
+EXCLUDE_OBJECT_START NAME=cube_1 id:0 copy 1
+
 G1 X141.011 Y153.994
 G1 Z3.000000
 G1 E0.75000 F1800
@@ -4188,7 +6247,13 @@ G1 X140.694 Y155.146 E0.07375
 G1 E-0.75000 F3000
 G1 Z3.400000 F18000
 ; stop printing object cube_1 id:0 copy 1
+EXCLUDE_OBJECT_END NAME=cube_1_id_0_copy_1
+EXCLUDE_OBJECT_END NAME=cube_1 id:0 copy 1
+
 ; printing object union_3 id:2 copy 0
+EXCLUDE_OBJECT_START NAME=union_3_id_2_copy_0
+EXCLUDE_OBJECT_START NAME=union_3 id:2 copy 0
+
 G1 X138.000 Y146.006
 G1 Z3.000000
 G1 E0.75000 F1800
@@ -4296,7 +6361,13 @@ G1 X148.672 Y145.688 E0.08516
 G1 E-0.75000 F3000
 G1 Z3.400000 F18000
 ; stop printing object union_3 id:2 copy 0
+EXCLUDE_OBJECT_END NAME=union_3_id_2_copy_0
+EXCLUDE_OBJECT_END NAME=union_3 id:2 copy 0
+
 ; printing object cylinder_2 id:1 copy 0
+EXCLUDE_OBJECT_START NAME=cylinder_2_id_1_copy_0
+EXCLUDE_OBJECT_START NAME=cylinder_2 id:1 copy 0
+
 G1 X159.036 Y148.209
 G1 Z3.000000
 G1 E0.75000 F1800
@@ -4329,6 +6400,9 @@ G1 X160.237 Y149.734 E0.07000
 ;3.2
 
 ; stop printing object cylinder_2 id:1 copy 0
+EXCLUDE_OBJECT_END NAME=cylinder_2_id_1_copy_0
+EXCLUDE_OBJECT_END NAME=cylinder_2 id:1 copy 0
+
 G1 Z3.200000 F18000
 ;AFTER_LAYER_CHANGE
 ;3.2
@@ -4338,6 +6412,9 @@ TIMELAPSE_TAKE_FRAME
 G1 E-0.75000 F3000
 G1 Z3.600000 F18000
 ; printing object cube_1 id:0 copy 0
+EXCLUDE_OBJECT_START NAME=cube_1_id_0_copy_0
+EXCLUDE_OBJECT_START NAME=cube_1 id:0 copy 0
+
 G1 X152.011 Y153.994
 G1 Z3.200000
 G1 E0.75000 F1800
@@ -4379,7 +6456,13 @@ G1 X151.694 Y155.005 E0.07375
 G1 E-0.75000 F3000
 G1 Z3.600000 F18000
 ; stop printing object cube_1 id:0 copy 0
+EXCLUDE_OBJECT_END NAME=cube_1_id_0_copy_0
+EXCLUDE_OBJECT_END NAME=cube_1 id:0 copy 0
+
 ; printing object cube_1 id:0 copy 1
+EXCLUDE_OBJECT_START NAME=cube_1_id_0_copy_1
+EXCLUDE_OBJECT_START NAME=cube_1 id:0 copy 1
+
 G1 X141.011 Y153.994
 G1 Z3.200000
 G1 E0.75000 F1800
@@ -4421,7 +6504,13 @@ G1 X140.694 Y155.005 E0.07375
 G1 E-0.75000 F3000
 G1 Z3.600000 F18000
 ; stop printing object cube_1 id:0 copy 1
+EXCLUDE_OBJECT_END NAME=cube_1_id_0_copy_1
+EXCLUDE_OBJECT_END NAME=cube_1 id:0 copy 1
+
 ; printing object union_3 id:2 copy 0
+EXCLUDE_OBJECT_START NAME=union_3_id_2_copy_0
+EXCLUDE_OBJECT_START NAME=union_3 id:2 copy 0
+
 G1 X138.000 Y146.006
 G1 Z3.200000
 G1 E0.75000 F1800
@@ -4511,7 +6600,13 @@ G1 X148.836 Y145.688 E0.08516
 G1 E-0.75000 F3000
 G1 Z3.600000 F18000
 ; stop printing object union_3 id:2 copy 0
+EXCLUDE_OBJECT_END NAME=union_3_id_2_copy_0
+EXCLUDE_OBJECT_END NAME=union_3 id:2 copy 0
+
 ; printing object cylinder_2 id:1 copy 0
+EXCLUDE_OBJECT_START NAME=cylinder_2_id_1_copy_0
+EXCLUDE_OBJECT_START NAME=cylinder_2 id:1 copy 0
+
 G1 X159.036 Y148.209
 G1 Z3.200000
 G1 E0.75000 F1800
@@ -4544,6 +6639,9 @@ G1 X160.385 Y149.760 E0.06666
 ;3.4
 
 ; stop printing object cylinder_2 id:1 copy 0
+EXCLUDE_OBJECT_END NAME=cylinder_2_id_1_copy_0
+EXCLUDE_OBJECT_END NAME=cylinder_2 id:1 copy 0
+
 G1 Z3.400000 F18000
 ;AFTER_LAYER_CHANGE
 ;3.4
@@ -4553,6 +6651,9 @@ TIMELAPSE_TAKE_FRAME
 G1 E-0.75000 F3000
 G1 Z3.800000 F18000
 ; printing object cube_1 id:0 copy 0
+EXCLUDE_OBJECT_START NAME=cube_1_id_0_copy_0
+EXCLUDE_OBJECT_START NAME=cube_1 id:0 copy 0
+
 G1 X152.011 Y153.994
 G1 Z3.400000
 G1 E0.75000 F1800
@@ -4593,7 +6694,13 @@ G1 X151.694 Y154.864 E0.07375
 G1 E-0.75000 F3000
 G1 Z3.800000 F18000
 ; stop printing object cube_1 id:0 copy 0
+EXCLUDE_OBJECT_END NAME=cube_1_id_0_copy_0
+EXCLUDE_OBJECT_END NAME=cube_1 id:0 copy 0
+
 ; printing object cube_1 id:0 copy 1
+EXCLUDE_OBJECT_START NAME=cube_1_id_0_copy_1
+EXCLUDE_OBJECT_START NAME=cube_1 id:0 copy 1
+
 G1 X141.011 Y153.994
 G1 Z3.400000
 G1 E0.75000 F1800
@@ -4634,7 +6741,13 @@ G1 X140.694 Y154.864 E0.07375
 G1 E-0.75000 F3000
 G1 Z3.800000 F18000
 ; stop printing object cube_1 id:0 copy 1
+EXCLUDE_OBJECT_END NAME=cube_1_id_0_copy_1
+EXCLUDE_OBJECT_END NAME=cube_1 id:0 copy 1
+
 ; printing object union_3 id:2 copy 0
+EXCLUDE_OBJECT_START NAME=union_3_id_2_copy_0
+EXCLUDE_OBJECT_START NAME=union_3 id:2 copy 0
+
 G1 X138.000 Y146.006
 G1 Z3.400000
 G1 E0.75000 F1800
@@ -4723,7 +6836,13 @@ G1 X150.694 Y143.864 E0.06541
 G1 E-0.75000 F3000
 G1 Z3.800000 F18000
 ; stop printing object union_3 id:2 copy 0
+EXCLUDE_OBJECT_END NAME=union_3_id_2_copy_0
+EXCLUDE_OBJECT_END NAME=union_3 id:2 copy 0
+
 ; printing object cylinder_2 id:1 copy 0
+EXCLUDE_OBJECT_START NAME=cylinder_2_id_1_copy_0
+EXCLUDE_OBJECT_START NAME=cylinder_2 id:1 copy 0
+
 G1 X159.138 Y147.928
 G1 Z3.400000
 G1 E0.75000 F1800
@@ -4757,6 +6876,9 @@ G1 X159.500 Y147.945 E0.06175
 ;3.6
 
 ; stop printing object cylinder_2 id:1 copy 0
+EXCLUDE_OBJECT_END NAME=cylinder_2_id_1_copy_0
+EXCLUDE_OBJECT_END NAME=cylinder_2 id:1 copy 0
+
 G1 Z3.600000 F18000
 ;AFTER_LAYER_CHANGE
 ;3.6
@@ -4766,6 +6888,9 @@ TIMELAPSE_TAKE_FRAME
 G1 E-0.75000 F3000
 G1 Z4.000000 F18000
 ; printing object cube_1 id:0 copy 0
+EXCLUDE_OBJECT_START NAME=cube_1_id_0_copy_0
+EXCLUDE_OBJECT_START NAME=cube_1 id:0 copy 0
+
 G1 X152.011 Y153.994
 G1 Z3.600000
 G1 E0.75000 F1800
@@ -4805,7 +6930,13 @@ G1 X151.694 Y154.998 E0.06058
 G1 E-0.75000 F3000
 G1 Z4.000000 F18000
 ; stop printing object cube_1 id:0 copy 0
+EXCLUDE_OBJECT_END NAME=cube_1_id_0_copy_0
+EXCLUDE_OBJECT_END NAME=cube_1 id:0 copy 0
+
 ; printing object cube_1 id:0 copy 1
+EXCLUDE_OBJECT_START NAME=cube_1_id_0_copy_1
+EXCLUDE_OBJECT_START NAME=cube_1 id:0 copy 1
+
 G1 X141.011 Y153.994
 G1 Z3.600000
 G1 E0.75000 F1800
@@ -4845,7 +6976,13 @@ G1 X140.694 Y154.998 E0.06058
 G1 E-0.75000 F3000
 G1 Z4.000000 F18000
 ; stop printing object cube_1 id:0 copy 1
+EXCLUDE_OBJECT_END NAME=cube_1_id_0_copy_1
+EXCLUDE_OBJECT_END NAME=cube_1 id:0 copy 1
+
 ; printing object union_3 id:2 copy 0
+EXCLUDE_OBJECT_START NAME=union_3_id_2_copy_0
+EXCLUDE_OBJECT_START NAME=union_3 id:2 copy 0
+
 G1 X138.000 Y146.006
 G1 Z3.600000
 G1 E0.75000 F1800
@@ -4932,7 +7069,13 @@ G1 X150.694 Y143.722 E0.06541
 G1 E-0.75000 F3000
 G1 Z4.000000 F18000
 ; stop printing object union_3 id:2 copy 0
+EXCLUDE_OBJECT_END NAME=union_3_id_2_copy_0
+EXCLUDE_OBJECT_END NAME=union_3 id:2 copy 0
+
 ; printing object cylinder_2 id:1 copy 0
+EXCLUDE_OBJECT_START NAME=cylinder_2_id_1_copy_0
+EXCLUDE_OBJECT_START NAME=cylinder_2 id:1 copy 0
+
 G1 X159.138 Y147.928
 G1 Z3.600000
 G1 E0.75000 F1800
@@ -4966,6 +7109,9 @@ G1 X160.265 Y149.739 E0.05524
 ;3.8
 
 ; stop printing object cylinder_2 id:1 copy 0
+EXCLUDE_OBJECT_END NAME=cylinder_2_id_1_copy_0
+EXCLUDE_OBJECT_END NAME=cylinder_2 id:1 copy 0
+
 G1 Z3.800000 F18000
 ;AFTER_LAYER_CHANGE
 ;3.8
@@ -4975,6 +7121,9 @@ TIMELAPSE_TAKE_FRAME
 G1 E-0.75000 F3000
 G1 Z4.200000 F18000
 ; printing object cube_1 id:0 copy 0
+EXCLUDE_OBJECT_START NAME=cube_1_id_0_copy_0
+EXCLUDE_OBJECT_START NAME=cube_1 id:0 copy 0
+
 G1 X152.011 Y153.994
 G1 Z3.800000
 G1 E0.75000 F1800
@@ -5014,7 +7163,13 @@ G1 X151.694 Y155.280 E0.05045
 G1 E-0.75000 F3000
 G1 Z4.200000 F18000
 ; stop printing object cube_1 id:0 copy 0
+EXCLUDE_OBJECT_END NAME=cube_1_id_0_copy_0
+EXCLUDE_OBJECT_END NAME=cube_1 id:0 copy 0
+
 ; printing object cube_1 id:0 copy 1
+EXCLUDE_OBJECT_START NAME=cube_1_id_0_copy_1
+EXCLUDE_OBJECT_START NAME=cube_1 id:0 copy 1
+
 G1 X141.011 Y153.994
 G1 Z3.800000
 G1 E0.75000 F1800
@@ -5054,7 +7209,13 @@ G1 X140.694 Y155.280 E0.05045
 G1 E-0.75000 F3000
 G1 Z4.200000 F18000
 ; stop printing object cube_1 id:0 copy 1
+EXCLUDE_OBJECT_END NAME=cube_1_id_0_copy_1
+EXCLUDE_OBJECT_END NAME=cube_1 id:0 copy 1
+
 ; printing object union_3 id:2 copy 0
+EXCLUDE_OBJECT_START NAME=union_3_id_2_copy_0
+EXCLUDE_OBJECT_START NAME=union_3 id:2 copy 0
+
 G1 X138.000 Y146.006
 G1 Z3.800000
 G1 E0.75000 F1800
@@ -5102,7 +7263,13 @@ G1 X138.317 Y143.319 E0.08492
 G1 E-0.75000 F3000
 G1 Z4.200000 F18000
 ; stop printing object union_3 id:2 copy 0
+EXCLUDE_OBJECT_END NAME=union_3_id_2_copy_0
+EXCLUDE_OBJECT_END NAME=union_3 id:2 copy 0
+
 ; printing object cylinder_2 id:1 copy 0
+EXCLUDE_OBJECT_START NAME=cylinder_2_id_1_copy_0
+EXCLUDE_OBJECT_START NAME=cylinder_2 id:1 copy 0
+
 G1 X159.036 Y148.209
 G1 Z3.800000
 G1 E0.75000 F1800
@@ -5136,6 +7303,9 @@ G1 X160.069 Y149.682 E0.04602
 ;4
 
 ; stop printing object cylinder_2 id:1 copy 0
+EXCLUDE_OBJECT_END NAME=cylinder_2_id_1_copy_0
+EXCLUDE_OBJECT_END NAME=cylinder_2 id:1 copy 0
+
 G1 Z4.000000 F18000
 ;AFTER_LAYER_CHANGE
 ;4
@@ -5145,6 +7315,9 @@ TIMELAPSE_TAKE_FRAME
 G1 E-0.75000 F3000
 G1 Z4.400000 F18000
 ; printing object cube_1 id:0 copy 0
+EXCLUDE_OBJECT_START NAME=cube_1_id_0_copy_0
+EXCLUDE_OBJECT_START NAME=cube_1 id:0 copy 0
+
 G1 X152.011 Y153.994
 G1 Z4.000000
 G1 E0.75000 F1800
@@ -5197,7 +7370,13 @@ M106 S73.95
 G1 E-0.75000 F3000
 G1 Z4.400000 F18000
 ; stop printing object cube_1 id:0 copy 0
+EXCLUDE_OBJECT_END NAME=cube_1_id_0_copy_0
+EXCLUDE_OBJECT_END NAME=cube_1 id:0 copy 0
+
 ; printing object cube_1 id:0 copy 1
+EXCLUDE_OBJECT_START NAME=cube_1_id_0_copy_1
+EXCLUDE_OBJECT_START NAME=cube_1 id:0 copy 1
+
 G1 X141.011 Y153.994
 G1 Z4.000000
 G1 E0.75000 F1800
@@ -5252,7 +7431,13 @@ M106 S73.95
 G1 E-0.75000 F3000
 G1 Z4.400000 F18000
 ; stop printing object cube_1 id:0 copy 1
+EXCLUDE_OBJECT_END NAME=cube_1_id_0_copy_1
+EXCLUDE_OBJECT_END NAME=cube_1 id:0 copy 1
+
 ; printing object union_3 id:2 copy 0
+EXCLUDE_OBJECT_START NAME=union_3_id_2_copy_0
+EXCLUDE_OBJECT_START NAME=union_3 id:2 copy 0
+
 G1 X138.000 Y146.006
 G1 Z4.000000
 G1 E0.75000 F1800
@@ -5340,7 +7525,13 @@ M106 S73.95
 G1 E-0.75000 F3000
 G1 Z4.400000 F18000
 ; stop printing object union_3 id:2 copy 0
+EXCLUDE_OBJECT_END NAME=union_3_id_2_copy_0
+EXCLUDE_OBJECT_END NAME=union_3 id:2 copy 0
+
 ; printing object cylinder_2 id:1 copy 0
+EXCLUDE_OBJECT_START NAME=cylinder_2_id_1_copy_0
+EXCLUDE_OBJECT_START NAME=cylinder_2 id:1 copy 0
+
 G1 X159.036 Y148.209
 G1 Z4.000000
 G1 E0.75000 F1800
@@ -5382,6 +7573,9 @@ M106 S73.95
 ;4.2
 
 ; stop printing object cylinder_2 id:1 copy 0
+EXCLUDE_OBJECT_END NAME=cylinder_2_id_1_copy_0
+EXCLUDE_OBJECT_END NAME=cylinder_2 id:1 copy 0
+
 G1 Z4.200000 F18000
 ;AFTER_LAYER_CHANGE
 ;4.2
@@ -5391,6 +7585,9 @@ TIMELAPSE_TAKE_FRAME
 G1 E-0.75000 F3000
 G1 Z4.600000 F18000
 ; printing object cube_1 id:0 copy 0
+EXCLUDE_OBJECT_START NAME=cube_1_id_0_copy_0
+EXCLUDE_OBJECT_START NAME=cube_1 id:0 copy 0
+
 G1 X152.011 Y153.994
 G1 Z4.200000
 G1 E0.75000 F1800
@@ -5442,7 +7639,13 @@ G1 X151.872 Y154.825 E0.02252
 G1 E-0.75000 F3000
 G1 Z4.600000 F18000
 ; stop printing object cube_1 id:0 copy 0
+EXCLUDE_OBJECT_END NAME=cube_1_id_0_copy_0
+EXCLUDE_OBJECT_END NAME=cube_1 id:0 copy 0
+
 ; printing object cube_1 id:0 copy 1
+EXCLUDE_OBJECT_START NAME=cube_1_id_0_copy_1
+EXCLUDE_OBJECT_START NAME=cube_1 id:0 copy 1
+
 G1 X141.011 Y153.994
 G1 Z4.200000
 G1 E0.75000 F1800
@@ -5493,7 +7696,13 @@ G1 X140.872 Y154.825 E0.02252
 G1 E-0.75000 F3000
 G1 Z4.600000 F18000
 ; stop printing object cube_1 id:0 copy 1
+EXCLUDE_OBJECT_END NAME=cube_1_id_0_copy_1
+EXCLUDE_OBJECT_END NAME=cube_1 id:0 copy 1
+
 ; printing object union_3 id:2 copy 0
+EXCLUDE_OBJECT_START NAME=union_3_id_2_copy_0
+EXCLUDE_OBJECT_START NAME=union_3 id:2 copy 0
+
 G1 X138.000 Y146.006
 G1 Z4.200000
 G1 E0.75000 F1800
@@ -5584,7 +7793,13 @@ G1 X138.138 Y145.280 E0.01791
 G1 E-0.75000 F3000
 G1 Z4.600000 F18000
 ; stop printing object union_3 id:2 copy 0
+EXCLUDE_OBJECT_END NAME=union_3_id_2_copy_0
+EXCLUDE_OBJECT_END NAME=union_3 id:2 copy 0
+
 ; printing object cylinder_2 id:1 copy 0
+EXCLUDE_OBJECT_START NAME=cylinder_2_id_1_copy_0
+EXCLUDE_OBJECT_START NAME=cylinder_2 id:1 copy 0
+
 G1 X159.006 Y148.357
 G1 Z4.200000
 G1 E0.75000 F1800
@@ -5626,6 +7841,9 @@ G1 X159.145 Y148.763 E0.04021
 ;4.4
 
 ; stop printing object cylinder_2 id:1 copy 0
+EXCLUDE_OBJECT_END NAME=cylinder_2_id_1_copy_0
+EXCLUDE_OBJECT_END NAME=cylinder_2 id:1 copy 0
+
 G1 Z4.400000 F18000
 ;AFTER_LAYER_CHANGE
 ;4.4
@@ -5635,6 +7853,9 @@ TIMELAPSE_TAKE_FRAME
 G1 E-0.75000 F3000
 G1 Z4.800000 F18000
 ; printing object cube_1 id:0 copy 0
+EXCLUDE_OBJECT_START NAME=cube_1_id_0_copy_0
+EXCLUDE_OBJECT_START NAME=cube_1 id:0 copy 0
+
 G1 X152.011 Y153.994
 G1 Z4.400000
 G1 E0.75000 F1800
@@ -5684,7 +7905,13 @@ G1 X149.138 Y154.867 E0.02624
 G1 E-0.75000 F3000
 G1 Z4.800000 F18000
 ; stop printing object cube_1 id:0 copy 0
+EXCLUDE_OBJECT_END NAME=cube_1_id_0_copy_0
+EXCLUDE_OBJECT_END NAME=cube_1 id:0 copy 0
+
 ; printing object cube_1 id:0 copy 1
+EXCLUDE_OBJECT_START NAME=cube_1_id_0_copy_1
+EXCLUDE_OBJECT_START NAME=cube_1 id:0 copy 1
+
 G1 X141.011 Y153.994
 G1 Z4.400000
 G1 E0.75000 F1800
@@ -5735,7 +7962,13 @@ G1 X138.138 Y154.867 E0.02624
 G1 E-0.75000 F3000
 G1 Z4.800000 F18000
 ; stop printing object cube_1 id:0 copy 1
+EXCLUDE_OBJECT_END NAME=cube_1_id_0_copy_1
+EXCLUDE_OBJECT_END NAME=cube_1 id:0 copy 1
+
 ; printing object union_3 id:2 copy 0
+EXCLUDE_OBJECT_START NAME=union_3_id_2_copy_0
+EXCLUDE_OBJECT_START NAME=union_3 id:2 copy 0
+
 G1 X138.000 Y146.006
 G1 Z4.400000
 G1 E0.75000 F1800
@@ -5822,7 +8055,13 @@ G1 X138.138 Y143.759 E0.02022
 G1 E-0.75000 F3000
 G1 Z4.800000 F18000
 ; stop printing object union_3 id:2 copy 0
+EXCLUDE_OBJECT_END NAME=union_3_id_2_copy_0
+EXCLUDE_OBJECT_END NAME=union_3 id:2 copy 0
+
 ; printing object cylinder_2 id:1 copy 0
+EXCLUDE_OBJECT_START NAME=cylinder_2_id_1_copy_0
+EXCLUDE_OBJECT_START NAME=cylinder_2 id:1 copy 0
+
 G1 X159.019 Y148.283
 G1 Z4.400000
 G1 E0.75000 F1800
@@ -5900,6 +8139,9 @@ G2 X159.267 Y148.266 I0.817 J0.622 E0.00151
 ;4.6
 
 ; stop printing object cylinder_2 id:1 copy 0
+EXCLUDE_OBJECT_END NAME=cylinder_2_id_1_copy_0
+EXCLUDE_OBJECT_END NAME=cylinder_2 id:1 copy 0
+
 G1 Z4.600000 F18000
 ;AFTER_LAYER_CHANGE
 ;4.6
@@ -5909,6 +8151,9 @@ TIMELAPSE_TAKE_FRAME
 G1 E-0.75000 F3000
 G1 Z5.000000 F18000
 ; printing object cube_1 id:0 copy 0
+EXCLUDE_OBJECT_START NAME=cube_1_id_0_copy_0
+EXCLUDE_OBJECT_START NAME=cube_1 id:0 copy 0
+
 G1 X152.011 Y153.994
 G1 Z4.600000
 G1 E0.75000 F1800
@@ -5959,7 +8204,13 @@ G1 X151.872 Y154.936 E0.02949
 G1 E-0.75000 F3000
 G1 Z5.000000 F18000
 ; stop printing object cube_1 id:0 copy 0
+EXCLUDE_OBJECT_END NAME=cube_1_id_0_copy_0
+EXCLUDE_OBJECT_END NAME=cube_1 id:0 copy 0
+
 ; printing object cube_1 id:0 copy 1
+EXCLUDE_OBJECT_START NAME=cube_1_id_0_copy_1
+EXCLUDE_OBJECT_START NAME=cube_1 id:0 copy 1
+
 G1 X141.011 Y153.994
 G1 Z4.600000
 G1 E0.75000 F1800
@@ -6010,7 +8261,13 @@ G1 X140.872 Y154.936 E0.02949
 G1 E-0.75000 F3000
 G1 Z5.000000 F18000
 ; stop printing object cube_1 id:0 copy 1
+EXCLUDE_OBJECT_END NAME=cube_1_id_0_copy_1
+EXCLUDE_OBJECT_END NAME=cube_1 id:0 copy 1
+
 ; printing object union_3 id:2 copy 0
+EXCLUDE_OBJECT_START NAME=union_3_id_2_copy_0
+EXCLUDE_OBJECT_START NAME=union_3 id:2 copy 0
+
 G1 X138.000 Y146.006
 G1 Z4.600000
 G1 E0.75000 F1800
@@ -6097,7 +8354,13 @@ G1 X138.764 Y145.867 E0.02022
 G1 E-0.75000 F3000
 G1 Z5.000000 F18000
 ; stop printing object union_3 id:2 copy 0
+EXCLUDE_OBJECT_END NAME=union_3_id_2_copy_0
+EXCLUDE_OBJECT_END NAME=union_3 id:2 copy 0
+
 ; printing object cylinder_2 id:1 copy 0
+EXCLUDE_OBJECT_START NAME=cylinder_2_id_1_copy_0
+EXCLUDE_OBJECT_START NAME=cylinder_2 id:1 copy 0
+
 G1 X159.000 Y148.403
 G1 Z4.600000
 G1 E0.75000 F1800
@@ -6178,6 +8441,9 @@ G2 X160.773 Y147.345 I-0.354 J0.484 E0.00110
 ;4.8
 
 ; stop printing object cylinder_2 id:1 copy 0
+EXCLUDE_OBJECT_END NAME=cylinder_2_id_1_copy_0
+EXCLUDE_OBJECT_END NAME=cylinder_2 id:1 copy 0
+
 G1 Z4.800000 F18000
 ;AFTER_LAYER_CHANGE
 ;4.8
@@ -6187,6 +8453,9 @@ TIMELAPSE_TAKE_FRAME
 G1 E-0.75000 F3000
 G1 Z5.200000 F18000
 ; printing object cube_1 id:0 copy 0
+EXCLUDE_OBJECT_START NAME=cube_1_id_0_copy_0
+EXCLUDE_OBJECT_START NAME=cube_1 id:0 copy 0
+
 G1 X152.011 Y153.994
 G1 Z4.800000
 G1 E0.75000 F1800
@@ -6237,7 +8506,13 @@ G1 X149.138 Y154.867 E0.02624
 G1 E-0.75000 F3000
 G1 Z5.200000 F18000
 ; stop printing object cube_1 id:0 copy 0
+EXCLUDE_OBJECT_END NAME=cube_1_id_0_copy_0
+EXCLUDE_OBJECT_END NAME=cube_1 id:0 copy 0
+
 ; printing object cube_1 id:0 copy 1
+EXCLUDE_OBJECT_START NAME=cube_1_id_0_copy_1
+EXCLUDE_OBJECT_START NAME=cube_1 id:0 copy 1
+
 G1 X141.011 Y153.994
 G1 Z4.800000
 G1 E0.75000 F1800
@@ -6288,7 +8563,13 @@ G1 X138.138 Y154.867 E0.02624
 G1 E-0.75000 F3000
 G1 Z5.200000 F18000
 ; stop printing object cube_1 id:0 copy 1
+EXCLUDE_OBJECT_END NAME=cube_1_id_0_copy_1
+EXCLUDE_OBJECT_END NAME=cube_1 id:0 copy 1
+
 ; printing object union_3 id:2 copy 0
+EXCLUDE_OBJECT_START NAME=union_3_id_2_copy_0
+EXCLUDE_OBJECT_START NAME=union_3 id:2 copy 0
+
 G1 X138.000 Y146.006
 G1 Z4.800000
 G1 E0.75000 F1800
@@ -6375,7 +8656,13 @@ G1 X138.138 Y143.759 E0.02022
 G1 E-0.75000 F3000
 G1 Z5.200000 F18000
 ; stop printing object union_3 id:2 copy 0
+EXCLUDE_OBJECT_END NAME=union_3_id_2_copy_0
+EXCLUDE_OBJECT_END NAME=union_3 id:2 copy 0
+
 ; printing object cylinder_2 id:1 copy 0
+EXCLUDE_OBJECT_START NAME=cylinder_2_id_1_copy_0
+EXCLUDE_OBJECT_START NAME=cylinder_2 id:1 copy 0
+
 G1 X159.019 Y148.283
 G1 Z4.800000
 G1 E0.75000 F1800
@@ -6454,6 +8741,9 @@ M106 S76.5
 ;5
 
 ; stop printing object cylinder_2 id:1 copy 0
+EXCLUDE_OBJECT_END NAME=cylinder_2_id_1_copy_0
+EXCLUDE_OBJECT_END NAME=cylinder_2 id:1 copy 0
+
 G1 Z5.000000 F18000
 ;AFTER_LAYER_CHANGE
 ;5
@@ -6463,6 +8753,9 @@ TIMELAPSE_TAKE_FRAME
 G1 E-0.75000 F3000
 G1 Z5.400000 F18000
 ; printing object cube_1 id:0 copy 0
+EXCLUDE_OBJECT_START NAME=cube_1_id_0_copy_0
+EXCLUDE_OBJECT_START NAME=cube_1 id:0 copy 0
+
 G1 X152.795 Y153.210
 G1 Z5.000000
 G1 E0.75000 F1800
@@ -6511,7 +8804,13 @@ G1 X148.344 Y157.120 E0.01646
 G1 E-0.75000
 G1 Z5.400000 F18000
 ; stop printing object cube_1 id:0 copy 0
+EXCLUDE_OBJECT_END NAME=cube_1_id_0_copy_0
+EXCLUDE_OBJECT_END NAME=cube_1 id:0 copy 0
+
 ; printing object cube_1 id:0 copy 1
+EXCLUDE_OBJECT_START NAME=cube_1_id_0_copy_1
+EXCLUDE_OBJECT_START NAME=cube_1 id:0 copy 1
+
 G1 X141.795 Y157.790
 G1 Z5.000000
 G1 E0.75000 F1800
@@ -6564,7 +8863,13 @@ G1 X137.344 Y157.120 E0.01646
 G1 E-0.75000
 G1 Z5.400000 F18000
 ; stop printing object cube_1 id:0 copy 1
+EXCLUDE_OBJECT_END NAME=cube_1_id_0_copy_1
+EXCLUDE_OBJECT_END NAME=cube_1 id:0 copy 1
+
 ; printing object union_3 id:2 copy 0
+EXCLUDE_OBJECT_START NAME=union_3_id_2_copy_0
+EXCLUDE_OBJECT_START NAME=union_3 id:2 copy 0
+
 G1 X137.215 Y146.790
 G1 Z5.000000
 G1 E0.75000 F1800
@@ -6653,7 +8958,13 @@ G1 X137.344 Y146.228 E0.01138
 G1 E-0.75000
 G1 Z5.400000 F18000
 ; stop printing object union_3 id:2 copy 0
+EXCLUDE_OBJECT_END NAME=union_3_id_2_copy_0
+EXCLUDE_OBJECT_END NAME=union_3 id:2 copy 0
+
 ; printing object cylinder_2 id:1 copy 0
+EXCLUDE_OBJECT_START NAME=cylinder_2_id_1_copy_0
+EXCLUDE_OBJECT_START NAME=cylinder_2 id:1 copy 0
+
 G1 X158.216 Y148.353
 G1 Z5.000000
 G1 E0.75000 F1800
@@ -6741,396 +9052,8 @@ G2 X162.447 Y147.931 I9.257 J-6.124 E0.00095
 G1 E-0.75000 F3000
 G1 Z5.400000 F18000
 ; stop printing object cylinder_2 id:1 copy 0
-M107
-;TYPE:Custom
-print_end    ;end script from macro
-; filament used [mm] = 264.59
-; filament used [cm3] = 0.64
-; filament used [g] = 0.67
-; filament cost = 0.01
-; total filament used [g] = 0.67
-; total filament cost = 0.01
-; estimated printing time (normal mode) = 7m 19s
+EXCLUDE_OBJECT_END NAME=cylinder_2_id_1_copy_0
 
-; allow_empty_layers = 0
-; avoid_crossing_not_first_layer = 1
-; avoid_crossing_perimeters = 0
-; avoid_crossing_perimeters_max_detour = 0
-; bed_custom_model =
-; bed_custom_texture =
-; bed_shape = 0x0,300x0,300x300,0x300
-; bed_temperature = 105
-; before_layer_gcode = ;BEFORE_LAYER_CHANGE\n;[layer_z]\n
-; between_objects_gcode =
-; bottom_fill_pattern = monotonicgapfill
-; bottom_solid_layers = 5
-; bottom_solid_min_thickness = 0
-; bridge_acceleration = 3000
-; bridge_angle = 0
-; bridge_fan_speed = 30
-; bridge_flow_ratio = 80%
-; bridge_overlap = 100%
-; bridge_speed = 60
-; bridge_speed_internal = 150%
-; bridged_infill_margin = 200%
-; brim_ears = 0
-; brim_ears_detection_length = 1
-; brim_ears_max_angle = 120
-; brim_ears_pattern = concentric
-; brim_inside_holes = 0
-; brim_offset = 0
-; brim_width = 0
-; brim_width_interior = 0
-; chamber_temperature = 40
-; clip_multipart_objects = 1
-; color_change_gcode = M600
-; compatible_printers_condition_cummulative = "printer_model=~/.*Voron_v2.*/ and nozzle_diameter[0]==0.4";"printer_model=~/.*Voron.*/ and printer_notes=~/.*E3DV6.*/"
-; complete_objects = 0
-; complete_objects_one_skirt = 0
-; complete_objects_sort = object
-; cooling = 1
-; cooling_tube_length = 5
-; cooling_tube_retraction = 91.5
-; curve_smoothing_angle_concave = 160
-; curve_smoothing_angle_convex = 160
-; curve_smoothing_cutoff_dist = 4
-; curve_smoothing_precision = 0
-; default_acceleration = 3000
-; default_filament_profile = "Basic PLA @VORON"
-; default_print_profile = 0.15mm 0.4nozzle
-; deretract_speed = 30
-; disable_fan_first_layers = 5
-; dont_support_bridges = 1
-; draft_shield = 0
-; duplicate_distance = 6
-; end_filament_gcode = ""
-; end_gcode = print_end    ;end script from macro
-; enforce_full_fill_volume = 1
-; ensure_vertical_shell_thickness = 1
-; exact_last_layer_height = 0
-; external_infill_margin = 150%
-; external_perimeter_cut_corners = 0%
-; external_perimeter_extrusion_spacing =
-; external_perimeter_extrusion_width = 105%
-; external_perimeter_fan_speed = -1
-; external_perimeter_overlap = 100%
-; external_perimeter_speed = 80
-; external_perimeters_first = 0
-; external_perimeters_hole = 1
-; external_perimeters_nothole = 1
-; external_perimeters_vase = 0
-; extra_loading_move = -2
-; extra_perimeters = 0
-; extra_perimeters_odd_layers = 0
-; extra_perimeters_overhangs = 0
-; extruder_clearance_height = 20
-; extruder_clearance_radius = 70
-; extruder_colour = #8000FF
-; extruder_fan_offset = 0%
-; extruder_offset = 0x0
-; extruder_temperature_offset = 0
-; extrusion_axis = E
-; extrusion_multiplier = 0.94
-; extrusion_spacing =
-; extrusion_width = 110%
-; fan_always_on = 1
-; fan_below_layer_time = 45
-; fan_kickstart = 0
-; fan_percentage = 0
-; fan_speedup_overhangs = 1
-; fan_speedup_time = 0
-; feature_gcode =
-; filament_colour = #A768DF
-; filament_cooling_final_speed = 3.4
-; filament_cooling_initial_speed = 2.2
-; filament_cooling_moves = 4
-; filament_cooling_zone_pause = 0
-; filament_cost = 22
-; filament_density = 1.05
-; filament_diameter = 1.75
-; filament_dip_extraction_speed = 70
-; filament_dip_insertion_speed = 33
-; filament_enable_toolchange_part_fan = 0
-; filament_enable_toolchange_temp = 0
-; filament_load_time = 0
-; filament_loading_speed = 28
-; filament_loading_speed_start = 3
-; filament_max_speed = 0
-; filament_max_volumetric_speed = 11
-; filament_max_wipe_tower_speed = 0
-; filament_melt_zone_pause = 0
-; filament_minimal_purge_on_wipe_tower = 15
-; filament_notes = ""
-; filament_ramming_parameters = "120 100 6.6 6.8 7.2 7.6 7.9 8.2 8.7 9.4 9.9 10.0| 0.05 6.6 0.45 6.8 0.95 7.8 1.45 8.3 1.95 9.7 2.45 10 2.95 7.6 3.45 7.6 3.95 7.6 4.45 7.6 4.95 7.6"
-; filament_settings_id = "KVP ABS @VORON - Copy"
-; filament_shrink = 100%
-; filament_skinnydip_distance = 31
-; filament_soluble = 0
-; filament_spool_weight = 0
-; filament_toolchange_delay = 0
-; filament_toolchange_part_fan_speed = 50
-; filament_toolchange_temp = 200
-; filament_type = ABS
-; filament_unload_time = 0
-; filament_unloading_speed = 90
-; filament_unloading_speed_start = 100
-; filament_use_fast_skinnydip = 0
-; filament_use_skinnydip = 0
-; filament_vendor = (Unknown)
-; filament_wipe_advanced_pigment = 0.5
-; fill_angle = 45
-; fill_angle_increment = 0
-; fill_density = 42%
-; fill_pattern = adaptivecubic
-; fill_smooth_distribution = 15%
-; fill_smooth_width = 50%
-; fill_top_flow_ratio = 100%
-; first_layer_acceleration = 1000
-; first_layer_bed_temperature = 110
-; first_layer_extrusion_spacing =
-; first_layer_extrusion_width = 140%
-; first_layer_flow_ratio = 100%
-; first_layer_height = 0.2
-; first_layer_infill_speed = 30
-; first_layer_size_compensation = -0.1
-; first_layer_speed = 25
-; first_layer_temperature = 240
-; full_fan_speed_layer = 0
-; gap_fill = 1
-; gap_fill_min_area = 100%
-; gap_fill_overlap = 100%
-; gap_fill_speed = 40
-; gcode_comments = 0
-; gcode_flavor = klipper
-; gcode_label_objects = 1
-; gcode_precision_e = 5
-; gcode_precision_xyz = 3
-; high_current_on_filament_swap = 0
-; hole_size_compensation = -0.05
-; hole_size_threshold = 100
-; hole_to_polyhole = 0
-; hole_to_polyhole_threshold = 0.01
-; host_type = octoprint
-; infill_acceleration = 4000
-; infill_anchor = 600%
-; infill_anchor_max = 0
-; infill_connection = connected
-; infill_connection_bottom = connected
-; infill_connection_solid = connected
-; infill_connection_top = connected
-; infill_dense = 1
-; infill_dense_algo = autosmall
-; infill_every_layers = 1
-; infill_extruder = 1
-; infill_extrusion_spacing =
-; infill_extrusion_width = 110%
-; infill_first = 0
-; infill_only_where_needed = 0
-; infill_overlap = 20%
-; infill_speed = 150
-; inherits_cummulative = "0.2mm 0.4nozzle V2";"KVP ABS @VORON";"Voron_v2_300_afterburner 0.4 nozzle"
-; interface_shells = 0
-; ironing = 0
-; ironing_angle = -1
-; ironing_flowrate = 15%
-; ironing_spacing = 0.1
-; ironing_speed = 15
-; ironing_type = top
-; layer_gcode = ;AFTER_LAYER_CHANGE\n;[layer_z]\n\nTIMELAPSE_TAKE_FRAME
-; layer_height = 0.2
-; machine_limits_usage = time_estimate_only
-; machine_max_acceleration_e = 10000
-; machine_max_acceleration_extruding = 1500
-; machine_max_acceleration_retracting = 1500
-; machine_max_acceleration_travel = 1500,1250
-; machine_max_acceleration_x = 9000
-; machine_max_acceleration_y = 9000
-; machine_max_acceleration_z = 500
-; machine_max_feedrate_e = 120
-; machine_max_feedrate_x = 500
-; machine_max_feedrate_y = 500
-; machine_max_feedrate_z = 12
-; machine_max_jerk_e = 2.5
-; machine_max_jerk_x = 10
-; machine_max_jerk_y = 10
-; machine_max_jerk_z = 0.2
-; machine_min_extruding_rate = 0
-; machine_min_travel_rate = 0
-; max_fan_speed = 30
-; max_layer_height = 0.3
-; max_print_height = 300
-; max_print_speed = 300
-; max_speed_reduction = 90%
-; max_volumetric_speed = 0
-; milling_after_z = 200%
-; milling_extra_size = 150%
-; milling_post_process = 0
-; milling_speed = 30
-; milling_toolchange_end_gcode =
-; milling_toolchange_start_gcode =
-; min_fan_speed = 15
-; min_layer_height = 0.0375
-; min_length = 0.035
-; min_print_speed = 15
-; min_skirt_length = 20
-; min_width_top_surface = 200%
-; model_precision = 0.0001
-; no_perimeter_unsupported_algo = none
-; notes = TODO: check the size of the extruder and the y-bar clearance. Optimize & test supports.
-; nozzle_diameter = 0.4
-; only_one_perimeter_top = 1
-; only_one_perimeter_top_other_algo = 0
-; only_retract_when_crossing_perimeters = 1
-; ooze_prevention = 0
-; output_filename_format = [input_filename_base] ([filament_type]-[nozzle_diameter]).gcode
-; over_bridge_flow_ratio = 110%
-; overhangs_reverse = 1
-; overhangs_reverse_threshold = 250%
-; overhangs_speed = 40
-; overhangs_width = 110%
-; overhangs_width_speed = 50%
-; parking_pos_retraction = 92
-; pause_print_gcode = M601
-; perimeter_acceleration = 2000
-; perimeter_bonding = 0%
-; perimeter_extruder = 1
-; perimeter_extrusion_spacing =
-; perimeter_extrusion_width = 110%
-; perimeter_loop = 0
-; perimeter_loop_seam = rear
-; perimeter_overlap = 100%
-; perimeter_round_corners = 0
-; perimeter_speed = 120
-; perimeters = 3
-; physical_printer_settings_id = V2.1112
-; post_process = "C:\\Users\\kageu\\Downloads\\SuperSlicer\\ArcWelder\\bin\\ArcWelder.exe"
-; print_extrusion_multiplier = 100%
-; print_retract_length = -1
-; print_retract_lift = -1
-; print_settings_id = 0.2mm 0.4nozzle V2 - Copy
-; print_temperature = 0
-; printer_model = Voron_v2_300_aferburner
-; printer_notes = Unoffical profile, for now.\nE3DV6
-; printer_settings_id = Voron_v2_300_afterburner 0.4 nozzle - Copy
-; printer_technology = FFF
-; printer_variant = 0.4
-; printer_vendor =
-; raft_layers = 0
-; remaining_times = 0
-; resolution = 0.002
-; retract_before_travel = 3
-; retract_before_wipe = 0%
-; retract_layer_change = 0
-; retract_length = 0.75
-; retract_length_toolchange = 10
-; retract_lift = 0.4
-; retract_lift_above = 0.2
-; retract_lift_below = 500
-; retract_lift_first_layer = 0
-; retract_lift_top = "All surfaces"
-; retract_restart_extra = 0
-; retract_restart_extra_toolchange = 0
-; retract_speed = 50
-; seam_angle_cost = 100%
-; seam_position = cost
-; seam_travel_cost = 20%
-; silent_mode = 0
-; single_extruder_multi_material = 0
-; single_extruder_multi_material_priming = 1
-; skirt_distance = 3
-; skirt_extrusion_width = 0
-; skirt_height = 1
-; skirts = 2
-; slice_closing_radius = 0.049
-; slowdown_below_layer_time = 15
-; small_perimeter_max_length = 20
-; small_perimeter_min_length = 6
-; small_perimeter_speed = 40
-; solid_fill_pattern = rectilineargapfill
-; solid_infill_below_area = 0
-; solid_infill_every_layers = 0
-; solid_infill_extruder = 1
-; solid_infill_extrusion_spacing =
-; solid_infill_extrusion_width = 110%
-; solid_infill_speed = 120
-; spiral_vase = 0
-; standby_temperature_delta = -5
-; start_filament_gcode = ""
-; start_gcode = print_start EXTRUDER={first_layer_temperature[initial_extruder] + extruder_temperature_offset[initial_extruder]} BED=[first_layer_bed_temperature] CHAMBER=[chamber_temperature] MATERIAL=[filament_type]
-; start_gcode_manual = 0
-; support_material = 0
-; support_material_angle = 0
-; support_material_auto = 1
-; support_material_buildplate_only = 1
-; support_material_contact_distance_bottom = 0.15
-; support_material_contact_distance_top = 0.15
-; support_material_contact_distance_type = filament
-; support_material_enforce_layers = 0
-; support_material_extruder = 0
-; support_material_extrusion_width = 110%
-; support_material_interface_contact_loops = 0
-; support_material_interface_extruder = 0
-; support_material_interface_layers = 1
-; support_material_interface_pattern = sawtooth
-; support_material_interface_spacing = 0.2
-; support_material_interface_speed = 70
-; support_material_pattern = rectilinear
-; support_material_solid_first_layer = 1
-; support_material_spacing = 1
-; support_material_speed = 90
-; support_material_synchronize_layers = 0
-; support_material_threshold = 30
-; support_material_with_sheath = 0
-; support_material_xy_spacing = 0.6
-; temperature = 235
-; template_custom_gcode =
-; thin_perimeters = 1
-; thin_perimeters_all = 0
-; thin_walls = 1
-; thin_walls_merge = 1
-; thin_walls_min_width = 50%
-; thin_walls_overlap = 50%
-; thin_walls_speed = 40
-; threads = 24
-; thumbnails = 64x64,400x300
-; thumbnails_color = #018aff
-; thumbnails_custom_color = 0
-; thumbnails_with_bed = 1
-; time_estimation_compensation = 100%
-; tool_name = ""
-; toolchange_gcode =
-; top_fan_speed = 30
-; top_fill_pattern = monotonicgapfill
-; top_infill_extrusion_spacing =
-; top_infill_extrusion_width = 110%
-; top_solid_infill_speed = 50
-; top_solid_layers = 6
-; top_solid_min_thickness = 0
-; travel_speed = 300
-; travel_speed_z = 0
-; use_firmware_retraction = 0
-; use_relative_e_distances = 1
-; use_volumetric_e = 0
-; variable_layer_height = 1
-; wipe = 0
-; wipe_advanced = 0
-; wipe_advanced_algo = linear
-; wipe_advanced_multiplier = 60
-; wipe_advanced_nozzle_melted_volume = 120
-; wipe_extra_perimeter = 0
-; wipe_into_infill = 0
-; wipe_into_objects = 0
-; wipe_tower = 1
-; wipe_tower_bridging = 10
-; wipe_tower_brim = 150%
-; wipe_tower_no_sparse_layers = 0
-; wipe_tower_rotation_angle = 0
-; wipe_tower_width = 60
-; wipe_tower_x = 180
-; wipe_tower_y = 140
-; wiping_volumes_extruders = 70,70
-; wiping_volumes_matrix = 0
-; xy_inner_size_compensation = 0
-; xy_size_compensation = 0
-; z_offset = 0
-; z_step = 0.00625
+.
+
+================== 1 passed, 1 skipped, 7 deselected in 0.42s ==================

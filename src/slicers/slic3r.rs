@@ -27,12 +27,7 @@ pub fn list_objects(file: &mut (impl BufRead + Seek)) -> io::Result<Vec<KnownObj
         } else if let Some(_) = comment(preceded("stop printing", rest)).parse(&*line).ok() {
             if let Some(hull) = hull.take() {
                 let (id, start_pos) = printing.take().expect("printing");
-                objects.push(KnownObject {
-                    id,
-                    start_pos,
-                    end_pos: pos,
-                    hull,
-                });
+                objects.push(KnownObject::new(id, start_pos, pos, hull));
             }
         } else if let Some(extrude) = ExtrudeMove::parser().parse_next(&mut &*line).ok() {
             if printing.is_some() {
