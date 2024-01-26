@@ -1,12 +1,13 @@
 use super::{comment, ExtrudeMove, KnownObject};
 use crate::bounding_box::BoundingBox;
+use std::collections::HashMap;
 use std::io::{self, BufRead, Seek};
 use std::vec;
 use winnow::combinator::{preceded, rest};
 use winnow::Parser;
 
 pub fn list_objects(file: &mut (impl BufRead + Seek)) -> io::Result<Vec<KnownObject>> {
-    let mut objects = vec![];
+    let mut objects = HashMap::<String, KnownObject>::new();
 
     let mut printing = None;
     let mut hull: Option<BoundingBox> = None;
@@ -23,17 +24,22 @@ pub fn list_objects(file: &mut (impl BufRead + Seek)) -> io::Result<Vec<KnownObj
             printing = Some((id.trim().to_owned(), pos));
             if let Some(hull) = hull.take() {
                 let (id, start_pos) = printing.take().expect("printing");
-                objects.push(KnownObject {
-                    id,
-                    start_pos,
-                    end_pos: pos,
-                    hull,
-                });
+                objects
+                    .entry(id)
+                    .and_modify(|o| o.union(start_pos..pos, hull))
+                    .or_insert_with_key(|id| {
+                        KnownObject::new(id.to_string(), start_pos..pos, hull)
+                    });
             }
         } else if let Some(_) = comment(preceded("TIME_ELAPSED", rest)).parse(&*line).ok() {
             if let Some(hull) = hull.take() {
                 let (id, start_pos) = printing.take().expect("printing");
-                objects.push(KnownObject::new(id, start_pos, pos, hull));
+                objects
+                    .entry(id)
+                    .and_modify(|o| o.union(start_pos..pos, hull))
+                    .or_insert_with_key(|id| {
+                        KnownObject::new(id.to_string(), start_pos..pos, hull)
+                    });
             }
         } else if let Some(extrude) = ExtrudeMove::parser().parse_next(&mut &*line).ok() {
             if printing.is_some() {
@@ -47,5 +53,5 @@ pub fn list_objects(file: &mut (impl BufRead + Seek)) -> io::Result<Vec<KnownObj
         line.clear();
     }
 
-    Ok(objects)
+    Ok(objects.into_values().collect())
 }

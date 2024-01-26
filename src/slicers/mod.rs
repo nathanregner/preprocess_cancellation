@@ -1,6 +1,7 @@
 use crate::bounding_box::BoundingBox;
 use std::fs::File;
 use std::io::{self, BufRead, BufReader, BufWriter, Read, Seek, SeekFrom, Write};
+use std::ops::Range;
 use std::path::Path;
 use std::vec;
 use tempfile::NamedTempFile;
@@ -53,19 +54,22 @@ pub fn comment<'i, O>(inner: impl StrParser<'i, O>) -> impl StrParser<'i, O> {
 #[derive(Debug)]
 pub struct KnownObject {
     id: String,
-    start_pos: u64,
-    end_pos: u64,
+    ranges: Vec<Range<u64>>,
     hull: BoundingBox,
 }
 
 impl KnownObject {
-    pub fn new(id: String, start_pos: u64, end_pos: u64, hull: BoundingBox) -> Self {
+    pub fn new(id: String, range: Range<u64>, hull: BoundingBox) -> Self {
         Self {
             id: id.replace(|c: char| !c.is_ascii_alphanumeric(), "_"),
-            start_pos,
-            end_pos,
+            ranges: vec![range],
             hull,
         }
+    }
+
+    pub fn union(&mut self, range: Range<u64>, hull: BoundingBox) {
+        self.ranges.push(range);
+        self.hull.union_with(&hull);
     }
 }
 
@@ -92,7 +96,7 @@ pub fn extract_objects(mut file: (impl Read + Write + Seek)) -> io::Result<()> {
         panic!("Unknown slicer");
     };
 
-    let mut last_comment = reader.stream_position()?;
+    let last_comment = reader.stream_position()?;
     let objects = match slicer {
         Slicer::Cura => cura::list_objects(&mut reader)?,
         Slicer::Slic3r => slic3r::list_objects(&mut reader)?,
@@ -120,9 +124,18 @@ pub fn extract_objects(mut file: (impl Read + Write + Seek)) -> io::Result<()> {
 }
 
 #[derive(Copy, Clone, Debug)]
-enum Slicer {
+pub enum Slicer {
     Cura,
     Slic3r,
+}
+
+impl Slicer {
+    pub fn list_objects(&self, reader: &mut (impl BufRead + Seek)) -> io::Result<Vec<KnownObject>> {
+        match self {
+            Slicer::Cura => cura::list_objects(reader),
+            Slicer::Slic3r => slic3r::list_objects(reader),
+        }
+    }
 }
 
 fn copy_to(mut src: impl BufRead + Seek, dst: &mut impl Write, end: u64) -> io::Result<u64> {
@@ -131,7 +144,7 @@ fn copy_to(mut src: impl BufRead + Seek, dst: &mut impl Write, end: u64) -> io::
     io::copy(&mut src.take(count), dst)
 }
 
-pub fn rewrite(src: &Path, objects: &[KnownObject]) -> anyhow::Result<()> {
+pub fn rewrite(src: &Path, objects: &mut [KnownObject]) -> anyhow::Result<()> {
     if objects.is_empty() {
         println!("preprocess_slicer: no objects found");
         return Ok(());
@@ -140,42 +153,46 @@ pub fn rewrite(src: &Path, objects: &[KnownObject]) -> anyhow::Result<()> {
     // let dst = NamedTempFile::new()?;
     let dst = NamedTempFile::new_in(src.parent().unwrap_or(src))?;
 
-    rewrite_to(BufReader::new(File::open(src)?), &objects, dst.reopen()?)?;
+    rewrite_to(BufReader::new(File::open(src)?), objects, dst.reopen()?)?;
     Ok(std::fs::rename(dst.into_temp_path(), src)?)
 }
 
-pub fn rewrite_to_string(src: &Path, objects: &[KnownObject]) -> anyhow::Result<String> {
+pub fn rewrite_to_string(
+    mut src: impl BufRead + Seek,
+    objects: &mut [KnownObject],
+) -> anyhow::Result<String> {
     let mut result = vec![];
     if objects.is_empty() {
         // println!("preprocess_slicer: no objects found");
-        File::open(src)?.read_to_end(&mut result)?;
+        src.read_to_end(&mut result)?;
     } else {
-        rewrite_to(BufReader::new(File::open(src)?), &objects, &mut result)?;
+        rewrite_to(BufReader::new(src), objects, &mut result)?;
     }
 
     Ok(String::from_utf8(result)?)
 }
 
 pub fn rewrite_to(
-    mut file: impl BufRead + Seek,
-    objects: &[KnownObject],
-    out: impl Write,
+    mut src: impl BufRead + Seek,
+    objects: &mut [KnownObject],
+    dst: impl Write,
 ) -> anyhow::Result<()> {
-    file.seek(SeekFrom::Start(0))?;
+    src.seek(SeekFrom::Start(0))?;
 
     let mut line = String::new();
-    while file.read_line(&mut line)? != 0 && comment(rest).parse(&line).is_ok() {
+    while src.read_line(&mut line)? != 0 && comment(rest).parse(&line).is_ok() {
         println!("comment: {:?}", line);
         line.clear();
     }
 
-    let mut writer = BufWriter::new(out);
+    let mut writer = BufWriter::new(dst);
 
-    let last_comment = file.stream_position()?;
-    file.seek(SeekFrom::Start(0))?;
-    copy_to(&mut file, &mut writer, last_comment)?;
+    let last_comment = src.stream_position()?;
+    src.seek(SeekFrom::Start(0))?;
+    copy_to(&mut src, &mut writer, last_comment)?;
 
-    for object in objects {
+    objects.sort_by_cached_key(|o| o.id.to_string());
+    for object in objects.iter() {
         let (x, y) = object.hull.center();
         writeln!(
             writer,
@@ -184,13 +201,21 @@ pub fn rewrite_to(
         )?;
     }
 
+    let mut ranges = objects
+        .iter()
+        .flat_map(|o| o.ranges.iter().map(|r| (&o.id, r.clone())))
+        .collect::<Vec<_>>();
+    ranges.sort_unstable_by_key(|(_, r)| r.start);
+
     println!("objects={:#?}", objects);
-    for object in objects {
-        copy_to(&mut file, &mut writer, object.start_pos)?;
-        writeln!(writer, "EXCLUDE_OBJECT_START NAME={}", object.id)?;
-        copy_to(&mut file, &mut writer, object.end_pos)?;
-        writeln!(writer, "EXCLUDE_OBJECT_END NAME={}", object.id)?;
+    for (object, range) in ranges {
+        copy_to(&mut src, &mut writer, range.start)?;
+        writeln!(writer, "EXCLUDE_OBJECT_START NAME={}", object)?;
+        copy_to(&mut src, &mut writer, range.end)?;
+        writeln!(writer, "EXCLUDE_OBJECT_END NAME={}", object)?;
     }
+
+    io::copy(&mut src, &mut writer)?;
 
     writer.flush()?;
 

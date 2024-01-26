@@ -14,9 +14,10 @@
           venvDir = "./.venv";
           buildInputs = [
             packages.default.buildInputs
-            pkgs.rust-analyzer
-            pkgs.python311Packages.venvShellHook
+            pkgs.cargo-insta
             pkgs.poetry
+            pkgs.python311Packages.venvShellHook
+            pkgs.rust-analyzer
           ];
         };
       };
