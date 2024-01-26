@@ -1,18 +1,17 @@
+use crate::bounding_box::BoundingBox;
+use std::fs::File;
+use std::io::{self, BufRead, BufReader, BufWriter, Read, Seek, SeekFrom, Write};
+use std::path::Path;
+use tempfile::NamedTempFile;
+use winnow::ascii::{float, space0};
+use winnow::combinator::{delimited, permutation, preceded, rest};
+use winnow::error::{ParserError, TreeError};
+use winnow::stream::{AsChar, Stream, StreamIsPartial};
+use winnow::token::take_till;
+use winnow::Parser;
+
 pub mod cura;
 pub mod slic3r;
-
-use std::io::{self, BufRead, BufReader, BufWriter, Read, Seek, SeekFrom, Write};
-
-use winnow::{
-    ascii::{float, space0},
-    combinator::{delimited, permutation, preceded, rest},
-    error::{ParserError, TreeError},
-    stream::{AsChar, Stream, StreamIsPartial},
-    token::take_till,
-    Parser,
-};
-
-use crate::bounding_box::BoundingBox;
 
 #[derive(Debug)]
 pub struct ExtrudeMove {
@@ -112,6 +111,67 @@ pub fn extract_objects(mut file: (impl Read + Write + Seek)) -> io::Result<()> {
 enum Slicer {
     Cura,
     Slic3r,
+}
+
+fn copy_to(mut src: impl BufRead + Seek, dst: &mut impl Write, end: u64) -> io::Result<u64> {
+    let pos = src.stream_position()?;
+    println!("copy_to(?, {:?}, {})", pos, end);
+    let count = end - pos;
+    io::copy(&mut src.take(count), dst)
+}
+
+pub fn rewrite(src: &Path, objects: &[KnownObject]) -> anyhow::Result<()> {
+    if objects.is_empty() {
+        println!("preprocess_slicer: no objects found");
+        return Ok(());
+    }
+    // let mut dst = NamedTempFile::new_in(src.parent().unwrap_or(src))?;
+    // let dst = NamedTempFile::new()?;
+    let dst = NamedTempFile::new_in(src.parent().unwrap_or(src))?;
+
+    rewrite_to(BufReader::new(File::open(src)?), &objects, dst.reopen()?)?;
+    Ok(std::fs::rename(dst.into_temp_path(), src)?)
+}
+
+pub fn rewrite_to(
+    mut file: impl BufRead + Seek,
+    objects: &[KnownObject],
+    out: impl Write,
+) -> anyhow::Result<()> {
+    file.seek(SeekFrom::Start(0))?;
+
+    let mut line = String::new();
+    while file.read_line(&mut line)? != 0 && comment(rest).parse(&line).is_ok() {
+        println!("comment: {:?}", line);
+        line.clear();
+    }
+
+    let mut writer = BufWriter::new(out);
+
+    let last_comment = file.stream_position()?;
+    file.seek(SeekFrom::Start(0))?;
+    copy_to(&mut file, &mut writer, last_comment)?;
+
+    for object in objects {
+        let (x, y) = object.hull.center();
+        writeln!(
+            writer,
+            "; EXCLUDE_OBJECT_DEFINE NAME={} CENTER={x},{y} POLYGON={}",
+            object.id, object.hull
+        )?;
+    }
+
+    println!("objects={:#?}", objects);
+    for object in objects {
+        copy_to(&mut file, &mut writer, object.start_pos)?;
+        writeln!(writer, "EXCLUDE_OBJECT_START NAME={}\n", object.id)?;
+        copy_to(&mut file, &mut writer, object.end_pos)?;
+        writeln!(writer, "EXCLUDE_OBJECT_END NAME={}\n", object.id)?;
+    }
+
+    writer.flush()?;
+
+    Ok(())
 }
 
 #[cfg(test)]

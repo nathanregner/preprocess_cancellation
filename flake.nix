@@ -16,6 +16,7 @@
             packages.default.buildInputs
             pkgs.rust-analyzer
             pkgs.python311Packages.venvShellHook
+            pkgs.poetry
           ];
         };
       };
