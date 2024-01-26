@@ -4,6 +4,7 @@ mod slicers;
 
 use crate::slicers::rewrite;
 pub use crate::slicers::{rewrite_to_string, Slicer};
+use pyiter::PyFileIter;
 use pyo3::exceptions::PyTypeError;
 use pyo3::prelude::*;
 use std::fs::File;
@@ -43,22 +44,13 @@ fn preprocess_cancellation(_py: Python<'_>, m: &PyModule) -> PyResult<()> {
 }
 
 #[pyfunction]
-pub fn preprocess_slicer(file_like: FileLike) -> PyResult<Vec<String>> {
+pub fn preprocess_slicer(file_like: FileLike) -> PyResult<PyFileIter> {
     let mut src = BufReader::new(File::open(&file_like)?);
     let mut objects = slicers::slic3r::list_objects(&mut src)?;
-    // TODO: https://pyo3.rs/v0.19.2/class/protocols#iterable-objects
-    Ok(rewrite_to_string(
-        BufReader::new(File::open(file_like.as_ref())?),
-        &mut objects,
-    )
-    .unwrap()
-    .lines()
-    .map(|s| {
-        let mut s = s.to_string();
-        s.push('\n');
-        s
+    Ok(match rewrite(file_like.as_ref(), &mut objects).unwrap() {
+        None => PyFileIter(None),
+        Some(dst) => PyFileIter(Some(BufReader::new(dst))),
     })
-    .collect())
 }
 
 #[pyfunction]

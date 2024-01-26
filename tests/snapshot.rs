@@ -13,3 +13,11 @@ fn superslicer() {
         &include_bytes!("../GCode/superslicer.gcode")[..]
     ));
 }
+
+#[test]
+fn cura() {
+    insta::assert_display_snapshot!(process_example(
+        Slicer::Cura,
+        &include_bytes!("../GCode/cura.gcode")[..]
+    ));
+}

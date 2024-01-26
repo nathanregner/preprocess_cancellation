@@ -144,17 +144,20 @@ fn copy_to(mut src: impl BufRead + Seek, dst: &mut impl Write, end: u64) -> io::
     io::copy(&mut src.take(count), dst)
 }
 
-pub fn rewrite(src: &Path, objects: &mut [KnownObject]) -> anyhow::Result<()> {
+pub fn rewrite<'i>(
+    src: &'i Path,
+    objects: &mut [KnownObject],
+) -> anyhow::Result<Option<NamedTempFile>> {
     if objects.is_empty() {
         println!("preprocess_slicer: no objects found");
-        return Ok(());
+        return Ok(None);
     }
     // let mut dst = NamedTempFile::new_in(src.parent().unwrap_or(src))?;
     // let dst = NamedTempFile::new()?;
     let dst = NamedTempFile::new_in(src.parent().unwrap_or(src))?;
 
     rewrite_to(BufReader::new(File::open(src)?), objects, dst.reopen()?)?;
-    Ok(std::fs::rename(dst.into_temp_path(), src)?)
+    Ok(Some(dst))
 }
 
 pub fn rewrite_to_string(
