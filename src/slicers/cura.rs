@@ -3,7 +3,7 @@ use crate::parser::{comment, extrude_move};
 use std::collections::HashMap;
 use std::io::{self, BufRead, Seek};
 use std::vec;
-use winnow::combinator::{preceded, rest};
+use winnow::combinator::{not, preceded, rest};
 
 pub fn list_objects(file: &mut (impl BufRead + Seek)) -> io::Result<Vec<KnownObject>> {
     let mut objects = HashMap::<String, KnownObject>::new();
@@ -20,7 +20,6 @@ pub fn list_objects(file: &mut (impl BufRead + Seek)) -> io::Result<Vec<KnownObj
         }
 
         if let Ok(id) = comment(preceded("MESH:", rest), &line) {
-            printing = Some((id.trim().to_owned(), pos));
             if let Some(hull) = hull.take() {
                 let (id, start_pos) = printing.take().expect("printing");
                 objects
@@ -29,6 +28,9 @@ pub fn list_objects(file: &mut (impl BufRead + Seek)) -> io::Result<Vec<KnownObj
                     .or_insert_with_key(|id| {
                         KnownObject::new(id.to_string(), start_pos..pos, hull)
                     });
+            }
+            if id != "NONMESH" {
+                printing = Some((id.trim().to_owned(), pos));
             }
         } else if let Ok(_) = comment(preceded("TIME_ELAPSED", rest), &line) {
             if let Some(hull) = hull.take() {
