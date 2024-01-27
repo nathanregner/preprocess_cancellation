@@ -1,6 +1,6 @@
 use winnow::ascii::{float, newline, space0};
 use winnow::combinator::{delimited, opt, permutation, preceded};
-use winnow::error::{ParserError, TreeError};
+use winnow::error::{ErrMode, ParseError, ParserError, TreeError};
 use winnow::stream::{AsChar, Stream, StreamIsPartial};
 use winnow::token::take_till;
 use winnow::Parser;
@@ -23,26 +23,26 @@ where
 pub fn comment<'i, O>(
     inner: impl Parser<&'i str, O, TreeError<&'i str>>,
     input: &'i str,
-) -> crate::Result<O> {
-    Ok(delimited(
+) -> Result<O, ParseError<&'i str, TreeError<&'i str>>> {
+    delimited(
         trim(';'),
         take_till(0.., AsChar::is_newline)
             .map(|s: &str| s.trim())
             .and_then(inner),
         opt(newline),
     )
-    .parse(input)?)
+    .parse(input)
 }
 
-pub fn extrude_move(input: &str) -> crate::Result<ExtrudeMove> {
+pub fn extrude_move<'i>(input: &'i str) -> Result<ExtrudeMove, ErrMode<TreeError<&'i str>>> {
     let x = trim(preceded('X', float));
     let y = trim(preceded('Y', float));
     let e = trim(preceded('E', float));
-    Ok(preceded(
+    preceded(
         ('G', take_till(1.., AsChar::is_space)),
         permutation((x, y, e)).map(|(x, y, e)| ExtrudeMove { x, y, e }),
     )
-    .parse_next(&mut &*input)?)
+    .parse_next(&mut &*input)
 }
 
 #[cfg(test)]
