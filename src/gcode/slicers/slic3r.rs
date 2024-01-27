@@ -25,5 +25,5 @@ pub fn format_patch(src: &mut (impl BufRead + Seek)) -> crate::Result<Patch> {
         line.clear();
     }
 
-    object_tracker.format_patch(last_comment(src)?)
+    object_tracker.into_patch(last_comment(src)?)
 }

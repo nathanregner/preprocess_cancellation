@@ -5,6 +5,7 @@ use winnow::combinator::rest;
 
 pub mod cura;
 pub mod ideamaker;
+pub mod m486;
 pub mod slic3r;
 
 #[derive(Copy, Clone, Debug)]
@@ -12,6 +13,7 @@ pub enum Slicer {
     Cura,
     Slic3r,
     IdeaMaker,
+    M486,
 }
 
 impl Slicer {
@@ -57,6 +59,7 @@ impl Slicer {
             Slicer::Cura => cura::format_patch(src),
             Slicer::Slic3r => slic3r::format_patch(src),
             Slicer::IdeaMaker => ideamaker::format_patch(src),
+            Slicer::M486 => m486::format_patch(src),
         }
     }
 }

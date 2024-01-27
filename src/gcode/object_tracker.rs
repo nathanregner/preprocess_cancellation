@@ -59,8 +59,13 @@ impl ObjectTracker {
             .or_insert_with_key(|id| KnownObject::new(id, start_pos..pos, hull));
     }
 
-    pub fn format_patch(self, header_pos: u64) -> crate::Result<Patch> {
+    pub fn into_patch(self, header_pos: u64) -> crate::Result<Patch> {
         let mut patch = Patch::default();
+        self.format_patch(&mut patch, header_pos)?;
+        Ok(patch)
+    }
+
+    pub fn format_patch(self, patch: &mut Patch, header_pos: u64) -> crate::Result<()> {
         if let Some(pending) = self.active {
             return Err(crate::error::Error::UnclosedObject(pending.id));
         }
@@ -85,13 +90,12 @@ impl ObjectTracker {
             .collect::<Vec<_>>();
         ranges.sort_unstable_by_key(|(_, r)| r.start);
 
-        println!("objects={:#?}", objects);
         for (name, range) in ranges {
             patch.insert(range.start, format!("EXCLUDE_OBJECT_START NAME={}\n", name));
             patch.insert(range.end, format!("EXCLUDE_OBJECT_END NAME={}\n", name));
         }
 
-        Ok(patch)
+        Ok(())
     }
 }
 
