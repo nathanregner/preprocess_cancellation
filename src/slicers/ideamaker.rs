@@ -1,5 +1,5 @@
 use crate::model::{KnownObject, ObjectTracker};
-use crate::parser::{comment, extrude_move};
+use crate::parser::{comment, extrude_move, trim};
 use std::io::{BufRead, Seek};
 use winnow::combinator::{preceded, rest};
 
@@ -14,14 +14,14 @@ pub fn list_objects(file: &mut (impl BufRead + Seek)) -> crate::Result<Vec<Known
             return Ok(vec![]);
         }
 
-        if let Ok(name) = comment(preceded("PRINTING:", rest), &line) {
+        if let Ok(name) = comment(preceded("PRINTING:", trim(rest)), &line) {
             let name = name.to_owned();
             line.clear();
             file.read_line(&mut line)?;
-            let id = comment(preceded("PRINTING_ID:", rest), &line)?;
-            if id == "-1" {
-                object_tracker.end(pos);
-            } else {
+            let id = comment(preceded("PRINTING_ID:", trim(rest)), &line)?;
+            object_tracker.end(pos);
+            // ignore internal non-object meshes
+            if id != "-1" {
                 object_tracker.start(name, pos)?;
             }
         } else if comment("REMAINING_TIME: 0", &line).is_ok() {

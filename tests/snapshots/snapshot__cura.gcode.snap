@@ -1,6 +1,6 @@
 ---
 source: tests/snapshot.rs
-expression: "process_example(slicer, input)"
+expression: process_example(file)
 ---
 ;FLAVOR:RepRap
 ;TIME:451

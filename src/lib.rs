@@ -10,7 +10,7 @@ mod slicers;
 pub type Result<T> = std::result::Result<T, error::Error>;
 
 pub use crate::generator::rewrite_to_string;
-pub use crate::slicers::Slicer;
+pub use crate::slicers::{list_objects, Slicer};
 use generator::rewrite;
 use py::{FileIter, FileLike, GCodeError};
 use pyo3::prelude::*;

@@ -12,7 +12,7 @@ pub struct ExtrudeMove {
     pub e: f32,
 }
 
-fn trim<I, O, E: ParserError<I>>(inner: impl Parser<I, O, E>) -> impl Parser<I, O, E>
+pub fn trim<I, O, E: ParserError<I>>(inner: impl Parser<I, O, E>) -> impl Parser<I, O, E>
 where
     I: Stream + StreamIsPartial,
     <I as Stream>::Token: AsChar + Clone,
@@ -25,7 +25,7 @@ pub fn comment<'i, O>(
     input: &'i str,
 ) -> crate::Result<O> {
     Ok(delimited(
-        ';',
+        trim(';'),
         take_till(0.., AsChar::is_newline)
             .map(|s: &str| s.trim())
             .and_then(inner),

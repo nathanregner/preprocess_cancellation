@@ -1,25 +1,27 @@
 use crate::model::KnownObject;
 use crate::parser::comment;
-use std::io::{BufRead, BufReader, Read, Seek, Write};
+use std::io::{BufRead, BufReader, Read, Seek};
 use winnow::combinator::rest;
 
 pub mod cura;
 pub mod ideamaker;
 pub mod slic3r;
 
-pub fn list_objects(mut file: (impl Read + Write + Seek)) -> crate::Result<Vec<KnownObject>> {
+pub fn list_objects(mut file: (impl Read + Seek)) -> crate::Result<Vec<KnownObject>> {
     let mut reader = BufReader::new(&mut file);
     let mut line = String::new();
     let slicer = loop {
+        line.clear();
         if reader.read_line(&mut line)? == 0 {
             break None;
         }
+
+        if line.trim().is_empty() {
+            continue;
+        }
+
         let Ok(comment) = comment(rest, &line) else {
-            if line.is_empty() {
-                continue;
-            } else {
-                break None;
-            }
+            break None;
         };
 
         if comment.contains("Cura") {
