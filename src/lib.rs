@@ -31,7 +31,6 @@ fn preprocess_cancellation(py: Python<'_>, m: &PyModule) -> PyResult<()> {
 pub fn preprocess_slicer(file_like: FileLike) -> PyResult<FileIter> {
     let mut src = BufReader::new(File::open(&file_like)?);
     let mut objects = slicers::slic3r::list_objects(&mut src)?;
-
     Ok(match rewrite(file_like.as_ref(), &mut objects)? {
         None => FileIter(None),
         Some(dst) => FileIter(Some(BufReader::new(dst))),
@@ -51,11 +50,18 @@ pub fn preprocess_cura(file_like: FileLike) -> PyResult<()> {
 }
 
 #[pyfunction]
-pub fn preprocess_ideamaker(_file_path: FileLike) -> PyResult<()> {
-    todo!()
+pub fn preprocess_ideamaker(file_like: FileLike) -> PyResult<()> {
+    let mut src = BufReader::new(File::open(&file_like)?);
+    let mut objects = slicers::ideamaker::list_objects(&mut src)?;
+    if objects.is_empty() {
+        println!("preprocess_slicer: no objects found");
+        return Ok(());
+    }
+    rewrite(file_like.as_ref(), &mut objects).unwrap();
+    Ok(())
 }
 
 #[pyfunction]
-pub fn preprocess_m486(_file_path: FileLike) -> PyResult<()> {
+pub fn preprocess_m486(_file_like: FileLike) -> PyResult<()> {
     todo!()
 }

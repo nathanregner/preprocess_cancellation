@@ -16,13 +16,23 @@
         rust-bin = pkgs.rust-bin.nightly.latest.default;
       in rec {
         packages.default = pkgs.python311Packages.callPackage ./package.nix {
-          rustPlatform = pkgs.makeRustPlatform {
-            cargo = rust-bin;
-            rustc = rust-bin;
-          };
+          rustPlatform = (let
+            self = pkgs.makeRustPlatform {
+              cargo = rust-bin;
+              rustc = rust-bin;
+            };
+          in self // {
+            # stupid hack to propagate nightly
+            maturinBuildHook = self.maturinBuildHook.override (oldAttrs: {
+              pkgsHostTarget = oldAttrs.pkgsHostTarget // {
+                rustc = rust-bin;
+                cargo = rust-bin;
+              };
+            });
+          });
         };
         devShells.default = pkgs.mkShell {
-          # inherit (packages.default) nativeBuildInputs;
+          inherit (packages.default) nativeBuildInputs;
           venvDir = "./.venv";
           buildInputs = [ packages.default.buildInputs rust-bin ]
             ++ (with pkgs; [
