@@ -6,7 +6,6 @@ use std::path::Path;
 use std::vec;
 use tempfile::NamedTempFile;
 use winnow::combinator::rest;
-use winnow::Parser;
 
 fn copy_to(mut src: impl BufRead + Seek, dst: &mut impl Write, end: u64) -> io::Result<u64> {
     let pos = src.stream_position()?;
@@ -33,12 +32,10 @@ pub fn rewrite_to_string(
 ) -> crate::Result<String> {
     let mut result = vec![];
     if objects.is_empty() {
-        // println!("preprocess_slicer: no objects found");
         src.read_to_end(&mut result)?;
     } else {
         rewrite_to(BufReader::new(src), objects, &mut result)?;
     }
-
     Ok(String::from_utf8(result)?)
 }
 

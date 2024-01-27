@@ -1,39 +1,4 @@
-use std::fmt::{self, Display, Formatter};
-use std::ops::Range;
-
-#[derive(Debug)]
-pub struct KnownObject {
-    id: String,
-    ranges: Vec<Range<u64>>,
-    hull: BoundingBox,
-}
-
-impl KnownObject {
-    pub fn new(id: String, range: Range<u64>, hull: BoundingBox) -> Self {
-        Self {
-            id: id.replace(|c: char| !c.is_ascii_alphanumeric(), "_"),
-            ranges: vec![range],
-            hull,
-        }
-    }
-
-    pub fn union(&mut self, range: Range<u64>, hull: BoundingBox) {
-        self.ranges.push(range);
-        self.hull.union_with(&hull);
-    }
-
-    pub fn id(&self) -> &str {
-        &self.id
-    }
-
-    pub fn ranges(&self) -> &[Range<u64>] {
-        &self.ranges
-    }
-
-    pub fn hull(&self) -> &BoundingBox {
-        &self.hull
-    }
-}
+pub use std::fmt::{self, Display, Formatter};
 
 #[derive(Copy, Clone, Debug)]
 pub struct BoundingBox {

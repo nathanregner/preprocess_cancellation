@@ -14,9 +14,17 @@ pub fn list_objects(file: &mut (impl BufRead + Seek)) -> crate::Result<Vec<Known
             return Ok(vec![]);
         }
 
-        if let Ok(id) = comment(preceded("printing object", rest), &line) {
-            object_tracker.start(id.trim().to_owned(), pos)?;
-        } else if comment(preceded("stop printing", rest), &line).is_ok() {
+        if let Ok(name) = comment(preceded("PRINTING:", rest), &line) {
+            let name = name.to_owned();
+            line.clear();
+            file.read_line(&mut line)?;
+            let id = comment(preceded("PRINTING_ID:", rest), &line)?;
+            if id == "-1" {
+                object_tracker.end(pos);
+            } else {
+                object_tracker.start(name, pos)?;
+            }
+        } else if comment("REMAINING_TIME: 0", &line).is_ok() {
             object_tracker.end(pos);
         } else if let Ok(extrude) = extrude_move(&line) {
             object_tracker.extrude(extrude);

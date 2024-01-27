@@ -1,58 +1,31 @@
-use crate::model::{BoundingBox, KnownObject};
+use crate::model::{KnownObject, ObjectTracker};
 use crate::parser::{comment, extrude_move};
-use std::collections::HashMap;
-use std::io::{self, BufRead, Seek};
-use std::vec;
-use winnow::combinator::{not, preceded, rest};
+use std::io::{BufRead, Seek};
+use winnow::combinator::{preceded, rest};
 
-pub fn list_objects(file: &mut (impl BufRead + Seek)) -> io::Result<Vec<KnownObject>> {
-    let mut objects = HashMap::<String, KnownObject>::new();
-
-    let mut printing = None;
-    let mut hull: Option<BoundingBox> = None;
+pub fn list_objects(file: &mut (impl BufRead + Seek)) -> crate::Result<Vec<KnownObject>> {
+    let mut object_tracker = ObjectTracker::default();
 
     let mut line = String::new();
     while file.read_line(&mut line)? != 0 {
         let pos = file.stream_position()?;
 
         if line.starts_with("EXCLUDE_OBJECT_DEFINE") {
-            return Ok(vec![]);
+            return Err(crate::error::Error::AlreadySupported);
         }
 
         if let Ok(id) = comment(preceded("MESH:", rest), &line) {
-            if let Some(hull) = hull.take() {
-                let (id, start_pos) = printing.take().expect("printing");
-                objects
-                    .entry(id)
-                    .and_modify(|o| o.union(start_pos..pos, hull))
-                    .or_insert_with_key(|id| {
-                        KnownObject::new(id.to_string(), start_pos..pos, hull)
-                    });
-            }
+            object_tracker.end(pos);
             if id != "NONMESH" {
-                printing = Some((id.trim().to_owned(), pos));
+                object_tracker.start(id.trim().to_owned(), pos)?;
             }
-        } else if let Ok(_) = comment(preceded("TIME_ELAPSED", rest), &line) {
-            if let Some(hull) = hull.take() {
-                let (id, start_pos) = printing.take().expect("printing");
-                objects
-                    .entry(id)
-                    .and_modify(|o| o.union(start_pos..pos, hull))
-                    .or_insert_with_key(|id| {
-                        KnownObject::new(id.to_string(), start_pos..pos, hull)
-                    });
-            }
+        } else if comment(preceded("TIME_ELAPSED", rest), &line).is_ok() {
+            object_tracker.end(pos);
         } else if let Ok(extrude) = extrude_move(&line) {
-            if printing.is_some() {
-                if let Some(hull) = &mut hull {
-                    hull.union(extrude.x, extrude.y);
-                } else {
-                    hull = Some(BoundingBox::new(extrude.x, extrude.y));
-                }
-            }
+            object_tracker.extrude(extrude);
         }
         line.clear();
     }
 
-    Ok(objects.into_values().collect())
+    object_tracker.into_objects()
 }

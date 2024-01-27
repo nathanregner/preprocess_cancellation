@@ -8,7 +8,7 @@
     rust-overlay.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = { self, nixpkgs, rust-overlay, flake-utils, ... }:
+  outputs = { nixpkgs, rust-overlay, flake-utils, ... }:
     flake-utils.lib.eachDefaultSystem (system:
       let
         overlays = [ (import rust-overlay) ];
@@ -21,9 +21,8 @@
             rustc = rust-bin;
           };
         };
-        packages.rust = rust-bin;
         devShells.default = pkgs.mkShell {
-          inherit (packages.default) nativeBuildInputs;
+          # inherit (packages.default) nativeBuildInputs;
           venvDir = "./.venv";
           buildInputs = [ packages.default.buildInputs rust-bin ]
             ++ (with pkgs; [

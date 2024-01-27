@@ -1,6 +1,6 @@
 ---
 source: tests/snapshot.rs
-expression: "process_example(Slicer::Slic3r,\n    &include_bytes!(\"../GCode/superslicer.gcode\")[..])"
+expression: "process_example(slicer, input)"
 ---
 ; Postprocessed by [ArcWelder](https://github.com/FormerLurker/ArcWelderLib)
 ; Copyright(C) 2020 - Brad Hochgesang
