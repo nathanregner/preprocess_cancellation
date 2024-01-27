@@ -15,7 +15,7 @@
         pkgs = import nixpkgs { inherit system overlays; };
         rust-bin = pkgs.rust-bin.nightly.latest.default;
       in rec {
-        packages.default = pkgs.python311Packages.callPackage ./package.nix {
+        packages.default = pkgs.python3.pkgs.callPackage ./package.nix {
           rustPlatform = (let
             self = pkgs.makeRustPlatform {
               cargo = rust-bin;
