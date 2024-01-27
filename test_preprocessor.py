@@ -25,13 +25,14 @@ def test_cli_without():
     try:
         command = [
             sys.executable,
-            "./preprocess_cancellation.py",
+            "-m",
+            "preprocess_cancellation",
             "--disable-shapely",
             "-o",
             ".testing",
             *gcode_path.glob("*.gcode"),
         ]
-        with subprocess.Popen(command, stdout=subprocess.PIPE, stderr=subprocess.PIPE) as proc:
+        with subprocess.Popen(command) as proc:
             proc.wait()
             assert proc.returncode == 0
     finally:
@@ -40,7 +41,7 @@ def test_cli_without():
 
 
 def test_m486():
-    with (gcode_path / "m486.gcode").open("r") as f:
+    with (gcode_path / "m486/m486.gcode").open("r") as f:
         results = "".join(list(preprocess_m486(f))).split("\n")
 
     definitions = collect_definitions(results)

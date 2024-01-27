@@ -16,6 +16,7 @@ email = "im@frank.af"
 
 [tool.maturin]
 features = ["pyo3/extension-module"]
+python-source = "python"
 
 [tool.poetry]
 name = "preprocess_cancellation"
