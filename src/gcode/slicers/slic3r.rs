@@ -1,17 +1,18 @@
-use crate::model::{KnownObject, ObjectTracker};
-use crate::parser::{comment, extrude_move};
+use crate::gcode::parser::{comment, extrude_move};
+use crate::gcode::{last_comment, ObjectTracker};
+use crate::patch::Patch;
 use std::io::{BufRead, Seek};
 use winnow::combinator::{preceded, rest};
 
-pub fn list_objects(file: &mut (impl BufRead + Seek)) -> crate::Result<Vec<KnownObject>> {
+pub fn format_patch(src: &mut (impl BufRead + Seek)) -> crate::Result<Patch> {
     let mut object_tracker = ObjectTracker::default();
 
     let mut line = String::new();
-    while file.read_line(&mut line)? != 0 {
-        let pos = file.stream_position()?;
+    while src.read_line(&mut line)? != 0 {
+        let pos = src.stream_position()?;
 
         if line.starts_with("EXCLUDE_OBJECT_DEFINE") {
-            return Ok(vec![]);
+            return Err(crate::error::Error::AlreadySupported);
         }
 
         if let Ok(id) = comment(preceded("printing object", rest), &line) {
@@ -24,5 +25,5 @@ pub fn list_objects(file: &mut (impl BufRead + Seek)) -> crate::Result<Vec<Known
         line.clear();
     }
 
-    object_tracker.into_objects()
+    object_tracker.format_patch(last_comment(src)?)
 }

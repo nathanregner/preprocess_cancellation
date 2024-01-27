@@ -37,6 +37,7 @@
           buildInputs = [ packages.default.buildInputs rust-bin ]
             ++ (with pkgs; [
               cargo-insta
+              cargo-nextest
               just
               poetry
               python311Packages.venvShellHook

@@ -34,7 +34,7 @@ pub fn comment<'i, O>(
     .parse(input)
 }
 
-pub fn extrude_move<'i>(input: &'i str) -> Result<ExtrudeMove, ErrMode<TreeError<&'i str>>> {
+pub fn extrude_move(input: &str) -> Result<ExtrudeMove, ErrMode<TreeError<&str>>> {
     let x = trim(preceded('X', float));
     let y = trim(preceded('Y', float));
     let e = trim(preceded('E', float));

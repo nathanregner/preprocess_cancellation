@@ -1,23 +1,24 @@
-use crate::model::{KnownObject, ObjectTracker};
-use crate::parser::{comment, extrude_move, trim};
+use crate::gcode::parser::{comment, extrude_move, trim};
+use crate::gcode::{last_comment, ObjectTracker};
+use crate::patch::Patch;
 use std::io::{BufRead, Seek};
 use winnow::combinator::{preceded, rest};
 
-pub fn list_objects(file: &mut (impl BufRead + Seek)) -> crate::Result<Vec<KnownObject>> {
+pub fn format_patch(src: &mut (impl BufRead + Seek)) -> crate::Result<Patch> {
     let mut object_tracker = ObjectTracker::default();
 
     let mut line = String::new();
-    while file.read_line(&mut line)? != 0 {
-        let pos = file.stream_position()?;
+    while src.read_line(&mut line)? != 0 {
+        let pos = src.stream_position()?;
 
         if line.starts_with("EXCLUDE_OBJECT_DEFINE") {
-            return Ok(vec![]);
+            return Err(crate::error::Error::AlreadySupported);
         }
 
         if let Ok(name) = comment(preceded("PRINTING:", trim(rest)), &line) {
             let name = name.to_owned();
             line.clear();
-            file.read_line(&mut line)?;
+            src.read_line(&mut line)?;
             let id = comment(preceded("PRINTING_ID:", trim(rest)), &line)?;
             object_tracker.end(pos);
             // ignore internal non-object meshes
@@ -32,5 +33,5 @@ pub fn list_objects(file: &mut (impl BufRead + Seek)) -> crate::Result<Vec<Known
         line.clear();
     }
 
-    object_tracker.into_objects()
+    object_tracker.format_patch(last_comment(src)?)
 }

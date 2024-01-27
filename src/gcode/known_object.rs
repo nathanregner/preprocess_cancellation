@@ -9,12 +9,9 @@ pub struct KnownObject {
 }
 
 impl KnownObject {
-    pub fn new(id: String, range: Range<u64>, hull: BoundingBox) -> Self {
-        let id = id
-            .trim_matches(|c: char| !c.is_ascii_alphanumeric())
-            .replace(|c: char| !c.is_ascii_alphanumeric(), "_");
+    pub fn new(id: &str, range: Range<u64>, hull: BoundingBox) -> Self {
         Self {
-            id,
+            id: escape_id(id),
             ranges: vec![range],
             hull,
         }
@@ -36,4 +33,24 @@ impl KnownObject {
     pub fn hull(&self) -> &BoundingBox {
         &self.hull
     }
+}
+
+fn escape_id(id: &str) -> String {
+    let mut escaped = String::new();
+    let mut escaping = false;
+    for c in id.chars() {
+        if c.is_ascii_alphanumeric() {
+            escaped.push(c);
+            escaping = false;
+        } else if !escaping {
+            if !escaped.is_empty() {
+                escaped.push('_');
+            }
+            escaping = true;
+        }
+    }
+    if let Some('_') = escaped.chars().last() {
+        escaped.pop();
+    }
+    escaped
 }
