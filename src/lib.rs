@@ -37,7 +37,7 @@ pub fn rewrite_iter(
 
     match dst {
         Some(dst) => {
-            patch.apply(src, BufWriter::new(File::open(dst)?))?;
+            patch.apply(src, BufWriter::new(File::create(dst)?))?;
             Ok(None)
         }
         None => {

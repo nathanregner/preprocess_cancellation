@@ -13,36 +13,39 @@
       let
         overlays = [ (import rust-overlay) ];
         pkgs = import nixpkgs { inherit system overlays; };
-        rust-bin = pkgs.rust-bin.nightly.latest.default;
+        rust = pkgs.rust-bin.nightly.latest.default;
+        rustOverrides = {
+          cargo = rust;
+          rustc = rust;
+        };
       in rec {
-        packages.default = pkgs.python3.pkgs.callPackage ./package.nix {
-          rustPlatform = (let
-            self = pkgs.makeRustPlatform {
-              cargo = rust-bin;
-              rustc = rust-bin;
-            };
-          in self // {
-            # stupid hack to propagate nightly
-            maturinBuildHook = self.maturinBuildHook.override (oldAttrs: {
-              pkgsHostTarget = oldAttrs.pkgsHostTarget // {
-                rustc = rust-bin;
-                cargo = rust-bin;
-              };
+        packages = rec {
+          default = pkgs.python3.pkgs.callPackage ./package.nix {
+            rustPlatform = (let self = pkgs.makeRustPlatform rustOverrides;
+            in self // {
+              # stupid hack to propagate nightly
+              maturinBuildHook = self.maturinBuildHook.override (oldAttrs: {
+                pkgsHostTarget = oldAttrs.pkgsHostTarget // rustOverrides;
+              });
             });
-          });
+          };
+          bench = pkgs.writeShellApplication {
+            name = "bench";
+            runtimeInputs = [ (pkgs.python3.withPackages (ps: [ default ])) ];
+            text = "python ${./bench.py}";
+          };
         };
         devShells.default = pkgs.mkShell {
           inherit (packages.default) nativeBuildInputs;
           venvDir = "./.venv";
-          buildInputs = [ packages.default.buildInputs rust-bin ]
-            ++ (with pkgs; [
-              cargo-insta
-              cargo-nextest
-              just
-              poetry
-              python311Packages.venvShellHook
-              rust-analyzer
-            ]);
+          buildInputs = [ packages.default.buildInputs rust ] ++ (with pkgs; [
+            cargo-insta
+            cargo-nextest
+            just
+            poetry
+            python311Packages.venvShellHook
+            rust-analyzer
+          ]);
         };
       });
 }
