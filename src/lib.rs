@@ -1,5 +1,3 @@
-#![feature(assert_matches)]
-
 mod error;
 mod gcode;
 mod patch;
@@ -28,33 +26,50 @@ fn preprocess_cancellation(py: Python<'_>, m: &PyModule) -> PyResult<()> {
     Ok(())
 }
 
-pub fn rewrite_iter(slicer: Slicer, src: FileLike) -> PyResult<FileIter> {
+pub fn rewrite_iter(
+    slicer: Slicer,
+    src: FileLike,
+    dst: Option<FileLike>,
+) -> PyResult<Option<FileIter>> {
     let mut src = BufReader::new(File::open(src)?);
     let patch = slicer.format_patch(&mut src)?;
-    let dst = NamedTempFile::new()?;
     src.seek(SeekFrom::Start(0))?;
-    patch.apply(src, dst.reopen()?)?;
-    Ok(dst.into())
+
+    match dst {
+        Some(dst) => {
+            patch.apply(src, BufWriter::new(File::open(dst)?))?;
+            Ok(None)
+        }
+        None => {
+            let dst = NamedTempFile::new()?;
+            patch.apply(src, BufWriter::new(dst.reopen()?))?;
+            Ok(Some(dst.into()))
+        }
+    }
 }
 
 #[pyfunction]
-pub fn preprocess_slicer(src: FileLike) -> PyResult<FileIter> {
-    rewrite_iter(Slicer::Slic3r, src)
+#[pyo3(signature = (src, dst=None))]
+pub fn preprocess_slicer(src: FileLike, dst: Option<FileLike>) -> PyResult<Option<FileIter>> {
+    rewrite_iter(Slicer::Slic3r, src, dst)
 }
 
 #[pyfunction]
-pub fn preprocess_cura(src: FileLike) -> PyResult<FileIter> {
-    rewrite_iter(Slicer::Cura, src)
+#[pyo3(signature = (src, dst=None))]
+pub fn preprocess_cura(src: FileLike, dst: Option<FileLike>) -> PyResult<Option<FileIter>> {
+    rewrite_iter(Slicer::Cura, src, dst)
 }
 
 #[pyfunction]
-pub fn preprocess_ideamaker(src: FileLike) -> PyResult<FileIter> {
-    rewrite_iter(Slicer::IdeaMaker, src)
+#[pyo3(signature = (src, dst=None))]
+pub fn preprocess_ideamaker(src: FileLike, dst: Option<FileLike>) -> PyResult<Option<FileIter>> {
+    rewrite_iter(Slicer::IdeaMaker, src, dst)
 }
 
 #[pyfunction]
-pub fn preprocess_m486(src: FileLike) -> PyResult<FileIter> {
-    rewrite_iter(Slicer::M486, src)
+#[pyo3(signature = (src, dst=None))]
+pub fn preprocess_m486(src: FileLike, dst: Option<FileLike>) -> PyResult<Option<FileIter>> {
+    rewrite_iter(Slicer::M486, src, dst)
 }
 
 #[pyfunction]
