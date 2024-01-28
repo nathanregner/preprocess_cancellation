@@ -1,9 +1,9 @@
-install:
-    poetry install
+install *FLAGS:
+    poetry install --no-root {{FLAGS}}
 
-pytest:
+pytest *FLAGS:
     maturin develop --release
-    ./.venv/bin/pytest $@
+    ./.venv/bin/pytest {{FLAGS}}
 
 snapshot-test:
     cargo insta test --unreferenced delete
