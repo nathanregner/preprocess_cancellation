@@ -1,3 +1,4 @@
+use crate::DEFAULT_BUF_SIZE;
 use pyo3::prelude::*;
 use std::fs::File;
 use std::io::{BufRead, BufReader};
@@ -8,7 +9,7 @@ pub struct FileIter(pub BufReader<File>);
 
 impl From<File> for FileIter {
     fn from(file: File) -> Self {
-        Self(BufReader::new(file))
+        Self(BufReader::with_capacity(DEFAULT_BUF_SIZE, file))
     }
 }
 

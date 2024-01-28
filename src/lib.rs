@@ -15,6 +15,8 @@ use std::io::{BufReader, BufWriter, Seek, SeekFrom};
 use std::path::PathBuf;
 use tempfile::NamedTempFile;
 
+const DEFAULT_BUF_SIZE: usize = 8 * 1024 * 1024;
+
 #[pymodule]
 fn preprocess_cancellation(py: Python<'_>, m: &PyModule) -> PyResult<()> {
     m.add_function(wrap_pyfunction!(preprocess_slicer, m)?)?;
@@ -31,18 +33,24 @@ pub fn rewrite_iter(
     src: FileLike,
     dst: Option<FileLike>,
 ) -> PyResult<Option<FileIter>> {
-    let mut src = BufReader::new(File::open(src)?);
+    let mut src = BufReader::with_capacity(DEFAULT_BUF_SIZE, File::open(src)?);
     let patch = slicer.format_patch(&mut src)?;
     src.seek(SeekFrom::Start(0))?;
 
     match dst {
         Some(dst) => {
-            patch.apply(src, BufWriter::new(File::create(dst)?))?;
+            patch.apply(
+                src,
+                BufWriter::with_capacity(DEFAULT_BUF_SIZE, File::create(dst)?),
+            )?;
             Ok(None)
         }
         None => {
             let dst = NamedTempFile::new()?;
-            patch.apply(src, BufWriter::new(dst.reopen()?))?;
+            patch.apply(
+                src,
+                BufWriter::with_capacity(DEFAULT_BUF_SIZE, dst.reopen()?),
+            )?;
             Ok(Some(dst.into()))
         }
     }
@@ -61,7 +69,7 @@ pub fn preprocess_cura(src: FileLike, dst: Option<FileLike>) -> PyResult<Option<
 }
 
 #[pyfunction]
-#[pyo3(signature = (src, dst=None))]
+#[pyo3(signature =(src, dst=None))]
 pub fn preprocess_ideamaker(src: FileLike, dst: Option<FileLike>) -> PyResult<Option<FileIter>> {
     rewrite_iter(Slicer::IdeaMaker, src, dst)
 }
@@ -112,10 +120,13 @@ where
     let paths = matches.get_many::<PathBuf>("paths").unwrap();
 
     for gcode_file in paths {
-        let mut src = BufReader::new(File::open(gcode_file)?);
+        let mut src = BufReader::with_capacity(DEFAULT_BUF_SIZE, File::open(gcode_file)?);
         let temp = NamedTempFile::new()?;
         let patch = Slicer::infer(&mut src)?.format_patch(&mut src)?;
-        patch.apply(src, BufWriter::new(temp.reopen()?))?;
+        patch.apply(
+            src,
+            BufWriter::with_capacity(DEFAULT_BUF_SIZE, temp.reopen()?),
+        )?;
 
         let dst_path = gcode_file.with_file_name({
             let ext = gcode_file.extension().unwrap_or_default();

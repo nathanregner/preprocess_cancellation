@@ -1,5 +1,6 @@
 use crate::gcode::parser::comment;
 use crate::patch::Patch;
+use crate::DEFAULT_BUF_SIZE;
 use std::io::{BufRead, BufReader, Read, Seek, SeekFrom};
 use winnow::combinator::rest;
 
@@ -20,7 +21,7 @@ impl Slicer {
     pub fn infer(mut src: (impl Read + Seek)) -> crate::Result<Self> {
         src.seek(SeekFrom::Start(0))?;
 
-        let mut reader = BufReader::new(&mut src);
+        let mut reader = BufReader::with_capacity(DEFAULT_BUF_SIZE, &mut src);
         let mut line = String::new();
         let slicer = loop {
             line.clear();
