@@ -13,6 +13,7 @@
       let
         overlays = [ (import rust-overlay) ];
         pkgs = import nixpkgs { inherit system overlays; };
+        lib = pkgs.lib;
         rust = pkgs.rust-bin.nightly.latest.default;
         rustOverrides = {
           cargo = rust;
@@ -24,9 +25,11 @@
             rustPlatform = (let self = pkgs.makeRustPlatform rustOverrides;
             in self // {
               # stupid hack to propagate nightly
-              maturinBuildHook = self.maturinBuildHook.override (oldAttrs: {
-                pkgsHostTarget = oldAttrs.pkgsHostTarget // rustOverrides;
-              });
+              maturinBuildHook = self.maturinBuildHook.overrideAttrs
+                (oldAttrs: {
+                  propagatedBuildInputs = [ pkgs.pkgsHostTarget.maturin ]
+                    ++ (lib.attrValues rustOverrides);
+                });
             });
           };
           bench = pkgs.writeShellApplication {
