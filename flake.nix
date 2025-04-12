@@ -4,45 +4,22 @@
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     flake-utils.url = "github:numtide/flake-utils";
-    rust-overlay.url = "github:oxalica/rust-overlay";
-    rust-overlay.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs =
     {
       nixpkgs,
-      rust-overlay,
       flake-utils,
       ...
     }:
     flake-utils.lib.eachDefaultSystem (
       system:
       let
-        overlays = [ (import rust-overlay) ];
-        pkgs = import nixpkgs { inherit system overlays; };
-        lib = pkgs.lib;
-        rust = pkgs.rust-bin.nightly.latest.default;
-        rustOverrides = {
-          cargo = rust;
-          rustc = rust;
-        };
+        pkgs = nixpkgs.legacyPackages.${system};
       in
       rec {
         packages = rec {
-          default = pkgs.python3.pkgs.callPackage ./package.nix {
-            rustPlatform = (
-              let
-                self = pkgs.makeRustPlatform rustOverrides;
-              in
-              self
-              // {
-                # stupid hack to propagate nightly
-                maturinBuildHook = self.maturinBuildHook.overrideAttrs (oldAttrs: {
-                  propagatedBuildInputs = [ pkgs.pkgsHostTarget.maturin ] ++ (lib.attrValues rustOverrides);
-                });
-              }
-            );
-          };
+          default = pkgs.python3.pkgs.callPackage ./package.nix { };
           bench = pkgs.writeShellApplication {
             name = "bench";
             runtimeInputs = [ (pkgs.python3.withPackages (ps: [ default ])) ];
@@ -50,19 +27,18 @@
           };
         };
         devShells.default = pkgs.mkShell {
-          inherit (packages.default) nativeBuildInputs;
-          venvDir = "./.venv";
-          buildInputs =
-            packages.default.buildInputs
-            ++ (with pkgs; [
+          inputsFrom = [ packages.default ];
+          packages = (
+            with pkgs;
+            [
+              cargo
               cargo-insta
               cargo-nextest
-              just
-              poetry
-              python311Packages.venvShellHook
+              clippy
               rust-analyzer
-            ]);
-          RUST_SRC_PATH = "${pkgs.rustPlatform.rustcSrc}/library";
+              rustfmt
+            ]
+          );
         };
       }
     );

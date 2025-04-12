@@ -1,5 +1,3 @@
-#![feature(assert_matches)]
-
 mod error;
 mod gcode;
 mod patch;
@@ -18,13 +16,13 @@ use std::path::PathBuf;
 use tempfile::NamedTempFile;
 
 #[pymodule]
-fn preprocess_cancellation(py: Python<'_>, m: &PyModule) -> PyResult<()> {
+fn preprocess_cancellation(py: Python<'_>, m: &Bound<'_, PyModule>) -> PyResult<()> {
     m.add_function(wrap_pyfunction!(preprocess_slicer, m)?)?;
     m.add_function(wrap_pyfunction!(preprocess_cura, m)?)?;
     m.add_function(wrap_pyfunction!(preprocess_ideamaker, m)?)?;
     m.add_function(wrap_pyfunction!(preprocess_m486, m)?)?;
     m.add_function(wrap_pyfunction!(_main, m)?)?;
-    m.add("GCodeError", py.get_type::<GCodeError>())?;
+    m.add("GCodeError", py.get_type_bound::<GCodeError>())?;
     Ok(())
 }
 
@@ -51,25 +49,25 @@ pub fn rewrite_iter(
 }
 
 #[pyfunction]
-#[pyo3(signature = (src, dst=None))]
+#[pyo3(signature=(src, dst=None))]
 pub fn preprocess_slicer(src: FileLike, dst: Option<FileLike>) -> PyResult<Option<FileIter>> {
     rewrite_iter(Slicer::Slic3r, src, dst)
 }
 
 #[pyfunction]
-#[pyo3(signature = (src, dst=None))]
+#[pyo3(signature=(src, dst=None))]
 pub fn preprocess_cura(src: FileLike, dst: Option<FileLike>) -> PyResult<Option<FileIter>> {
     rewrite_iter(Slicer::Cura, src, dst)
 }
 
 #[pyfunction]
-#[pyo3(signature = (src, dst=None))]
+#[pyo3(signature=(src, dst=None))]
 pub fn preprocess_ideamaker(src: FileLike, dst: Option<FileLike>) -> PyResult<Option<FileIter>> {
     rewrite_iter(Slicer::IdeaMaker, src, dst)
 }
 
 #[pyfunction]
-#[pyo3(signature = (src, dst=None))]
+#[pyo3(signature=(src, dst=None))]
 pub fn preprocess_m486(src: FileLike, dst: Option<FileLike>) -> PyResult<Option<FileIter>> {
     rewrite_iter(Slicer::M486, src, dst)
 }

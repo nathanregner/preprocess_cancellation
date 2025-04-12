@@ -5,7 +5,7 @@ use winnow::stream::{AsChar, Stream, StreamIsPartial};
 use winnow::token::take_till;
 use winnow::Parser;
 
-#[derive(Debug)]
+#[derive(PartialEq, Debug)]
 pub struct ExtrudeMove {
     pub x: f32,
     pub y: f32,
@@ -48,15 +48,18 @@ pub fn extrude_move(input: &str) -> Result<ExtrudeMove, ErrMode<TreeError<&str>>
 #[cfg(test)]
 mod test {
     use super::*;
-    use std::assert_matches::assert_matches;
-    use winnow::combinator::rest;
+    use winnow::token::rest;
 
     #[test]
     fn parse_extrude_move() {
-        let result = extrude_move("G1 X98.536 Y84.964 E2.15296");
-        assert_matches!(
+        let result = extrude_move("G1 X98.536 Y84.964 E2.15296").unwrap();
+        assert_eq!(
             result,
-            Ok(ExtrudeMove { x, y, e }) if x == 98.536 && y == 84.964 && e == 2.15296
+            ExtrudeMove {
+                x: 98.536,
+                y: 84.964,
+                e: 2.15296
+            }
         );
     }
 

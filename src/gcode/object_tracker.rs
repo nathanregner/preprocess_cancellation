@@ -3,7 +3,7 @@ use crate::gcode::{BoundingBox, KnownObject};
 use crate::patch::Patch;
 use std::collections::HashMap;
 use std::io::{BufRead, Seek, SeekFrom};
-use winnow::combinator::rest;
+use winnow::token::rest;
 
 #[derive(Clone, Default, Debug)]
 pub struct ObjectTracker {

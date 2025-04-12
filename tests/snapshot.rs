@@ -22,14 +22,14 @@ fn patch_infer(file: File) -> Result<String> {
 fn snapshot(#[files("./GCode/*.gcode")] path: PathBuf) {
     let file = File::open(&path).unwrap();
     let file_name = path.file_name().unwrap().to_str().unwrap();
-    insta::assert_display_snapshot!(file_name, patch_infer(file).unwrap());
+    insta::assert_snapshot!(file_name, patch_infer(file).unwrap());
 }
 
 #[rstest]
 fn m486(#[files("./GCode/m486/*.gcode")] path: PathBuf) {
     let file = File::open(&path).unwrap();
     let file_name = path.file_name().unwrap().to_str().unwrap();
-    insta::assert_display_snapshot!(
+    insta::assert_snapshot!(
         file_name,
         process(Slicer::M486, BufReader::new(file)).unwrap()
     );

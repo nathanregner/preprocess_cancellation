@@ -20,7 +20,7 @@ python-source = "python"
 
 [tool.poetry]
 name = "preprocess_cancellation"
-version = "0.2.1"
+version = "0.2.1.1"
 description = "GCode processor to add klipper cancel-object markers"
 readme = "README.md"
 authors = ["Franklyn Tackitt <im@frank.af>"]

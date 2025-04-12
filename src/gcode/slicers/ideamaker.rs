@@ -2,7 +2,8 @@ use crate::gcode::parser::{comment, extrude_move, trim};
 use crate::gcode::{last_comment, ObjectTracker};
 use crate::patch::Patch;
 use std::io::{BufRead, Seek};
-use winnow::combinator::{preceded, rest};
+use winnow::combinator::preceded;
+use winnow::token::rest;
 
 pub fn format_patch(src: &mut (impl BufRead + Seek)) -> crate::Result<Patch> {
     let mut object_tracker = ObjectTracker::default();

@@ -3,7 +3,8 @@ use crate::gcode::{last_comment, ObjectTracker};
 use crate::patch::Patch;
 use std::io::{BufRead, Seek};
 use winnow::ascii::dec_int;
-use winnow::combinator::{alt, preceded, rest};
+use winnow::combinator::{alt, preceded};
+use winnow::token::rest;
 use winnow::Parser;
 
 pub fn format_patch(src: &mut (impl BufRead + Seek)) -> crate::Result<Patch> {

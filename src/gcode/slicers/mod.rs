@@ -1,7 +1,7 @@
 use crate::gcode::parser::comment;
 use crate::patch::Patch;
 use std::io::{BufRead, BufReader, Read, Seek, SeekFrom};
-use winnow::combinator::rest;
+use winnow::token::rest;
 
 pub mod cura;
 pub mod ideamaker;

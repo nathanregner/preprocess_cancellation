@@ -1,19 +1,36 @@
-{ lib, buildPythonPackage, pythonOlder, rustPlatform, stdenv, libiconv
-, pytestCheckHook }:
-buildPythonPackage rec {
+{
+  lib,
+  buildPythonPackage,
+  libiconv,
+  pytestCheckHook,
+  python,
+  pythonOlder,
+  rustPlatform,
+  stdenv,
+}:
+buildPythonPackage {
   pname = "preprocess_cancellation";
-  version = "0.2.0";
+  version = "0.2.1.1";
   format = "pyproject";
   disabled = pythonOlder "3.8";
 
   src = ./.;
 
-  cargoDeps = rustPlatform.fetchCargoTarball {
-    inherit src;
-    hash = "sha256-JanQ3XBkhe9LtYJPne+g6NgQ5dNAeDtrNx95dBO1j8k=";
+  cargoDeps = rustPlatform.importCargoLock {
+    lockFile = ./Cargo.lock;
   };
 
-  nativeBuildInputs = with rustPlatform; [ cargoSetupHook maturinBuildHook ];
+  nativeBuildInputs =
+    [
+      (python.withPackages (p: [
+        p.pytest
+      ]))
+    ]
+    ++ (with rustPlatform; [
+      cargoCheckHook
+      cargoSetupHook
+      maturinBuildHook
+    ]);
 
   buildInputs = lib.optional stdenv.isDarwin libiconv;
 
